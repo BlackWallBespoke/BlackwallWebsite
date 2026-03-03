@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blackwall â€" J. Christophe Aishe, Artisan</title>
+        <meta name="description" content="Meet J. Christophe Aishe â€" the hand and mind behind every Blackwall bespoke BDSM flogger.">
+        <meta name="robots" content="noindex, nofollow">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
+        <style>:root { --void: #050407; --abyss: #080610; --deep: #0e0b14; --surface: #141118; --ember: #c9762a; --ember-dark: #5c3510; --ember-glow: #d4944e; --gold: #c9a84c; --gold-light: #e2c97e; --gold-dim: #7a5f2a; --cream: #e8dcc8; --parchment: #c4b49a; --dusk: #6a5e4e; --whisper: #2a2220; --font-display: 'Cinzel','Palatino Linotype',serif; --font-body: 'Cormorant Garamond','Georgia',serif; --font-ui: 'Raleway','Futura',sans-serif; --ease: cubic-bezier(0.16,1,0.3,1); --t-slow: 0.9s; --t-mid: 0.5s; --t-fast: 0.25s; } * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: var(--void); color: var(--cream); font-family: var(--font-body); font-weight: 300; line-height: 1.8; overflow-x: hidden; cursor: none; } /* CURSOR */.cur-dot { position: fixed; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width 0.3s,height 0.3s; } .cur-ring { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(201,168,76,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width 0.4s var(--ease),height 0.4s var(--ease),border-color 0.3s; } .cur-dot.active { width: 12px; height: 12px; } .cur-ring.active { width: 64px; height: 64px; border-color: rgba(201,168,76,0.7); } /* NAV */nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 5rem; padding: 1.5rem 4rem; background: linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%); } .nav-links { display: flex; gap: 4rem; list-style: none; align-items: center; } .nav-links a { font-family: var(--font-ui); font-weight: 200; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); text-decoration: none; transition: color var(--t-fast); display: inline-block; text-align: center; line-height: 1.7; } .nav-links a:hover { color: var(--gold-light); } .nav-logo { height: 114px; opacity: 0.9; transition: opacity var(--t-fast); } .nav-logo:hover { opacity: 1; } /* SHARED SECTION STYLES */.section { position: relative; padding: 10rem 4rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; background-attachment: fixed; } .section-overlay { position: absolute; inset: 0; background: rgba(5,4,7,0.84); } .section-inner { position: relative; z-index: 2; max-width: 960px; display: flex; flex-direction: column; align-items: center; gap: 2rem; } .eyebrow { font-family: var(--font-ui); font-weight: 200; font-size: 0.58rem; letter-spacing: 0.55em; text-transform: uppercase; color: var(--gold-dim); } .section-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem,5vw,3.8rem); letter-spacing: 0.06em; color: var(--cream); line-height: 1.25; } .section-title em { font-style: italic; color: var(--ember-glow); } .section-body { font-size: 1.15rem; color: var(--parchment); line-height: 2; max-width: 700px; } .section-body-sm { font-size: 1rem; color: var(--dusk); line-height: 1.9; max-width: 700px; } .gold-rule { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); } .btn { font-family: var(--font-ui); font-weight: 200; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; display: inline-block; transition: all var(--t-mid) var(--ease); position: relative; overflow: hidden; border: 1px solid var(--gold-dim); color: var(--gold-light); } .btn::before { content: ''; position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; transition: transform var(--t-mid) var(--ease); z-index: -1; background: var(--gold); } .btn:hover::before { transform: scaleX(1); } .btn:hover { color: var(--void); border-color: var(--gold); } /* HERO */.page-hero { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; animation: hZoom 18s ease-in-out infinite alternate; } @keyframes hZoom{ from {  transform: scale(1.04); }  to {  transform: scale(1.08); } } .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%); } .hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%); animation: gBreath 6s ease-in-out infinite; } @keyframes gBreath{ 0%, 100% {  opacity: 0.7; }  50% {  opacity: 1; } } .hero-content { position: relative; z-index: 2; padding: 2rem; animation: hFade 2s var(--ease) both; } @keyframes hFade{ from {  opacity: 0;  transform: translateY(30px); }  to {  opacity: 1;  transform: translateY(0); } } .hero-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem,7vw,5.5rem); color: var(--cream); letter-spacing: 0.08em; line-height: 1.2; margin-bottom: 1.5rem; } .hero-title em { font-style: italic; color: var(--ember-glow); } .hero-sub { font-family: var(--font-ui); font-weight: 100; font-size: 0.6rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--dusk); margin-top: 1rem; } .gold-rule-center { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); margin: 2rem auto; } /* PLACEHOLDER IMAGE */.placeholder-img { width: 100%; max-width: 800px; aspect-ratio: 16/9; background: linear-gradient(135deg,var(--deep) 0%,var(--surface) 50%,var(--lift,#1c1820) 100%); border: 1px solid var(--whisper); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; position: relative; overflow: hidden; } .placeholder-img::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(42,34,32,0.3) 40px,rgba(42,34,32,0.3) 41px); } .placeholder-img-label { position: relative; z-index: 1; font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--whisper); } .placeholder-img-icon { position: relative; z-index: 1; font-size: 2rem; color: var(--gold-dim); opacity: 0.3; } .placeholder-img-sq { aspect-ratio: 1/1; max-width: 480px; } .placeholder-img-tall { aspect-ratio: 2/3; max-width: 420px; } /* GRID LAYOUTS */.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; max-width: 1200px; width: 100%; text-align: left; } .two-col-reverse { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; max-width: 1200px; width: 100%; text-align: left; } .three-col { display: grid; grid-template-columns: repeat(3,1fr); gap: 3rem; max-width: 1200px; width: 100%; } .col-text { display: flex; flex-direction: column; justify-content: center; gap: 1.5rem; } /* CARD */.card { background: var(--deep); border: 1px solid var(--whisper); padding: 3rem 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; transition: border-color var(--t-mid),background var(--t-mid); } .card:hover { border-color: var(--gold-dim); background: var(--surface); } .card-icon { font-size: 1.8rem; color: var(--gold); } .card-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--cream); letter-spacing: 0.05em; } .card-body { font-size: 0.95rem; color: var(--dusk); line-height: 1.8; } /* FOOTER */footer { background: var(--void); border-top: 1px solid var(--whisper); padding: 4rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; } .footer-logo { height: 28px; opacity: 0.65; } .footer-rule { width: 200px; height: 1px; background: linear-gradient(to right,transparent,var(--whisper),transparent); } .footer-artisan { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--dusk); } .footer-copy { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--whisper); } /* REVEAL */.reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.1s var(--ease),transform 1.1s var(--ease); } .reveal.visible { opacity: 1; transform: translateY(0); } .rd1 { transition-delay: 0.15s; } .rd2 { transition-delay: 0.3s; } .rd3 { transition-delay: 0.45s; } .rd4 { transition-delay: 0.6s; } /* RESPONSIVE */@media (max-width:1000px){ .two-col, .two-col-reverse {  grid-template-columns: 1fr;  gap: 3rem; } } @media (max-width:800px){ .three-col {  grid-template-columns: 1fr; }  nav {  gap: 2rem;  padding: 1rem 2rem; }  .nav-links {  gap: 2rem; }  .section {  padding: 6rem 2rem; } } @media (max-width:600px){ .nav-links {  display: none; } }</style>
+    </head>
+    <body>
+        <div class="cur-dot" id="curDot"></div>
+        <div class="cur-ring" id="curRing"></div>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="artisan.html">The<br>Artisan</a>
+                </li>
+                <li>
+                    <a href="materials.html">Materials</a>
+                </li>
+            </ul>
+            <a href="index.html"><img class="nav-logo" src="Transparent logo white font.png" alt="Blackwall"></a>
+            <ul class="nav-links">
+                <li>
+                    <a href="commission.html">Commission</a>
+                </li>
+                <li>
+                    <a href="pricing.html">Pricing</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="page-hero">
+            <div class="hero-bg" style="background-image:url('image2.jpg');"></div>
+            <div class="hero-vignette"></div>
+            <div class="hero-glow"></div>
+            <div class="hero-content" style="font-family: 'Cinzel', serif;">
+                <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;">The Hand Behind the Work</p>
+                <div class="gold-rule-center"></div>
+                <h1 class="hero-title"><em>J. Christophe</em><br>Aishe</h1>
+                <p class="hero-sub"><b style="font-size: 20px; font-weight: 800; font-style: normal;">Artisan - Maker - Craftsman</b></p>
+            </div>
+        </div>
+        <!-- PORTRAIT + INTRO -->
+        <section class="section">
+            <div class="section-bg" style="background-image:url('image6.jpg');"></div>
+            <div class="section-overlay"></div>
+            <div class="section-inner" style="max-width:1200px;">
+                <h3>The hand behind the work is J. Christophe Aishe, a master turner with more than three decades of experience. Taught how to turn wood as a child by his grandfather, he has spent almost a decade making bespoke heirloom-grade floggers for discerning private clients, growing his reputation slowly through word-of-mouth and a reputation for the higest quality craftsmanship in a market both saturated with hobby work and devoid of heirloom-quality pieces.<br><br>If you look carefully, you&apos;ll notice his work in some of the most well-known dungeons on the planet. <br><br>Reclusive and introverted, Mr. Aishe is known as much for his eccentrcities as he is for his intense focus and dedication to perfection, and he is famous- perhaps infamous- for spending hours perfecting his pieces, ensuring there are no blemishes or imperfections beyond those conveyed by nature.<br><br>His pieces are highly sought after by collectors in discerning circles, and his methodology for creating the &quot;ultra-bespoke&quot; flogger biomechanically measured and built specifically for a client&apos;s hand and swinging motion is still the only process of its kind in the world.<br><br>For the first time, Mr. Aishe has decided to make his creations available to the commercial public, and has created this website for the purpose of making his pieces more accessible.&nbsp;<br>As he puts it, &quot;Spending $1200 on a flogger is perhaps no longer the domain of the rich seeking pieces of status, but rather also the connoisseur of Kink, and the serious practitioner of the craft.&quot;&nbsp; &nbsp; &nbsp;</h3>
+            </div>
+        </section>
+        <!-- PHILOSOPHY QUOTE -->
+        <section class="section" style="padding:7rem 4rem;">
+            <div class="section-bg" style="background-image:url('image3.jpg');"></div>
+            <div class="section-overlay" style="background:rgba(5,4,7,0.88);"></div>
+        </section>
+        <!-- WORKSHOP -->
+        <section class="section">
+            <div class="section-bg" style="background-image:url('image5.jpg');"></div>
+            <div class="section-overlay" style="background:rgba(5,4,7,0.86);"></div>
+        </section>
+        <!-- WORK GALLERY -->
+        <section class="section" style="padding-bottom:10rem;">
+            <div class="section-bg" style="background-image:url('image4.jpg');"></div>
+            <div class="section-overlay" style="background:rgba(5,4,7,0.89);"></div>
+            <div class="section-inner" style="max-width:1100px;">
+                <p class="eyebrow reveal">From the Workshop</p>
+                <div class="gold-rule reveal rd1"></div>
+            </div>
+        </section>
+        <!-- CTA -->
+        <section class="section" style="padding:8rem 4rem;">
+            <div class="section-bg" style="background-image:url('image8.jpg');"></div>
+            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>
+        </section>
+        <footer>
+            <div class="footer-rule"></div>
+            <p class="footer-artisan">J. Christophe Aishe &nbsp;Â·&nbsp; Artisan</p>
+            <p class="footer-copy">&copy; 2025 Blackwall &nbsp;Â·&nbsp; All rights reserved &nbsp;Â·&nbsp; Bespoke BDSM Equipment</p>
+        </footer>
+        <script>
+const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
+let cx=0,cy=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
+(function a(){rx+=(cx-rx)*0.1;ry+=(cy-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button,.card').forEach(el=>{el.addEventListener('mouseenter',()=>{dot.classList.add('active');ring.classList.add('active');});el.addEventListener('mouseleave',()=>{dot.classList.remove('active');ring.classList.remove('active');});});
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),${threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+    </body>
+</html>

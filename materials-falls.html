@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blackwall – Fall Materials</title>
+        <meta name="description" content="Fall materials for every Blackwall bespoke flogger — domestic leather, exotic leather, and beyond.">
+        <meta name="robots" content="noindex, nofollow">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,900;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
+        <style>:root { --void: #050407; --abyss: #080610; --deep: #0e0b14; --surface: #141118; --ember: #c9762a; --ember-dark: #5c3510; --ember-glow: #d4944e; --gold: #c9a84c; --gold-light: #e2c97e; --gold-dim: #7a5f2a; --cream: #e8dcc8; --parchment: #c4b49a; --dusk: #6a5e4e; --whisper: #2a2220; --font-display: 'Cinzel','Palatino Linotype',serif; --font-body: 'Cormorant Garamond','Georgia',serif; --font-ui: 'Raleway','Futura',sans-serif; --ease: cubic-bezier(0.16,1,0.3,1); --t-slow: 0.9s; --t-mid: 0.5s; --t-fast: 0.25s; } * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: var(--void); color: var(--cream); font-family: var(--font-body); font-weight: 300; line-height: 1.8; overflow-x: hidden; cursor: none; } .cur-dot { position: fixed; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s,height .3s; } .cur-ring { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(201,168,76,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .4s var(--ease),height .4s var(--ease),border-color .3s; } .cur-dot.active { width: 12px; height: 12px; } .cur-ring.active { width: 64px; height: 64px; border-color: rgba(201,168,76,0.7); } nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 5rem; padding: 1.5rem 4rem; background: linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%); } .nav-links { display: flex; gap: 4rem; list-style: none; align-items: center; } .nav-links a { font-family: var(--font-ui); font-weight: 200; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); text-decoration: none; transition: color var(--t-fast); display: inline-block; text-align: center; line-height: 1.7; } .nav-links a:hover { color: var(--gold-light); } .nav-logo { height: 114px; opacity: 0.9; transition: opacity var(--t-fast); } .nav-logo:hover { opacity: 1; } .mat-subnav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 199; display: flex; justify-content: center; } .mat-subnav-inner { display: flex; align-items: stretch; background: rgba(5,4,7,0.97); border: 1px solid var(--whisper); border-bottom: none; } .mat-subnav-inner a { font-family: var(--font-ui); font-weight: 200; font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--dusk); text-decoration: none; padding: 1rem 2.5rem; transition: color var(--t-fast),background var(--t-fast); border-right: 1px solid var(--whisper); } .mat-subnav-inner a:last-child { border-right: none; } .mat-subnav-inner a:hover { color: var(--gold-light); } .mat-subnav-inner a.active { color: var(--gold); background: rgba(201,168,76,0.06); } .page-hero { position: relative; min-height: 55vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; animation: hZ 18s ease-in-out infinite alternate; } @keyframes hZ{ from {  transform: scale(1.04); }  to {  transform: scale(1.08); } } .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%); } .hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%); animation: gB 6s ease-in-out infinite; } @keyframes gB{ 0%, 100% {  opacity: .7; }  50% {  opacity: 1; } } .hero-content { position: relative; z-index: 2; padding: 2rem; animation: hF 2s var(--ease) both; } @keyframes hF{ from {  opacity: 0;  transform: translateY(30px); }  to {  opacity: 1;  transform: translateY(0); } } .hero-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem,7vw,5.5rem); color: var(--cream); letter-spacing: 0.08em; line-height: 1.2; margin-bottom: 1.5rem; } .hero-title em { font-style: italic; color: var(--ember-glow); } .gold-rule-c { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); margin: 2rem auto; } .section { position: relative; padding: 10rem 4rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; background-attachment: fixed; } .section-overlay { position: absolute; inset: 0; background: rgba(5,4,7,0.84); } .section-inner { position: relative; z-index: 2; max-width: 1200px; display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; } .eyebrow { font-family: var(--font-ui); font-weight: 200; font-size: 0.58rem; letter-spacing: 0.55em; text-transform: uppercase; color: var(--gold-dim); } .section-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem,5vw,3.8rem); letter-spacing: 0.06em; color: var(--cream); line-height: 1.25; } .section-title em { font-style: italic; color: var(--ember-glow); } .section-body { font-size: 1.15rem; color: var(--parchment); line-height: 2; max-width: 700px; } .gold-rule { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); } .btn { font-family: var(--font-ui); font-weight: 200; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; display: inline-block; transition: all var(--t-mid) var(--ease); position: relative; overflow: hidden; border: 1px solid var(--gold-dim); color: var(--gold-light); } .btn::before { content: ''; position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; transition: transform var(--t-mid) var(--ease); z-index: -1; background: var(--gold); } .btn:hover::before { transform: scaleX(1); } .btn:hover { color: var(--void); border-color: var(--gold); } .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.1s var(--ease),transform 1.1s var(--ease); } .reveal.visible { opacity: 1; transform: translateY(0); } .rd1 { transition-delay: .15s; } .rd2 { transition-delay: .3s; } .rd3 { transition-delay: .45s; } .rd4 { transition-delay: .6s; } footer { background: var(--void); border-top: 1px solid var(--whisper); padding: 4rem 4rem 7rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; } .footer-logo { height: 28px; opacity: 0.65; } .footer-rule { width: 200px; height: 1px; background: linear-gradient(to right,transparent,var(--whisper),transparent); } .footer-artisan { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--dusk); } .footer-copy { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--whisper); } .leather-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--whisper); width: 100%; max-width: 1200px; margin-top: 2rem; } .leather-card { background: var(--deep); padding: 1.5rem 1.25rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; transition: background var(--t-mid); cursor: default; } .leather-card:hover { background: var(--surface); } .sub-heading { font-family: var(--font-display); font-weight: 300; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--parchment); margin-top: 3rem; width: 100%; max-width: 1200px; text-align: center; } .sub-heading.exotic { color: var(--ember-glow); } .sub-heading.fibres { color: var(--gold-light); } .leather-name { font-family: var(--font-display); font-size: 0.95rem; color: var(--cream); letter-spacing: 0.04em; } .leather-note { font-family: var(--font-body); font-style: italic; font-size: 0.78rem; color: var(--dusk); line-height: 1.6; } .cross-links { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--whisper); width: 100%; max-width: 1200px; margin-top: 4rem; } .cross-link { background: var(--deep); padding: 2rem 2.5rem; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; transition: background var(--t-mid); } .cross-link:hover { background: var(--surface); } .cross-link-label { font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-dim); } .cross-link-title { font-family: var(--font-display); font-size: 1.3rem; color: var(--cream); } .cross-link-sub { font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); } .sensation-table { width: 100%; max-width: 1200px; border-collapse: collapse; margin-top: 2rem; } .sensation-table th, .sensation-table td { border: 1px solid var(--whisper); padding: 0.9rem 1.2rem; text-align: left; vertical-align: middle; } .sensation-table thead tr { background: var(--abyss); } .sensation-table th { font-family: var(--font-ui); font-weight: 200; font-size: 0.48rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold-dim); } .sensation-table th.col-metric { text-align: center; color: var(--gold); } .sensation-table tbody tr { background: var(--deep); transition: background var(--t-fast); } .sensation-table tbody tr:hover { background: var(--surface); } .sensation-table tbody tr.group-divider td { border-top: 1px solid var(--gold-dim); } .sensation-table .mat-label { font-family: var(--font-display); font-size: 0.85rem; color: var(--cream); letter-spacing: 0.04em; } .sensation-table .pip-cell { text-align: center; white-space: nowrap; } .sensation-table .pip { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin: 0 2px; } .sensation-table .pip.on-thud { background: var(--gold); } .sensation-table .pip.on-sting { background: #4a9ebb; } .sensation-table .pip.on-pain { background: #c0392b; } .sensation-table .pip.off { background: transparent; border: 1px solid var(--whisper); } .sensation-table .group-label td { background: var(--abyss); font-family: var(--font-ui); font-weight: 200; font-size: 0.42rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--dusk); padding: 0.6rem 1.2rem; border-top: 1px solid var(--gold-dim); } @media (max-width:900px){ nav {  gap: 2rem;  padding: 1rem 2rem; }  .nav-links {  gap: 2rem; }  .section {  padding: 7rem 2rem; }  .leather-grid {  grid-template-columns: repeat(2,1fr); }  .sensation-table th, .sensation-table td {  padding: 0.7rem 0.6rem; } } @media (max-width:600px){ .nav-links {  display: none; }  .cross-links {  grid-template-columns: 1fr; }  .sensation-table .mat-label {  font-size: 0.72rem; } }</style>
+    </head>
+    <body>
+        <div class="cur-dot" id="curDot"></div>
+        <div class="cur-ring" id="curRing"></div>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="artisan.html">The<br>Artisan</a>
+                </li>
+                <li>
+                    <a href="materials.html">Materials</a>
+                </li>
+            </ul>
+            <a href="index.html"><img class="nav-logo" src="Transparent logo white font.png" alt="Blackwall"></a>
+            <ul class="nav-links">
+                <li>
+                    <a href="commission.html">Commission</a>
+                </li>
+                <li>
+                    <a href="pricing.html">Pricing</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mat-subnav">
+            <div class="mat-subnav-inner">
+                <a href="materials.html">← Materials</a>
+                <a href="materials-handles.html">Handles</a>
+                <a href="materials-synthetic.html">Synthetic Handles</a>
+                <a href="materials-falls.html" class="active">Falls</a>
+                <a href="materials-hardware.html">Hardware</a>
+            </div>
+        </div>
+        <div class="page-hero">
+            <div class="hero-bg" style="background-image:url('image1.jpg');"></div>
+            <div class="hero-vignette"></div>
+            <div class="hero-glow"></div>
+            <div class="hero-content">
+                <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;">Component Two</p>
+                <div class="gold-rule-c"></div>
+                <h1 class="hero-title">The <em>Strike</em></h1>
+                <p style="font-family:var(--font-ui);font-weight:100;font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--dusk);margin-top:1rem;">Fall Materials &nbsp;·&nbsp; Leather &nbsp;&amp;&nbsp; Beyond</p>
+            </div>
+        </div>
+        <!-- LEATHER SECTION -->
+        <section class="section" style="padding-bottom:0;">
+            <div class="section-bg" style="background-image:url('image1.jpg');"></div>
+            <div class="section-overlay" style="background:rgba(5,4,7,0.88);"></div>
+            <div class="section-inner">
+                <p class="eyebrow reveal">Fall Materials</p>
+                <div class="gold-rule reveal rd1"></div>
+                <h2 class="section-title reveal rd2">Leather <em>Beyond</em></h2>
+                <p class="section-body reveal rd3">
+      The falls determine everything about sensation. Thickness, cut, species, and tanning method all contribute. We source 100% full-grain premium-grade hides, inspected by hand before any cut is made.
+      Pricing for all leathers varies with market conditions at time of order. </p>
+                <p class="sub-heading reveal">Domestic</p>
+                <div class="leather-grid reveal rd4">
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="cowhide.jpg" alt="Cowhide" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Cowhide</div>
+                        <div class="leather-note">The benchmark. Predictable, durable. The staple for most floggers.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="suede.jpg" alt="Suede" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Suede</div>
+                        <div class="leather-note">Softer surface on both sides of the fall. Thuddy, warm sensation.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="kangaroo.jpg" alt="Kangaroo" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Kangaroo</div>
+                        <div class="leather-note">Remarkably strong for its weight. Fine, even grain. A premium choice for speed floggers.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="elk.jpg" alt="Elk" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Elk</div>
+                        <div class="leather-note">Supple and heavy. Excellent drape and a good thud. Perfect for warmup flogging.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="deer.jpg" alt="Deer" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Deer</div>
+                        <div class="leather-note">Soft, pliable. Light sensation. Good for beginners.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="moose.jpg" alt="Moose" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Moose</div>
+                        <div class="leather-note">Large, coarse-grained. Heavy falls with significant thud.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="bison.jpg" alt="Bison" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Bison</div>
+                        <div class="leather-note">Rougher texture. Amongst the heaviest leather. Excellent for a booming sound profile.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="buffalo.jpg" alt="Buffalo" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Buffalo</div>
+                        <div class="leather-note">Open grain, very tough. Substantial impact.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="horse.jpg" alt="Horse" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Horse</div>
+                        <div class="leather-note">Tight, fine grain. Excellent strength. A traditional choice.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="bull.jpg" alt="Bull" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Bull</div>
+                        <div class="leather-note">Dense and heavy. Maximum impact potential.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="lamb.jpg" alt="Lamb" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Lamb</div>
+                        <div class="leather-note">Extremely soft. Lightest sensation. Luxuriously fine.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="sheep.jpg" alt="Sheep" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Sheep</div>
+                        <div class="leather-note">Softer than cowhide. Gentle, consistent sensation.</div>
+                    </div>
+                </div>
+                <p class="sub-heading exotic reveal">Exotic</p>
+                <div class="leather-grid reveal rd4">
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="ostrich.jpg" alt="Ostrich" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Ostrich</div>
+                        <div class="leather-note">Distinctive quill pattern. Exotic and tactile.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="stingray.jpg" alt="Stingray" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Stingray</div>
+                        <div class="leather-note">Armoured surface. Unique texture against skin.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="alligator.jpg" alt="Alligator" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Alligator</div>
+                        <div class="leather-note">Scute-patterned. Assertive texture. Extraordinary piece.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="python.jpg" alt="Python / Snake" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Python / Snake</div>
+                        <div class="leather-note">Scale texture. Unique sensory experience.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="eel.jpg" alt="Eel" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Eel</div>
+                        <div class="leather-note">Smooth, fine-scaled. Supple and distinctive.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="kodiak.jpg" alt="Kodiak" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Kodiak</div>
+                        <div class="leather-note">Heavy, dense. Maximum weight falls.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="beaver-tail.jpg" alt="Beaver Tail" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Beaver Tail</div>
+                        <div class="leather-note">Scaly skin texture. Unusual and tactile.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="fish-scale.jpg" alt="Fish Scale" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Fish Scale</div>
+                        <div class="leather-note">Delicate surface pattern. Visually stunning.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- BEYOND LEATHER SECTION -->
+        <section class="section" style="padding-top:0;">
+            <div class="section-bg" style="background-image:url('image8.jpg');"></div>
+            <div class="section-overlay" style="background:rgba(5,4,7,0.88);"></div>
+            <div class="section-inner">
+                <p class="sub-heading fibres reveal">Fibres</p>
+                <h2 class="section-title reveal rd2">Beyond <em>Leather</em></h2>
+                <p class="section-body reveal rd3">
+                    Not every commission calls for hide. Natural fibres, synthetic cords, and metal falls each carry their own sensory signature — distinct weight, texture, and sound. Chosen with the same rigour as every other element. </p>
+                <div class="leather-grid reveal rd4">
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="jute-rope.jpg" alt="Jute Rope" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Jute Rope</div>
+                        <div class="leather-note">Soft and forgiving. Thuddy, warm sensation. The benchmark of natural fibre options.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="cotton-rope.jpg" alt="Cotton Rope" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Cotton Rope</div>
+                        <div class="leather-note">Softer and smoother than jute. Gentle, consistent sensation with a clean, natural drape.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="latex.jpg" alt="Latex" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Latex</div>
+                        <div class="leather-note">Smooth, fast-moving, and precise. Cool against skin, with a sharp, immediate sting.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="horsehair.jpg" alt="Horsehair" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Horsehair</div>
+                        <div class="leather-note">Traditional and precise. A distinct whisper against skin.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="kevlar.jpg" alt="Kevlar" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Kevlar</div>
+                        <div class="leather-note">Extraordinarily strong. Fine, consistent falls with a cutting bite. Not for the uninitiated.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="nylon.jpg" alt="Nylon" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Nylon</div>
+                        <div class="leather-note">Smooth and fast-moving. Precise, stinging sensation.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="paracord.jpg" alt="Paracord" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Paracord</div>
+                        <div class="leather-note">Resilient and consistent. Stingier than natural fibres.&nbsp;</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="metal.jpg" alt="Metal Falls" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Metal Falls</div>
+                        <div class="leather-note">Steel, brass, or copper. Cold weight and sound. An instrument of extraordinary presence.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="satin.jpg" alt="Satin" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Satin</div>
+                        <div class="leather-note">Smooth, cool, and whisper-light. Available as rope or braided strips — striking to see, remarkable to feel.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="silk.jpg" alt="Silk" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Silk</div>
+                        <div class="leather-note">The most luxurious option. Extraordinary softness and drape. Available as rope or braided strips — an aesthetic statement as much as a sensation.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="biothane.jpg" alt="Biothane" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Biothane</div>
+                        <div class="leather-note">Waterproof, easy to clean, and extraordinarily durable. Behaves like leather with none of its maintenance demands.</div>
+                    </div>
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <img src="rubber.jpg" alt="Rubber" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                        <div class="leather-name">Rubber</div>
+                        <div class="leather-note">Dense and unforgiving. Heavy thud with a sharp bite at the tip. A very different sensation from any other organic material.</div>
+                    </div>
+                </div>
+                <p class="eyebrow reveal" style="margin-top: 4rem; font-weight: 800;">Sensation Reference</p>
+                <div class="gold-rule reveal rd1"></div>
+                <h2 class="section-title reveal rd2" style="font-size:clamp(1.6rem,3vw,2.4rem);">Sensation Profile<font color="#d4944e"><i>&nbsp;Index Table</i></font></h2>
+                <p class="section-body reveal rd3" style="font-size:1rem;">Creating a sensation profile can be a complex endeavour- finding the right balance of thud, sting, and pain are essential to creating the best piece possible.<br>&nbsp;Ratings are relative to the full range of materials in this catalogue &#8212; not against an absolute standard. <br>A 5 in any category is the most intense available here. <br>Ratings assume standard fall length and cut, standard swing weight, and experienced technique. <br>Actual sensation varies with secondary fall characteristics and use.</p>
+                <p class="reveal rd3" style="font-family:var(--font-ui);font-size:0.42rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--dusk);margin-top:0.5rem;"> <span style="display: inline-flex; align-items: center; gap: 0.4rem; margin-right: 1.5rem; font-weight: 900;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#c9a84c;"></span> Thud</span> <span style="display: inline-flex; align-items: center; gap: 0.4rem; margin-right: 1.5rem; font-weight: 900;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#4a9ebb;"></span> Sting</span> <span style="display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 900;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#c0392b;"></span> Pain</span> </p>
+                <div class="reveal" style="width:100%;max-width:1200px;overflow-x:auto;margin-top:1rem;">
+                    <table class="sensation-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%; font-weight: 800;">Material</th>
+                                <th class="col-metric">Thud</th>
+                                <th class="col-metric">Sting</th>
+                                <th class="col-metric">Pain</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="group-label">
+                                <td colspan="4" style="font-weight: 700;">Domestic Leather</td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Lamb</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Sheep</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Deer</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Suede</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Elk</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Cowhide</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Horse</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Kangaroo</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Moose</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Buffalo</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Bison</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Bull</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr class="group-label">
+                                <td colspan="4" style="font-weight: 700;">Exotic Leather</td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Fish Scale</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Eel</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Beaver Tail</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Ostrich</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Python / Snake</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Stingray</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Alligator</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Kodiak</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr class="group-label">
+                                <td colspan="4" style="font-weight: 700;">Fibres &amp; Beyond</td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Silk</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Satin</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Cotton Rope</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Jute Rope</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Horsehair</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Nylon</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Paracord</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Biothane</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Rubber</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Latex</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip off"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Kevlar</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip off"></span><span class="pip off"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="mat-label">Metal Falls</td>
+                                <td class="pip-cell"><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span><span class="pip on-thud"></span></td>
+                                <td class="pip-cell"><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip on-sting"></span><span class="pip off"></span></td>
+                                <td class="pip-cell"><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span><span class="pip" style="background:#c0392b;"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cross-links reveal">
+                    <a class="cross-link" href="materials-handles.html"><div class="cross-link-label">Also</div><div class="cross-link-title">← Handles</div><div class="cross-link-sub">Wood · Domestic · Exotic</div></a>
+                    <a class="cross-link" href="materials-hardware.html"><div class="cross-link-label">Next Component</div><div class="cross-link-title">Hardware →</div><div class="cross-link-sub">Metals · Wrapping</div></a>
+                </div>
+            </div>
+        </section>
+        <section class="section" style="padding:7rem 4rem;">
+            <div class="section-bg" style="background-image:url('image7.jpg');"></div>
+            <div class="section-overlay" style="background:rgba(5,4,7,0.88);"></div>
+            <div class="section-inner" style="max-width:700px;">
+                <p class="eyebrow reveal">Next Step</p>
+                <div class="gold-rule reveal rd1"></div>
+                <h2 class="section-title reveal rd2" style="font-size:2.5rem;">Every selection is a conversation</h2>
+                <p class="section-body reveal rd3">No order blank is filled in isolation. These choices are made together, with context, with purpose.</p>
+                <a href="commission.html" class="btn reveal rd4">Begin Your Commission</a>
+            </div>
+        </section>
+        <footer>
+            <img class="footer-logo" src="Transparent logo white font.png" alt="Blackwall">
+            <div class="footer-rule"></div>
+            <p class="footer-artisan">J. Christophe Aishe &nbsp;·&nbsp; Artisan</p>
+            <p class="footer-copy">&copy; 2025 Blackwall &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Bespoke BDSM Equipment</p>
+        </footer>
+        <script>
+const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');let cx=0,cy=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
+(function a(){rx+=(cx-rx)*0.1;ry+=(cy-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button,.leather-card').forEach(el=>{el.addEventListener('mouseenter',()=>{dot.classList.add('active');ring.classList.add('active');});el.addEventListener('mouseleave',()=>{dot.classList.remove('active');ring.classList.remove('active');});});
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+        </script>
+    </body>
+</html>
