@@ -1,0 +1,77 @@
+<Line No>:- 3 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 3 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 4 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 4 <Error>:- The paragraph level attribute "pSpaceBefore" applied again. Inserting a paragraph level attribute termination tag "<pSpaceBefore:>". 
+<Line No>:- 4 <Error>:- The paragraph level attribute "pSpaceAfter" applied again. Inserting a paragraph level attribute termination tag "<pSpaceAfter:>". 
+<Line No>:- 4 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 4 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 4 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 4 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 5 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 5 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 5 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 5 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 5 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 6 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 6 <Error>:- The paragraph level attribute "pSpaceBefore" applied again. Inserting a paragraph level attribute termination tag "<pSpaceBefore:>". 
+<Line No>:- 6 <Error>:- The paragraph level attribute "pSpaceAfter" applied again. Inserting a paragraph level attribute termination tag "<pSpaceAfter:>". 
+<Line No>:- 6 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 6 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 6 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 6 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 7 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 7 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 7 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 7 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 7 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 8 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 8 <Error>:- The paragraph level attribute "pSpaceBefore" applied again. Inserting a paragraph level attribute termination tag "<pSpaceBefore:>". 
+<Line No>:- 8 <Error>:- The paragraph level attribute "pSpaceAfter" applied again. Inserting a paragraph level attribute termination tag "<pSpaceAfter:>". 
+<Line No>:- 8 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 8 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 8 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 8 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 9 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 9 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 9 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 9 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 9 <Error>:- The character level attribute "cLeading" applied again. Inserting a character level attribute termination tag "<cLeading:>". 
+<Line No>:- 9 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 10 <Error>:- Importing invalid tag "<pjLeft>" as text. 
+<Line No>:- 10 <Error>:- The paragraph level attribute "pSpaceBefore" applied again. Inserting a paragraph level attribute termination tag "<pSpaceBefore:>". 
+<Line No>:- 10 <Error>:- The paragraph level attribute "pSpaceAfter" applied again. Inserting a paragraph level attribute termination tag "<pSpaceAfter:>". 
+<Line No>:- 10 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 10 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 10 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 10 <Error>:- The character level attribute "cLeading" applied again. Inserting a character level attribute termination tag "<cLeading:>". 
+<Line No>:- 10 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 11 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 11 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 11 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 11 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 11 <Error>:- The character level attribute "cLeading" applied again. Inserting a character level attribute termination tag "<cLeading:>". 
+<Line No>:- 11 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 12 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 12 <Error>:- The paragraph level attribute "pSpaceBefore" applied again. Inserting a paragraph level attribute termination tag "<pSpaceBefore:>". 
+<Line No>:- 12 <Error>:- The paragraph level attribute "pSpaceAfter" applied again. Inserting a paragraph level attribute termination tag "<pSpaceAfter:>". 
+<Line No>:- 12 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 12 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 12 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 12 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 13 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 13 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 13 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 13 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 13 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 14 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 14 <Error>:- The paragraph level attribute "pSpaceBefore" applied again. Inserting a paragraph level attribute termination tag "<pSpaceBefore:>". 
+<Line No>:- 14 <Error>:- The paragraph level attribute "pSpaceAfter" applied again. Inserting a paragraph level attribute termination tag "<pSpaceAfter:>". 
+<Line No>:- 14 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 14 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 14 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 14 <Error>:- Importing invalid tag "<>" as text. 
+<Line No>:- 15 <Error>:- Importing invalid tag "<pjCenter>" as text. 
+<Line No>:- 15 <Error>:- The character level attribute "cFont" applied again. Inserting a character level attribute termination tag "<cFont:>". 
+<Line No>:- 15 <Error>:- The character level attribute "cSize" applied again. Inserting a character level attribute termination tag "<cSize:>". 
+<Line No>:- 15 <Error>:- The character level attribute "cTypeface" applied again. Inserting a character level attribute termination tag "<cTypeface:>". 
+<Line No>:- 15 <Error>:- Importing invalid tag "<>" as text. 
