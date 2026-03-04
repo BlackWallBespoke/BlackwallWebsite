@@ -10,6 +10,11 @@
         <link rel="stylesheet" href="shared.css">
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
         <style>
+          /* ROOT VARIABLES */
+          :root{--void:#050407;--abyss:#080610;--deep:#0e0b14;--surface:#141118;--ember:#c9762a;--ember-dark:#5c3510;--ember-glow:#d4944e;--gold:#c9a84c;--gold-light:#e2c97e;--gold-dim:#7a5f2a;--cream:#e8dcc8;--parchment:#c4b49a;--dusk:#6a5e4e;--whisper:#2a2220;--font-display:'Cinzel','Palatino Linotype',serif;--font-body:'Cormorant Garamond','Georgia',serif;--font-ui:'Raleway','Futura',sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--t-slow:0.9s;--t-mid:0.5s;--t-fast:0.25s;}
+          *{margin:0;padding:0;box-sizing:border-box;}
+          html{scroll-behavior:smooth;}
+          body{background:var(--void);color:var(--cream);font-family:var(--font-body);font-weight:300;line-height:1.8;overflow-x:hidden;cursor:none;}
           @font-face { font-family: 'Iknu'; src: url('Iknu-font.ttf') format('truetype'), url('Iknu font.otf') format('opentype'); font-weight: normal; font-style: normal; font-display: block; }
           /* ─── CURSOR ─────────────────────────────────────────── */
           .cur-dot { position: fixed; width: 6px; height: 10px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width 0.3s, height 0.3s; }
