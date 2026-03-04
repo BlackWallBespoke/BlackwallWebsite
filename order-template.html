@@ -6,30 +6,8 @@
 <title>Blackwall — Order XXXXX</title>
 <meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
-<style>
-:root{
-  --void:#050407;--abyss:#080610;--deep:#0e0b14;--surface:#141118;
-  --gold:#c9a84c;--gold-light:#e2c97e;--gold-dim:#7a5f2a;--ember:#c9762a;
-  --cream:#e8dcc8;--parchment:#c4b49a;--dusk:#6a5e4e;--whisper:#2a2220;
-  --font-display:'Cinzel','Palatino',serif;
-  --font-body:'Cormorant Garamond','Georgia',serif;
-  --font-ui:'Raleway','Futura',sans-serif;
-  --ease:cubic-bezier(0.16,1,0.3,1);
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--cream);font-family:var(--font-body);font-weight:300;overflow-x:hidden;cursor:none;}
-
-.cur-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
-.cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.4s var(--ease),height 0.4s var(--ease);}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:center;gap:5rem;padding:2rem 4rem;background:linear-gradient(to bottom,rgba(5,4,7,0.9) 0%,transparent 100%);}
-.nav-links{display:flex;gap:3rem;list-style:none;}
-.nav-links a{font-family:var(--font-ui);font-weight:200;font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--parchment);text-decoration:none;transition:color 0.25s;}
-.nav-links a:hover{color:var(--gold-light);}
-.nav-logo{height:36px;opacity:0.9;}
-
-/* HERO */
+<link rel="stylesheet" href="shared.css">
+<style>/* HERO */
 .order-hero{
   position:relative;min-height:55vh;
   display:flex;align-items:center;justify-content:center;
@@ -125,8 +103,7 @@ footer{border-top:1px solid var(--whisper);padding:3rem;text-align:center;displa
   .update{grid-template-columns:1fr;gap:1rem;}
   .stages{flex-wrap:wrap;gap:1rem;}
   .stage{flex:0 0 calc(25% - 1rem);}
-}
-</style>
+}</style>
 </head>
 <body>
 <div class="cur-dot" id="curDot"></div>
@@ -189,8 +166,7 @@ footer{border-top:1px solid var(--whisper);padding:3rem;text-align:center;displa
   <p class="footer-copy">&copy; 2025 Blackwall &nbsp;·&nbsp; J. Christophe Aishe, Artisan</p>
 </footer>
 
-<script>
-// ═══════════════════════════════════════════════════════
+<script>// ═══════════════════════════════════════════════════════
 // ORDER DATA — Replace this block for each new order page
 // ═══════════════════════════════════════════════════════
 const orderData = {
@@ -261,15 +237,10 @@ const upEl = document.getElementById('updatesEl');
 });
 
 // Cursor
-const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
-let cx=0,cy=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
-(function a(){rx+=(cx-rx)*0.1;ry+=(cy-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+
 document.querySelectorAll('a').forEach(el=>{el.addEventListener('mouseenter',()=>ring.style.width=ring.style.height='60px');el.addEventListener('mouseleave',()=>ring.style.width=ring.style.height='40px');});
 
-// Reveal
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),${threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
+// Reveal</script>
+<script src="shared.js"></script>
 </body>
 </html>

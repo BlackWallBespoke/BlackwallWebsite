@@ -3,358 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blackwall &mdash; Order 00000</title>
+<title>Blackwall Ã¢â‚¬â€ Track Your Order</title>
 <meta name="robots" content="noindex, nofollow">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
 <style>
 :root {
-  --void:#050407; --abyss:#080610; --deep:#0e0b14; --surface:#141118;
-  --gold:#c9a84c; --gold-light:#e2c97e; --gold-dim:#7a5f2a;
-  --ember:#c9762a; --ember-glow:#d4944e;
-  --cream:#e8dcc8; --parchment:#c4b49a; --dusk:#6a5e4e; --whisper:#2a2220;
-  --font-display:'Cinzel','Palatino',serif;
-  --font-body:'Cormorant Garamond','Georgia',serif;
-  --font-ui:'Raleway','Futura',sans-serif;
-  --ease:cubic-bezier(0.16,1,0.3,1);
+  --void:        #050407;
+  --abyss:       #080610;
+  --deep:        #0e0b14;
+  --ember:       #b8722a;
+  --ember-dark:  #5c3510;
+  --ember-glow:  #d4944e;
+  --gold:        #c9a84c;
+  --gold-light:  #e2c97e;
+  --gold-dim:    #7a5f2a;
+  --cream:       #e8dcc8;
+  --parchment:   #c4b49a;
+  --dusk:        #6a5e4e;
+  --whisper:     #2a2220;
+  
+  --font-display: 'Cinzel', 'Palatino Linotype', serif;
+  --font-body:    'Cormorant Garamond', 'Georgia', serif;
+  --font-ui:      'Raleway', 'Futura', sans-serif;
+  
+  --ease:        cubic-bezier(0.16, 1, 0.3, 1);
+  --t-slow:      0.9s;
+  --t-mid:       0.5s;
+  --t-fast:      0.25s;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--cream);font-family:var(--font-body);font-weight:300;overflow-x:hidden;cursor:none;}
-
+*{ margin:0;padding:0;box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--void); color:var(--cream);
+  font-family:var(--font-body); font-weight:300;
+  min-height:100vh; overflow-x:hidden; cursor:none;
+  background-image:url('image6.jpg');
+  background-size:cover; background-position:center; background-attachment:fixed;
+}
+body::before{
+  content:''; position:fixed; inset:0;
+  background:rgba(5,4,7,0.91); z-index:0;
+}
 .cur-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
 .cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.4s var(--ease),height 0.4s var(--ease);}
-
-/* ══════════════════════════════════════════
-   PASSWORD GATE
-══════════════════════════════════════════ */
-#pw-gate {
-  position:fixed; inset:0; z-index:5000;
-  background:var(--void);
-  display:flex; align-items:center; justify-content:center;
-  flex-direction:column; gap:2rem;
-  transition:opacity 0.8s var(--ease);
-}
-#pw-gate.unlocking { opacity:0; pointer-events:none; }
-.gate-logo { height:52px; opacity:0.85; margin-bottom:1rem; }
-.gate-eyebrow {
-  font-family:var(--font-ui); font-weight:200;
-  font-size:0.55rem; letter-spacing:0.55em; text-transform:uppercase;
-  color:var(--gold-dim);
-}
-.gate-title {
-  font-family:var(--font-display); font-weight:300;
-  font-size:clamp(1.4rem,4vw,2.2rem); color:var(--cream);
-  letter-spacing:0.06em; text-align:center;
-}
-.gate-sub {
-  font-family:var(--font-body); font-size:1rem;
-  color:var(--dusk); line-height:1.8; text-align:center;
-  max-width:360px;
-}
-.gate-rule { width:100px; height:1px; background:linear-gradient(to right,transparent,var(--gold-dim),transparent); }
-.gate-input-wrap { display:flex; flex-direction:column; align-items:center; gap:1rem; }
-.gate-input {
-  background:transparent; border:none;
-  border-bottom:1px solid var(--gold-dim);
-  color:var(--cream);
-  font-family:var(--font-ui); font-weight:200;
-  font-size:1.3rem; letter-spacing:0.35em;
-  text-align:center; width:280px; padding:0.6rem 0.5rem;
-  outline:none; transition:border-color 0.3s;
-  text-transform:uppercase;
-}
-.gate-input:focus { border-bottom-color:var(--gold-light); }
-.gate-input::placeholder { color:var(--whisper); letter-spacing:0.2em; }
-.gate-btn {
-  background:transparent; border:1px solid var(--gold-dim);
-  color:var(--gold-light);
-  font-family:var(--font-ui); font-weight:200;
-  font-size:0.6rem; letter-spacing:0.35em; text-transform:uppercase;
-  padding:0.9rem 3rem; cursor:pointer;
-  position:relative; overflow:hidden;
-  transition:color 0.3s, border-color 0.3s;
-}
-.gate-btn::before { content:''; position:absolute; inset:0; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform 0.3s var(--ease); z-index:-1; }
-.gate-btn:hover::before { transform:scaleX(1); }
-.gate-btn:hover { color:var(--void); border-color:var(--gold); }
-.gate-error {
-  font-family:var(--font-ui); font-size:0.52rem; letter-spacing:0.3em;
-  text-transform:uppercase; color:#8a3a1a;
-  opacity:0; transition:opacity 0.3s; height:1rem;
-}
-.gate-error.show { opacity:1; }
-.gate-hint {
-  font-family:var(--font-ui); font-size:0.48rem; letter-spacing:0.25em;
-  text-transform:uppercase; color:var(--whisper); text-align:center;
-  max-width:300px; line-height:2;
-}
-
-/* Page content hidden until unlocked */
-#page-content { display:none; }
-#page-content.visible { display:block; }
-
-/* ══════════════════════════════════════════
-   NAV
-══════════════════════════════════════════ */
 nav {
-  position:fixed; top:0; left:0; right:0; z-index:200;
+  position:fixed; top:0; left:0; right:0;
+  z-index:200;
   display:flex; align-items:center; justify-content:center;
-  gap:5rem; padding:2rem 4rem;
-  background:linear-gradient(to bottom,rgba(5,4,7,0.9) 0%,transparent 100%);
+  gap:5rem;
+  padding:1.5rem 4rem;
+  background:linear-gradient(to bottom, rgba(5,4,7,0.92) 0%, rgba(5,4,7,0.6) 60%, transparent 100%);
+  backdrop-filter:blur(1px);
 }
-.nav-links { display:flex; gap:3rem; list-style:none; }
+.nav-links {
+  display:flex; gap:4rem; list-style:none; align-items:center;
+}
 .nav-links a {
-  font-family:var(--font-ui); font-weight:200; font-size:0.6rem;
-  letter-spacing:0.35em; text-transform:uppercase;
-  color:var(--parchment); text-decoration:none; transition:color 0.25s;
+  font-family:var(--font-ui);
+  font-weight:200;
+  font-size:0.62rem;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--dusk);
+  text-decoration:none;
+  transition:color var(--t-fast);
+  display:inline-block;
+  text-align:center;
+  line-height:1.7;
 }
 .nav-links a:hover { color:var(--gold-light); }
-.nav-logo { height:36px; opacity:0.9; }
-
-/* ══════════════════════════════════════════
-   HERO
-══════════════════════════════════════════ */
-.order-hero {
-  position:relative; min-height:55vh;
-  display:flex; align-items:center; justify-content:center;
-  text-align:center; overflow:hidden;
-}
-.hero-bg {
-  position:absolute; inset:0;
-  background-image:url('image6.jpg');
-  background-size:cover; background-position:center;
-}
-.hero-ov {
-  position:absolute; inset:0;
-  background:radial-gradient(ellipse at 50% 50%,rgba(5,4,7,0.65) 0%,rgba(5,4,7,0.97) 100%);
-}
-.hero-glow {
-  position:absolute; inset:0;
-  background:radial-gradient(ellipse 600px 400px at 50% 50%,rgba(180,110,30,0.15) 0%,transparent 70%);
-}
-.hero-content { position:relative; z-index:2; padding:2rem; }
-.order-eyebrow {
-  font-family:var(--font-ui); font-weight:200; font-size:0.58rem;
-  letter-spacing:0.55em; text-transform:uppercase; color:var(--gold-dim); margin-bottom:1.5rem;
-}
-.order-number-display {
-  font-family:var(--font-display); font-weight:300;
-  font-size:clamp(4rem,12vw,9rem); color:var(--cream);
-  letter-spacing:0.15em; opacity:0.2; line-height:1; display:block;
-}
-.order-label {
-  font-family:var(--font-ui); font-weight:100; font-size:0.55rem;
-  letter-spacing:0.5em; text-transform:uppercase; color:var(--dusk); margin-top:1rem;
-}
-.gold-rule { width:120px; height:1px; background:linear-gradient(to right,transparent,var(--gold-dim),transparent); margin:2rem auto; }
-
-/* ══════════════════════════════════════════
-   QUEUE POSITION BANNER
-══════════════════════════════════════════ */
-.queue-banner {
-  background:var(--surface);
-  border-bottom:1px solid var(--whisper);
-  padding:2rem;
-  display:flex; align-items:center; justify-content:center; gap:4rem;
-  flex-wrap:wrap;
-}
-.queue-stat { text-align:center; }
-.queue-num {
-  font-family:var(--font-display); font-weight:300;
-  font-size:2.8rem; color:var(--gold-light); letter-spacing:0.1em; line-height:1;
-  display:block;
-}
-.queue-lbl {
-  font-family:var(--font-ui); font-weight:200; font-size:0.5rem;
-  letter-spacing:0.4em; text-transform:uppercase; color:var(--dusk);
-  margin-top:0.4rem; display:block;
-}
-.queue-divider { width:1px; height:60px; background:var(--whisper); }
-
-/* ══════════════════════════════════════════
-   BODY
-══════════════════════════════════════════ */
-.order-body { max-width:1040px; margin:0 auto; padding:6rem 2rem; }
-.section-eyebrow {
-  font-family:var(--font-ui); font-weight:200; font-size:0.55rem;
-  letter-spacing:0.5em; text-transform:uppercase; color:var(--gold-dim);
-  margin-bottom:1.5rem; display:block; text-align:center;
-}
-
-/* ══════════════════════════════════════════
-   PROGRESS TRACKER
-══════════════════════════════════════════ */
-.progress-wrap { position:relative; margin:2rem 0 4rem; }
-.progress-track { position:absolute; top:23px; left:24px; right:24px; height:1px; background:var(--whisper); }
-.progress-fill { position:absolute; top:23px; left:24px; height:1px; background:linear-gradient(to right,var(--gold),var(--gold-dim)); transition:width 1.5s var(--ease); }
-.stages { display:flex; justify-content:space-between; }
-.stage { display:flex; flex-direction:column; align-items:center; gap:0.6rem; flex:1; }
-.stage-dot {
-  width:48px; height:48px; border-radius:50%;
-  border:1px solid var(--whisper); background:var(--void);
-  display:flex; align-items:center; justify-content:center;
-  font-family:var(--font-display); font-size:0.85rem; color:var(--whisper);
-  position:relative; z-index:1; transition:all 0.6s;
-}
-.stage.done .stage-dot { border-color:var(--gold-dim); color:var(--gold); }
-.stage.now .stage-dot { border-color:var(--gold); color:var(--void); background:var(--gold); box-shadow:0 0 24px rgba(201,168,76,0.3); }
-.stage-lbl {
-  font-family:var(--font-ui); font-size:0.45rem; letter-spacing:0.15em;
-  text-transform:uppercase; color:var(--whisper); text-align:center; max-width:70px;
-}
-.stage.done .stage-lbl, .stage.now .stage-lbl { color:var(--dusk); }
-
-/* ══════════════════════════════════════════
-   SPECS
-══════════════════════════════════════════ */
-.specs-section { margin:5rem 0; }
-.specs-grid {
-  display:grid; grid-template-columns:1fr 1fr; gap:1px;
-  background:var(--whisper); border:1px solid var(--whisper); margin-top:1.5rem;
-}
-.spec-row {
-  display:flex; justify-content:space-between; align-items:baseline;
-  padding:1rem 1.5rem; background:var(--deep); transition:background 0.25s;
-}
-.spec-row:hover { background:var(--surface); }
-.spec-k { font-family:var(--font-ui); font-size:0.52rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--dusk); }
-.spec-v { font-family:var(--font-body); font-size:0.95rem; color:var(--cream); text-align:right; max-width:55%; }
-.spec-row.full-width { grid-column:1 / -1; }
-
-/* ══════════════════════════════════════════
-   PROGRESS PHOTOS
-══════════════════════════════════════════ */
-.photos-section { margin:5rem 0; }
-.photo-stage-group { margin-bottom:3rem; }
-.photo-stage-label {
-  font-family:var(--font-ui); font-weight:200; font-size:0.52rem;
-  letter-spacing:0.4em; text-transform:uppercase;
-  color:var(--gold-dim); margin-bottom:1rem; display:block;
-  padding-left:0.25rem;
-  border-left:1px solid var(--gold-dim); padding-left:0.75rem;
-}
-.photo-grid {
-  display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem;
-}
-.photo-slot {
-  aspect-ratio:4/3; background:var(--surface);
-  border:1px solid var(--whisper); overflow:hidden;
-  position:relative; transition:border-color 0.25s;
-}
-.photo-slot:hover { border-color:var(--gold-dim); }
-.photo-slot img { width:100%; height:100%; object-fit:cover; filter:sepia(0.15) brightness(0.85); transition:filter 0.4s; }
-.photo-slot:hover img { filter:sepia(0) brightness(1); }
-.photo-slot.empty {
-  display:flex; align-items:center; justify-content:center;
-  flex-direction:column; gap:0.5rem;
-}
-.photo-slot.empty::before {
-  content:''; display:block; width:30px; height:30px;
-  border:1px solid var(--whisper); border-radius:50%;
+.nav-logo-wrap {
   position:relative;
+  display:flex; align-items:center; justify-content:center;
 }
-.photo-slot.empty::after {
-  content:'Not yet available';
-  font-family:var(--font-ui); font-size:0.44rem; letter-spacing:0.25em;
-  text-transform:uppercase; color:var(--whisper);
+.nav-logo {
+  height:114px;
+  opacity:0.9;
+  transition:opacity var(--t-fast);
 }
+.nav-logo:hover { opacity:1; }
+.main{
+  position:relative;z-index:1;
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:8rem 2rem 4rem;
+  text-align:center;
+  gap:2rem;
+}
+.eyebrow{font-family:var(--font-ui);font-weight:200;font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);}
+.title{font-family:var(--font-display);font-weight:300;font-size:clamp(2rem,5vw,3.5rem);color:var(--cream);letter-spacing:0.06em;}
+.body-text{font-size:1.05rem;color:var(--parchment);line-height:1.9;max-width:500px;}
+.gold-rule{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);}
+.input-wrap{margin:1rem 0;}
+.order-input{
+  background:transparent;border:none;
+  border-bottom:1px solid var(--gold-dim);
+  color:var(--cream);
+  font-family:var(--font-display);font-weight:300;
+  font-size:3.5rem;letter-spacing:0.4em;
+  text-align:center;width:12rem;padding:0.5rem;
+  outline:none;transition:border-color 0.3s;
+}
+.order-input:focus{border-bottom-color:var(--gold-light);}
+.order-input::placeholder{color:var(--whisper);}
+.go-btn{
+  background:transparent;border:1px solid var(--gold-dim);
+  color:var(--gold-light);
+  font-family:var(--font-ui);font-weight:200;
+  font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;
+  padding:1rem 3rem;cursor:pointer;
+  position:relative;overflow:hidden;
+  transition:color 0.3s,border-color 0.3s;
+}
+.go-btn::before{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s var(--ease);z-index:-1;}
+.go-btn:hover::before{transform:scaleX(1);}
+.go-btn:hover{color:var(--void);border-color:var(--gold);}
+.hint{font-family:var(--font-ui);font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--whisper);}
 
-/* ══════════════════════════════════════════
-   UPDATES LOG
-══════════════════════════════════════════ */
-.updates-section { margin:5rem 0; }
-.update {
-  display:grid; grid-template-columns:160px 1fr; gap:3rem;
-  padding:3rem 0; border-bottom:1px solid rgba(42,34,32,0.5);
+/* AGE GATE */
+#age-gate{
+  position:fixed;inset:0;z-index:8000;
+  background:var(--void);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:1.8rem;
+  transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1);
 }
-.update:last-child { border-bottom:none; }
-.u-date {
-  font-family:var(--font-ui); font-size:0.55rem; letter-spacing:0.25em;
-  text-transform:uppercase; color:var(--gold-dim); padding-top:0.3rem;
+#age-gate.leaving{opacity:0;pointer-events:none;}
+.ag-logo{height:48px;opacity:0.85;margin-bottom:0.5rem;}
+.ag-eyebrow{font-family:var(--font-ui);font-weight:200;font-size:0.54rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);}
+.ag-title{font-family:'Cinzel','Palatino Linotype',serif;font-weight:300;font-size:clamp(1.5rem,4vw,2.4rem);color:var(--cream);letter-spacing:0.06em;text-align:center;}
+.ag-rule{width:100px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);}
+.ag-body{font-family:'Cormorant Garamond','Georgia',serif;font-size:1.05rem;color:var(--parchment);line-height:1.9;text-align:center;max-width:360px;}
+.ag-buttons{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;}
+.ag-btn{
+  background:transparent;border:1px solid var(--gold-dim);
+  color:var(--gold-light);
+  font-family:'Raleway','Futura',sans-serif;font-weight:200;
+  font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;
+  padding:0.9rem 2.8rem;cursor:pointer;
+  position:relative;overflow:hidden;
+  transition:color 0.3s,border-color 0.3s;
 }
-.u-badge {
-  display:inline-block; margin-top:0.5rem;
-  font-family:var(--font-ui); font-size:0.42rem; letter-spacing:0.2em;
-  text-transform:uppercase; color:var(--dusk);
-  border:1px solid var(--whisper); padding:0.2rem 0.5rem;
-}
-.u-text { font-size:1.1rem; color:var(--parchment); line-height:1.9; }
-.u-imgs {
-  display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem; margin-top:1.25rem;
-}
-.u-img { aspect-ratio:1; background:var(--surface); border:1px solid var(--whisper); overflow:hidden; }
-.u-img img { width:100%; height:100%; object-fit:cover; filter:sepia(0.2) brightness(0.8); }
-
-/* ══════════════════════════════════════════
-   CONTACT
-══════════════════════════════════════════ */
-.order-contact {
-  text-align:center; padding:5rem 2rem;
+.ag-btn::before{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);z-index:-1;}
+.ag-btn:hover::before{transform:scaleX(1);}
+.ag-btn:hover{color:var(--void);border-color:var(--gold);}
+.ag-btn.decline{border-color:var(--whisper);color:var(--dusk);}
+.ag-btn.decline::before{background:var(--whisper);}
+.ag-btn.decline:hover{color:var(--cream);}
+.ag-disclaimer{font-family:'Raleway','Futura',sans-serif;font-size:0.46rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;max-width:320px;line-height:2;}
+#age-denied{display:none;position:fixed;inset:0;z-index:8000;background:var(--void);align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;text-align:center;padding:2rem;}
+#age-denied.show{display:flex;}
+.denied-title{font-family:'Cinzel','Palatino Linotype',serif;font-weight:300;font-size:1.8rem;color:var(--dusk);letter-spacing:0.06em;}
+.denied-body{font-family:'Cormorant Garamond','Georgia',serif;font-size:1rem;color:var(--whisper);max-width:320px;line-height:1.9;}
+footer{
+  position:relative;z-index:1;
   border-top:1px solid var(--whisper);
+  padding:3rem;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:1.5rem;
 }
-.contact-email {
-  font-family:var(--font-display); font-weight:300; font-size:1.4rem;
-  color:var(--gold-light); text-decoration:none; letter-spacing:0.05em;
-  border-bottom:1px solid var(--gold-dim); padding-bottom:0.2rem;
-  transition:color 0.25s, border-color 0.25s;
-}
-.contact-email:hover { color:var(--cream); border-color:var(--gold); }
-
-footer {
-  border-top:1px solid var(--whisper); padding:3rem; text-align:center;
-  display:flex; flex-direction:column; align-items:center; gap:1.5rem;
-}
-.footer-logo { height:28px; opacity:0.7; }
-.footer-copy {
-  font-family:var(--font-ui); font-size:0.5rem; letter-spacing:0.3em;
-  text-transform:uppercase; color:var(--whisper);
-}
-
-.reveal { opacity:0; transform:translateY(20px); transition:opacity 1s var(--ease),transform 1s var(--ease); }
-.reveal.visible { opacity:1; transform:translateY(0); }
-
-@media(max-width:700px) {
-  .specs-grid { grid-template-columns:1fr; }
-  .spec-row.full-width { grid-column:auto; }
-  .update { grid-template-columns:1fr; gap:1rem; }
-  .stages { flex-wrap:wrap; gap:1rem; }
-  .stage { flex:0 0 calc(25% - 1rem); }
-  .queue-banner { gap:2rem; }
-  .queue-divider { display:none; }
-  nav { gap:2rem; padding:1.5rem 1.5rem; }
-  .nav-links { gap:1.5rem; }
-}
+.footer-logo{height:28px;opacity:0.7;}
+.footer-copy{font-family:var(--font-ui);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--whisper);}
 </style>
 </head>
 <body>
 <div class="cur-dot" id="curDot"></div>
 <div class="cur-ring" id="curRing"></div>
 
-<!-- ══════════════════════════════════════════
-     PASSWORD GATE
-══════════════════════════════════════════ -->
-<div id="pw-gate">
-  <img class="gate-logo" src="Transparent logo white font.png" alt="Blackwall">
-  <p class="gate-eyebrow">Order Access</p>
-  <div class="gate-rule"></div>
-  <h1 class="gate-title">Your commission awaits</h1>
-  <p class="gate-sub">Enter your access code to view your order status, commission details, and progress updates.</p>
-  <div class="gate-input-wrap">
-    <input type="password" id="pwInput" class="gate-input" placeholder="ACCESS CODE" autocomplete="off" spellcheck="false">
-    <button class="gate-btn" id="pwBtn">Enter &rarr;</button>
-    <p class="gate-error" id="pwError">Incorrect access code</p>
+<!-- AGE GATE -->
+<div id="age-gate">
+  <img class="ag-logo" src="Transparent logo white font.png" alt="Blackwall">
+  <p class="ag-eyebrow">Age Verification Required</p>
+  <div class="ag-rule"></div>
+  <h1 class="ag-title">You must be 18 or older<br>to enter this site.</h1>
+  <p class="ag-body">Blackwall creates bespoke BDSM equipment for consenting adults. By entering, you confirm you are of legal age in your jurisdiction.</p>
+  <div class="ag-buttons">
+    <button class="ag-btn" id="agYes">I am 18 or older &mdash; Enter</button>
+    <button class="ag-btn decline" id="agNo">I am under 18 &mdash; Exit</button>
   </div>
-  <p class="gate-hint">Your default access code is your 5-digit order number<br>followed by the first four letters of your last name.<br>Example: 00042SMIT</p>
+  <p class="ag-disclaimer">This site contains content intended for adults only.<br>By entering you confirm your age and consent to view adult content.</p>
 </div>
-
-<!-- ══════════════════════════════════════════
-     PAGE CONTENT (hidden until unlocked)
-══════════════════════════════════════════ -->
-<div id="page-content">
+<div id="age-denied">
+  <img class="ag-logo" src="Transparent logo white font.png" alt="Blackwall">
+  <p class="denied-title">Access Restricted</p>
+  <p class="ag-body" style="color:var(--whisper)">This site is for adults aged 18 and over only.</p>
+</div>
 
 <nav>
   <ul class="nav-links">
-    <li><a href="artisan.html">The Artisan</a></li>
+    <li><a href="artisan.html">The<br>Artisan</a></li>
     <li><a href="materials.html">Materials</a></li>
   </ul>
   <a href="index.html"><img class="nav-logo" src="Transparent logo white font.png" alt="Blackwall"></a>
@@ -364,305 +202,51 @@ footer {
   </ul>
 </nav>
 
-<div class="order-hero">
-  <div class="hero-bg"></div>
-  <div class="hero-ov"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <p class="order-eyebrow">Commission in Progress</p>
-    <span class="order-number-display" id="orderNum">00000</span>
-    <div class="gold-rule"></div>
-    <p class="order-label">Order Number</p>
+<main class="main">
+  <p class="eyebrow">Order Tracking</p>
+  <div class="gold-rule"></div>
+  <h1 class="title">Find your piece</h1>
+  <p class="body-text">Enter your 5-digit order number below.<br>Your number appears on your commission confirmation.</p>
+  <div class="input-wrap">
+    <input type="text" class="order-input" id="orderInput" maxlength="5" placeholder="00000" inputmode="numeric" autocomplete="off" spellcheck="false">
   </div>
-</div>
-
-<!-- QUEUE BANNER -->
-<div class="queue-banner">
-  <div class="queue-stat">
-    <span class="queue-num" id="queuePos">—</span>
-    <span class="queue-lbl">Position in Queue</span>
-  </div>
-  <div class="queue-divider"></div>
-  <div class="queue-stat">
-    <span class="queue-num" id="queueTotal">—</span>
-    <span class="queue-lbl">Active Commissions</span>
-  </div>
-  <div class="queue-divider"></div>
-  <div class="queue-stat">
-    <span class="queue-num" id="estCompletion">—</span>
-    <span class="queue-lbl">Estimated Completion</span>
-  </div>
-  <div class="queue-divider"></div>
-  <div class="queue-stat">
-    <span class="queue-num" id="daysIn">—</span>
-    <span class="queue-lbl">Days in Production</span>
-  </div>
-</div>
-
-<div class="order-body">
-
-  <!-- PROGRESS STAGES -->
-  <span class="section-eyebrow reveal">Production Status</span>
-  <div class="progress-wrap reveal">
-    <div class="progress-track"></div>
-    <div class="progress-fill" id="pFill" style="width:0%"></div>
-    <div class="stages" id="stagesEl"></div>
-  </div>
-
-  <!-- COMMISSION SPECS -->
-  <div class="specs-section reveal">
-    <span class="section-eyebrow">Your Commission</span>
-    <div class="specs-grid" id="specsEl"></div>
-  </div>
-
-  <!-- PROGRESS PHOTOS -->
-  <div class="photos-section reveal">
-    <span class="section-eyebrow">Progress Photos</span>
-    <div id="photosEl"></div>
-  </div>
-
-  <!-- UPDATES LOG -->
-  <div class="updates-section reveal">
-    <span class="section-eyebrow">Artisan Updates</span>
-    <div id="updatesEl"></div>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="order-contact reveal">
-    <p style="font-family:var(--font-body);font-size:1.1rem;color:var(--parchment);margin-bottom:2rem;">Questions about your commission?</p>
-    <a href="mailto:info@blackwallbdsm.com" class="contact-email">info@blackwallbdsm.com</a>
-  </div>
-</div>
+  <button class="go-btn" id="goBtn">Go to Order &rarr;</button>
+  <p class="hint">5 digits &nbsp;&mdash;&nbsp; e.g., 00042</p>
+</main>
 
 <footer>
   <img class="footer-logo" src="Transparent logo white font.png" alt="Blackwall">
-  <p class="footer-copy">&copy; 2025 Blackwall &nbsp;&middot;&nbsp; J. Christophe Aishe, Artisan</p>
+  <p class="footer-copy">&copy; 2025 Blackwall &nbsp;Ã‚Â·&nbsp; J. Christophe Aishe, Artisan</p>
 </footer>
 
-</div><!-- /page-content -->
-
-<script>
-// ═══════════════════════════════════════════════════════════════════════════
-// ORDER DATA  — Replace this block for each new order
-// ═══════════════════════════════════════════════════════════════════════════
-const ORDER = {
-  orderNumber:    "00000",
-  password:       "00000AISH",    // 5-digit order number + first 4 letters of last name (uppercase)
-  currentStage:   0,              // 0=Received, 1=Design, 2=Materials, 3=Handle, 4=Falls, 5=Assembly, 6=Finishing, 7=Complete
-  queuePosition:  1,              // Client's place in the active queue
-  queueTotal:     1,              // Total active commissions
-  estimatedCompletion: "—",       // e.g. "March 2025" or "6–8 weeks"
-  orderDate:      "",             // ISO date string e.g. "2025-01-15"  (leave "" if not set)
-
-  specs: [
-    { k:"Type",          v:"—" },
-    { k:"Handle Wood",   v:"—" },
-    { k:"Handle Length", v:"—" },
-    { k:"Handle Diameter",v:"—" },
-    { k:"Grip Wrap",     v:"—" },
-    { k:"Neck Hardware", v:"—" },
-    { k:"Fall Material", v:"—" },
-    { k:"Fall Length",   v:"—" },
-    { k:"Fall Width",    v:"—" },
-    { k:"Fall Count",    v:"—" },
-    { k:"Fall Ends",     v:"—" },
-    { k:"Butt Cap",      v:"—" },
-    { k:"Enhancements",  v:"—", fullWidth: true },
-    { k:"Notes",         v:"—", fullWidth: true },
-  ],
-
-  // Progress photos grouped by stage name
-  // Each entry: { stage: "Stage Name", photos: ["path/to/img.jpg", ...] }
-  // Empty arrays show placeholder slots
-  progressPhotos: [
-    { stage:"Materials",  photos:[] },
-    { stage:"Handle",     photos:[] },
-    { stage:"Falls",      photos:[] },
-    { stage:"Assembly",   photos:[] },
-    { stage:"Finishing",  photos:[] },
-  ],
-
-  // Artisan updates — newest last (rendered newest first)
-  updates: [
-    {
-      date: "—",
-      stage: "Received",
-      text: "Order received. Commission conversation complete. Details confirmed. Production scheduled.",
-      images: []
-    }
-  ]
-};
-// ═══════════════════════════════════════════════════════════════════════════
-
-const STAGES = ["Received","Design","Materials","Handle","Falls","Assembly","Finishing","Complete"];
-const SESSION_KEY = "bw_auth_" + ORDER.orderNumber;
-
-// ── Password gate ──────────────────────────────────────────────────────────
-function unlock() {
-  document.getElementById('pw-gate').classList.add('unlocking');
-  setTimeout(() => {
-    document.getElementById('pw-gate').style.display = 'none';
-    const pc = document.getElementById('page-content');
-    pc.style.display = 'block';
-    pc.classList.add('visible');
-    sessionStorage.setItem(SESSION_KEY, '1');
-    renderPage();
-    initCursor();
-    initReveal();
-  }, 800);
+<script>const inp=document.getElementById('orderInput'),btn=document.getElementById('goBtn');
+inp.addEventListener('input',()=>{inp.value=inp.value.replace(/[^0-9]/g,'');});
+function go(){
+  const n=inp.value;
+  if(n.length===5){window.location.href=n+'.html';}
+  else{inp.style.borderBottomColor='#8a3a1a';setTimeout(()=>{inp.style.borderBottomColor='';},800);}
 }
+btn.addEventListener('click',go);
+inp.addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+inp.focus();
 
-function checkPassword() {
-  const val = document.getElementById('pwInput').value.trim().toUpperCase();
-  const correct = ORDER.password.toUpperCase();
-  if (val === correct) {
-    unlock();
-  } else {
-    const err = document.getElementById('pwError');
-    err.classList.add('show');
-    document.getElementById('pwInput').style.borderBottomColor = '#8a3a1a';
-    setTimeout(() => {
-      err.classList.remove('show');
-      document.getElementById('pwInput').style.borderBottomColor = '';
-    }, 2000);
+// AGE GATE
+(function(){
+  if(localStorage.getItem('bw_age_ok')==='1'){
+    document.getElementById('age-gate').style.display='none';
+    return;
   }
-}
-
-document.getElementById('pwBtn').addEventListener('click', checkPassword);
-document.getElementById('pwInput').addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
-
-// Auto-unlock if already authenticated this session
-if (sessionStorage.getItem(SESSION_KEY) === '1') {
-  document.getElementById('pw-gate').style.display = 'none';
-  const pc = document.getElementById('page-content');
-  pc.style.display = 'block';
-  pc.classList.add('visible');
-  document.addEventListener('DOMContentLoaded', () => { renderPage(); initCursor(); initReveal(); });
-}
-document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('pw-gate').style.display !== 'none') {
-    document.getElementById('pwInput').focus();
-  }
-});
-
-// ── Render page ────────────────────────────────────────────────────────────
-function renderPage() {
-  // Order number
-  document.getElementById('orderNum').textContent = ORDER.orderNumber;
-  document.title = 'Blackwall \u2014 Order ' + ORDER.orderNumber;
-
-  // Queue stats
-  document.getElementById('queuePos').textContent = ORDER.queuePosition;
-  document.getElementById('queueTotal').textContent = ORDER.queueTotal;
-  document.getElementById('estCompletion').textContent = ORDER.estimatedCompletion || '—';
-
-  // Days in production
-  if (ORDER.orderDate) {
-    const days = Math.floor((Date.now() - new Date(ORDER.orderDate)) / 86400000);
-    document.getElementById('daysIn').textContent = days;
-  } else {
-    document.getElementById('daysIn').textContent = '—';
-  }
-
-  // Progress stages
-  const stEl = document.getElementById('stagesEl');
-  stEl.innerHTML = '';
-  STAGES.forEach((name, i) => {
-    const done = i < ORDER.currentStage;
-    const now  = i === ORDER.currentStage;
-    const d = document.createElement('div');
-    d.className = 'stage' + (done ? ' done' : '') + (now ? ' now' : '');
-    d.innerHTML = '<div class="stage-dot">' + (done ? '&#10003;' : (i + 1)) + '</div><div class="stage-lbl">' + name + '</div>';
-    stEl.appendChild(d);
+  document.getElementById('agYes').addEventListener('click',function(){
+    localStorage.setItem('bw_age_ok','1');
+    const g=document.getElementById('age-gate');
+    g.classList.add('leaving');
+    setTimeout(()=>g.style.display='none',800);
   });
-  setTimeout(() => {
-    document.getElementById('pFill').style.width =
-      (ORDER.currentStage / (STAGES.length - 1) * 100) + '%';
-  }, 400);
-
-  // Specs
-  const spEl = document.getElementById('specsEl');
-  spEl.innerHTML = '';
-  ORDER.specs.forEach(s => {
-    const r = document.createElement('div');
-    r.className = 'spec-row' + (s.fullWidth ? ' full-width' : '');
-    r.innerHTML = '<span class="spec-k">' + s.k + '</span><span class="spec-v">' + s.v + '</span>';
-    spEl.appendChild(r);
+  document.getElementById('agNo').addEventListener('click',function(){
+    document.getElementById('age-gate').style.display='none';
+    document.getElementById('age-denied').classList.add('show');
   });
-
-  // Progress photos
-  const phEl = document.getElementById('photosEl');
-  phEl.innerHTML = '';
-  ORDER.progressPhotos.forEach(group => {
-    if (ORDER.currentStage < STAGES.indexOf(group.stage)) return; // Don't show future stages
-    const wrap = document.createElement('div');
-    wrap.className = 'photo-stage-group';
-    const label = document.createElement('span');
-    label.className = 'photo-stage-label';
-    label.textContent = group.stage;
-    wrap.appendChild(label);
-    const grid = document.createElement('div');
-    grid.className = 'photo-grid';
-    // Show actual photos, pad to 3 slots minimum
-    const slots = Math.max(group.photos.length, 3);
-    for (let i = 0; i < slots; i++) {
-      const slot = document.createElement('div');
-      if (group.photos[i]) {
-        slot.className = 'photo-slot';
-        slot.innerHTML = '<img src="' + group.photos[i] + '" alt="' + group.stage + ' photo ' + (i+1) + '">';
-      } else {
-        slot.className = 'photo-slot empty';
-      }
-      grid.appendChild(slot);
-    }
-    wrap.appendChild(grid);
-    phEl.appendChild(wrap);
-  });
-  if (phEl.children.length === 0) {
-    phEl.innerHTML = '<p style="font-family:var(--font-body);font-size:1rem;color:var(--dusk);text-align:center;padding:2rem 0;">Progress photos will appear here as your piece is made.</p>';
-  }
-
-  // Updates (newest first)
-  const upEl = document.getElementById('updatesEl');
-  upEl.innerHTML = '';
-  [...ORDER.updates].reverse().forEach(u => {
-    const d = document.createElement('div');
-    d.className = 'update';
-    const imgs = u.images && u.images.length
-      ? '<div class="u-imgs">' + u.images.map(s => '<div class="u-img"><img src="' + s + '" alt=""></div>').join('') + '</div>'
-      : '';
-    const badge = u.stage ? '<span class="u-badge">' + u.stage + '</span>' : '';
-    d.innerHTML = '<div class="u-date">' + u.date + badge + '</div><div class="u-text">' + u.text + imgs + '</div>';
-    upEl.appendChild(d);
-  });
-}
-
-// ── Cursor ─────────────────────────────────────────────────────────────────
-function initCursor() {
-  const dot = document.getElementById('curDot'), ring = document.getElementById('curRing');
-  let cx=0, cy=0, rx=0, ry=0;
-  document.addEventListener('mousemove', e => {
-    cx = e.clientX; cy = e.clientY;
-    dot.style.left = cx + 'px'; dot.style.top = cy + 'px';
-  });
-  (function a() {
-    rx += (cx - rx) * 0.1; ry += (cy - ry) * 0.1;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(a);
-  })();
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => { ring.style.width = ring.style.height = '60px'; });
-    el.addEventListener('mouseleave', () => { ring.style.width = ring.style.height = '40px'; });
-  });
-}
-
-// ── Reveal on scroll ───────────────────────────────────────────────────────
-function initReveal() {
-  const obs = new IntersectionObserver(entries => entries.forEach(x => {
-    if (x.isIntersecting) { x.target.classList.add('visible'); obs.unobserve(x.target); }
-  }), { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-}
-</script>
+})();</script>
+<script src="shared.js"></script>
 </body>
 </html>

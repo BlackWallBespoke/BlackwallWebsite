@@ -1,213 +1,606 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blackwall – Materials</title>
-        <meta name="description" content="The woods, leathers, metals and fibres that go into every Blackwall bespoke flogger.">
-        <meta name="robots" content="noindex, nofollow">
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Blackwall â€” Materials</title>         
+        <meta name="description" content="The woods, leathers, metals and fibres that go into every Blackwall bespoke flogger."> 
+        <meta name="robots" content="noindex, nofollow"> 
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,900;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
-        <style>
-:root{
-  --void:#050407;--abyss:#080610;--deep:#0e0b14;--surface:#141118;
-  --ember:#c9762a;--ember-dark:#5c3510;--ember-glow:#d4944e;
-  --gold:#c9a84c;--gold-light:#e2c97e;--gold-dim:#7a5f2a;
-  --cream:#e8dcc8;--parchment:#c4b49a;--dusk:#6a5e4e;--whisper:#2a2220;
-  --font-display:'Cinzel','Palatino Linotype',serif;
-  --font-body:'Cormorant Garamond','Georgia',serif;
-  --font-ui:'Raleway','Futura',sans-serif;
-  --ease:cubic-bezier(0.16,1,0.3,1);
-  --t-slow:0.9s;--t-mid:0.5s;--t-fast:0.25s;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--cream);font-family:var(--font-body);font-weight:300;line-height:1.8;overflow-x:hidden;cursor:none;}
-.cur-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
-.cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .4s var(--ease),height .4s var(--ease),border-color .3s;}
-.cur-dot.active{width:12px;height:12px;}
-.cur-ring.active{width:64px;height:64px;border-color:rgba(201,168,76,0.7);}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:center;gap:5rem;padding:1.5rem 4rem;background:linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%);}
-.nav-links{display:flex;gap:4rem;list-style:none;align-items:center;}
-.nav-links a{font-family:var(--font-ui);font-weight:200;font-size:0.62rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--dusk);text-decoration:none;transition:color var(--t-fast);display:inline-block;text-align:center;line-height:1.7;}
-.nav-links a:hover{color:var(--gold-light);}
-.nav-logo{height:114px;opacity:0.9;transition:opacity var(--t-fast);}
-.nav-logo:hover{opacity:1;}
-.section{position:relative;padding:10rem 4rem;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.section-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-attachment:fixed;}
-.section-overlay{position:absolute;inset:0;background:rgba(5,4,7,0.84);}
-.section-inner{position:relative;z-index:2;max-width:1100px;display:flex;flex-direction:column;align-items:center;gap:2rem;width:100%;}
-.eyebrow{font-family:var(--font-ui);font-weight:200;font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);}
-.section-title{font-family:var(--font-display);font-weight:300;font-size:clamp(2rem,5vw,3.8rem);letter-spacing:0.06em;color:var(--cream);line-height:1.25;}
-.section-title em{font-style:italic;color:var(--ember-glow);}
-.section-body{font-size:1.15rem;color:var(--parchment);line-height:2;max-width:700px;}
-.gold-rule{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);}
-.btn{font-family:var(--font-ui);font-weight:200;font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;text-decoration:none;padding:1rem 2.8rem;display:inline-block;transition:all var(--t-mid) var(--ease);position:relative;overflow:hidden;border:1px solid var(--gold-dim);color:var(--gold-light);}
-.btn::before{content:'';position:absolute;inset:0;transform:scaleX(0);transform-origin:left;transition:transform var(--t-mid) var(--ease);z-index:-1;background:var(--gold);}
-.btn:hover::before{transform:scaleX(1);}
-.btn:hover{color:var(--void);border-color:var(--gold);}
-.page-hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:hZ 18s ease-in-out infinite alternate;}
-@keyframes hZ{from{transform:scale(1.04);}to{transform:scale(1.08);}}
-.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%);}
-.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%);animation:gB 6s ease-in-out infinite;}
-@keyframes gB{0%,100%{opacity:.7;}50%{opacity:1;}}
-.hero-content{position:relative;z-index:2;padding:2rem;animation:hF 2s var(--ease) both;}
-@keyframes hF{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.hero-title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.5rem,7vw,5.5rem);color:var(--cream);letter-spacing:0.08em;line-height:1.2;margin-bottom:1.5rem;}
-.hero-title em{font-style:italic;color:var(--ember-glow);}
-.gold-rule-c{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);margin:2rem auto;}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.rd1{transition-delay:.15s;}.rd2{transition-delay:.3s;}.rd3{transition-delay:.45s;}.rd4{transition-delay:.6s;}
-footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;display:flex;flex-direction:column;align-items:center;gap:2rem;text-align:center;}
-.footer-logo{height:28px;opacity:0.65;}
-.footer-rule{width:200px;height:1px;background:linear-gradient(to right,transparent,var(--whisper),transparent);}
-.footer-artisan{font-family:var(--font-body);font-style:italic;font-size:1rem;color:var(--dusk);}
-.footer-copy{font-family:var(--font-ui);font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--whisper);}
-@media(max-width:900px){nav{gap:2rem;padding:1rem 2rem;}.nav-links{gap:2rem;}.section{padding:7rem 2rem;}}
-@media(max-width:600px){.nav-links{display:none;}}
-
-/* CATEGORY MENU */
-.cat-menu{display:grid;grid-template-columns:repeat(3,1fr);width:100%;border-top:1px solid var(--whisper);border-bottom:1px solid var(--whisper);}
-.cat-panel{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 3rem;text-decoration:none;min-height:65vh;}
-.cat-panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1s var(--ease);}
-.cat-panel:hover .cat-panel-bg{transform:scale(1.07);}
-.cat-panel-overlay{position:absolute;inset:0;background:rgba(5,4,7,0.75);transition:background 0.5s var(--ease);}
-.cat-panel:hover .cat-panel-overlay{background:rgba(5,4,7,0.58);}
-.cat-panel-glow{position:absolute;inset:0;background:radial-gradient(ellipse 500px 400px at 50% 65%,rgba(201,168,76,0.12) 0%,transparent 70%);opacity:0;transition:opacity 0.6s;}
-.cat-panel:hover .cat-panel-glow{opacity:1;}
-.cat-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1.6rem;}
-.cat-eyebrow{font-family:var(--font-ui);font-weight:200;font-size:0.5rem;letter-spacing:0.65em;text-transform:uppercase;color:var(--gold-dim);transition:color 0.4s;}
-.cat-panel:hover .cat-eyebrow{color:var(--gold);}
-.cat-rule{width:50px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);transition:width 0.6s var(--ease);}
-.cat-panel:hover .cat-rule{width:90px;}
-.cat-title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.4rem,3.5vw,3.8rem);color:var(--cream);letter-spacing:0.08em;}
-.cat-list{font-family:var(--font-ui);font-weight:100;font-size:0.5rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--dusk);line-height:2.6;transition:color 0.4s;}
-.cat-panel:hover .cat-list{color:var(--parchment);}
-.cat-cta{font-family:var(--font-ui);font-weight:200;font-size:0.52rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-light);border:1px solid var(--gold-dim);padding:0.75rem 2rem;opacity:0;transform:translateY(10px);transition:opacity 0.4s 0.05s,transform 0.4s var(--ease),background 0.3s,color 0.3s,border-color 0.3s;}
-.cat-panel:hover .cat-cta{opacity:1;transform:translateY(0);}
-.cat-cta:hover{background:var(--gold);color:var(--void);border-color:var(--gold);}
-.cat-sep{position:absolute;right:0;top:10%;bottom:10%;width:1px;background:linear-gradient(to bottom,transparent,var(--whisper),transparent);}
-@media(max-width:1000px){.cat-menu{grid-template-columns:1fr;}.cat-sep{right:auto;bottom:0;top:auto;left:10%;right:10%;width:auto;height:1px;background:linear-gradient(to right,transparent,var(--whisper),transparent);}.cat-panel{min-height:50vh;}}
-        </style>
-    </head>
-    <body>
-        <div class="cur-dot" id="curDot"></div>
-        <div class="cur-ring" id="curRing"></div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="artisan.html">The<br>Artisan</a></li>
-                <li><a href="materials.html">Materials</a></li>
-            </ul>
-            <a href="index.html"><img class="nav-logo" src="logo-white.png" alt="Blackwall"></a>
-            <ul class="nav-links">
-                <li><a href="commission.html">Commission</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-            </ul>
-        </nav>
-
-        <!-- HERO -->
-        <div class="page-hero">
-            <div class="hero-bg" style="background-image:url('image2.jpg');"></div>
-            <div class="hero-vignette"></div>
-            <div class="hero-glow"></div>
-            <div class="hero-content">
-                <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;">The Palette of the Maker</p>
-                <div class="gold-rule-c"></div>
-                <h1 class="hero-title">Materials &amp;<br><em>Selection</em></h1>
-                <p style="font-family:var(--font-ui);font-weight:100;font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--dusk);margin-top:1rem;">Handles &nbsp;·&nbsp; Falls &nbsp;·&nbsp; Hardware</p>
-            </div>
-        </div>
-
-        <!-- CATEGORY MENU -->
-        <div class="cat-menu">
-            <a class="cat-panel" href="materials-handles.html">
-                <div class="cat-panel-bg" style="background-image:url('image4.jpg');"></div>
-                <div class="cat-panel-overlay"></div>
-                <div class="cat-panel-glow"></div>
-                <div class="cat-inner">
-                    <p class="cat-eyebrow">Component One</p>
-                    <div class="cat-rule"></div>
-                    <h2 class="cat-title">Handles</h2>
-                    <p class="cat-list">Domestic Hardwoods<br>Non-Domestic Species<br>Exotic &amp; Rare Woods</p>
-                    <div class="cat-cta">Explore Handles →</div>
-                </div>
-                <div class="cat-sep"></div>
-            </a>
-            <a class="cat-panel" href="materials-falls.html">
-                <div class="cat-panel-bg" style="background-image:url('image1.jpg');"></div>
-                <div class="cat-panel-overlay"></div>
-                <div class="cat-panel-glow"></div>
-                <div class="cat-inner">
-                    <p class="cat-eyebrow">Component Two</p>
-                    <div class="cat-rule"></div>
-                    <h2 class="cat-title">Falls</h2>
-                    <p class="cat-list">Domestic Leather<br>Exotic Leather<br>Beyond Leather</p>
-                    <div class="cat-cta">Explore Falls →</div>
-                </div>
-                <div class="cat-sep"></div>
-            </a>
-            <a class="cat-panel" href="materials-hardware.html">
-                <div class="cat-panel-bg" style="background-image:url('image5.jpg');"></div>
-                <div class="cat-panel-overlay"></div>
-                <div class="cat-panel-glow"></div>
-                <div class="cat-inner">
-                    <p class="cat-eyebrow">Component Three</p>
-                    <div class="cat-rule"></div>
-                    <h2 class="cat-title">Hardware</h2>
-                    <p class="cat-list">Neck &amp; CNC Metals<br>Carbon Fibre<br>Grip &amp; Neck Wrapping</p>
-                    <div class="cat-cta">Explore Hardware →</div>
-                </div>
-            </a>
-        </div>
-
-        <!-- INTRO / PHILOSOPHY -->
-        <section class="section" style="padding:8rem 4rem;">
-            <div class="section-bg" style="background-image:url('image6.jpg');"></div>
-            <div class="section-overlay"></div>
-            <div class="section-inner" style="max-width:800px;">
-                <p class="eyebrow reveal">Selection</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2">Everything chosen<br>with <em>purpose</em></h2>
-                <p class="section-body reveal rd3">
-      This is not a menu — it is a conversation about two things: Use Profile and Aesthetic Profile.<br><br>
-      In both of those profiles, each selection a client makes interacts and creates an effect on the other choices, and they all come together to create a use profile for the piece.<br><br>
-      The weight of the wood shapes the profile of the falls: heavier woods require heavier falls, or the handle will not balance correctly. The length determines the use profile; the fall thickness determines the sound and the sensation. These choices are made together, never in isolation.<br><br>
-      What wood you use provides the foundation for the aesthetics of your piece — it dictates what colours you can use. Purple Heart wood and bright yellow falls looks cartoonish, while pink or purple looks refined, imperial even. The image — the message — that you want your piece to convey is chosen with your aesthetic profile. </p>
-                <p class="section-body reveal rd4">
-      Pricing varies by material. Exotics and rare woods carry premiums that reflect their sourcing difficulty, scarcity, and the additional skill required to work them properly.
-      All pricing is confirmed during the commission conversation. </p>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="section" style="padding:7rem 4rem;">
-            <div class="section-bg" style="background-image:url('image7.jpg');"></div>
-            <div class="section-overlay" style="background:rgba(5,4,7,0.88);"></div>
-            <div class="section-inner" style="max-width:700px;">
-                <p class="eyebrow reveal">Next Step</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2" style="font-size:2.5rem;">Every selection is a conversation</h2>
-                <p class="section-body reveal rd3">No order blank is filled in isolation. These choices are made together, with context, with purpose.</p>
-                <a href="commission.html" class="btn reveal rd4">Begin Your Commission</a>
-            </div>
-        </section>
-
-        <footer>
-            <img class="footer-logo" src="logo-white.png" alt="Blackwall">
-            <div class="footer-rule"></div>
-            <p class="footer-artisan">J. Christophe Aishe &nbsp;·&nbsp; Artisan</p>
-            <p class="footer-copy">&copy; 2025 Blackwall &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Bespoke BDSM Equipment</p>
-        </footer>
-
-        <script>
-const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
-let cx=0,cy=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
-(function a(){rx+=(cx-rx)*0.1;ry+=(cy-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
-document.querySelectorAll('a,button,.cat-panel').forEach(el=>{el.addEventListener('mouseenter',()=>{dot.classList.add('active');ring.classList.add('active');});el.addEventListener('mouseleave',()=>{dot.classList.remove('active');ring.classList.remove('active');});});
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-        </script>
-    </body>
+<link rel="stylesheet" href="shared.css"> 
+        <style>/* MATERIALS-SPECIFIC */
+.material-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--whisper);width:100%;max-width:1100px;margin-top:3rem;}
+.wood-card{background:var(--deep);padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1rem;transition:background var(--t-mid);cursor:default;}
+.wood-card:hover{background:var(--surface);}
+.wood-tier{font-family:var(--font-ui);font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold-dim);}
+.wood-name{font-family:var(--font-display);font-size:1.05rem;color:var(--cream);letter-spacing:0.05em;}
+.wood-note{font-family:var(--font-body);font-style:italic;font-size:0.85rem;color:var(--dusk);}
+.wood-price{font-family:var(--font-ui);font-size:0.55rem;letter-spacing:0.25em;color:var(--ember-glow);}
+.wood-swatch{width:60px;height:60px;border-radius:50%;border:1px solid var(--whisper);background:var(--abyss);margin-bottom:0.5rem;overflow:hidden;}
+.leather-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--whisper);width:100%;max-width:1200px;margin-top:3rem;}
+.leather-card{background:var(--deep);padding:1.5rem 1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.6rem;transition:background var(--t-mid);cursor:default;}
+.leather-card:hover{background:var(--surface);}
+.leather-name{font-family:var(--font-display);font-size:0.95rem;color:var(--cream);letter-spacing:0.04em;}
+.leather-note{font-family:var(--font-body);font-style:italic;font-size:0.78rem;color:var(--dusk);line-height:1.6;}
+.metal-row{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;}
+.metal-chip{padding:1.2rem 1.5rem;border:1px solid var(--whisper);text-align:center;min-width:140px;transition:border-color var(--t-mid);display:flex;flex-direction:column;align-items:center;gap:0.75rem;}
+.metal-chip:hover{border-color:var(--gold-dim);}
+.metal-name{font-family:var(--font-display);font-size:0.95rem;color:var(--cream);margin-bottom:0.4rem;}
+.metal-note{font-family:var(--font-ui);font-size:0.5rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--dusk);}
+@media(max-width:900px){.material-grid{grid-template-columns:repeat(2,1fr);}.leather-grid{grid-template-columns:repeat(2,1fr);}.metal-row{gap:1rem;}}
+@media(max-width:600px){.material-grid{grid-template-columns:1fr;}.leather-grid{grid-template-columns:1fr 1fr;}}</style>         
+    </head>     
+    <body> 
+        <div class="cur-dot" id="curDot"></div>         
+        <div class="cur-ring" id="curRing"></div>         
+        <nav> 
+            <ul class="nav-links"> 
+                <li>
+                    <a href="artisan.html">The<br>Artisan</a>
+                </li>                 
+                <li>
+                    <a href="materials.html">Materials</a>
+                </li>                 
+            </ul>             
+            <a href="index.html"><img class="nav-logo" src="Transparent logo white font.png" alt="Blackwall"></a> 
+            <ul class="nav-links"> 
+                <li>
+                    <a href="commission.html">Commission</a>
+                </li>                 
+                <li>
+                    <a href="pricing.html">Pricing</a>
+                </li>                 
+            </ul>             
+        </nav>         
+        <div class="page-hero"> 
+            <div class="hero-bg" style="background-image:url('image2.jpg');"></div>             
+            <div class="hero-vignette"></div>             
+            <div class="hero-glow"></div>             
+            <div class="hero-content"> 
+                <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;">The Palette of the Maker</p> 
+                <div class="gold-rule-c"></div>                 
+                <h1 class="hero-title">Materials &amp;<br><em>Selection</em></h1> 
+                <p style="font-family:var(--font-ui);font-weight:100;font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--dusk);margin-top:1rem;">Wood &nbsp;·&nbsp; Leather &nbsp;·&nbsp; Metal &nbsp;·&nbsp; Fibre</p> 
+            </div>             
+        </div>         
+        <!-- INTRO -->         
+        <section class="section" style="padding:8rem 4rem;"> 
+            <div class="section-bg" style="background-image:url('image6.jpg');"></div>             
+            <div class="section-overlay"></div>             
+            <div class="section-inner" style="max-width:800px;"> 
+                <p class="eyebrow reveal">Selection</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Everything chosen<br>with <em>purpose</em></h2> 
+                <p class="section-body reveal rd3"> 
+      This is not a menu- it is a conversation about two things: Use Profile and Aesthetic Profile.<br><br> 
+      In both of those profiles, each selection a client makes interacts and creates and effect on the other choices, and they all come together to create a use profile for the piece.<br><br> 
+      The weight of the wood shapes the profile of the falls: Heavier woods require heavier falls, or the handle will not balance correctly. The length determines the use profile; the fall thickness determines the sound and the sensation. These choices are made together, never in isolation.<br>,<br>
+      What wood you use provides the foundation for the aesthetics of your piece- it dictates what colours you can use for your piece- Purple Heart wood and bright yellow falls looks cartoonish, while pink or purple looks refined, Imperial even. The image- the message- that you want your piece to convey is chosen with your aesthetic profile. <br><br> </p> 
+                <p class="section-body reveal rd4"> 
+      Pricing varies by material. Exotics and rare woods carry premiums that reflect their sourcing difficulty, scarcity, and the additional skill required to work them properly. 
+      All pricing is confirmed during the commission conversation. </p> 
+            </div>             
+        </section>         
+        <!-- WOOD â€” HANDLES -->         
+        <section class="section"> 
+            <div class="section-bg" style="background-image:url('image4.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>             
+            <div class="section-inner"> 
+                <p class="eyebrow reveal">Handle Materials</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Wood</h2> 
+                <p class="section-body reveal rd3"> 
+      Hand-turned on a lathe, one at a time. From common domestic species to the rarest of exotic woods available only when the right blank presents itself. Each wood species has its own weight, grain character, and working personality, all of which affect the finished piece. </p> 
+                <!-- Domestic -->                 
+                <p class="eyebrow reveal" style="margin-top:3rem;color:var(--parchment);">Domestic- Included in Base Price</p> 
+                <div class="material-grid reveal rd1"> 
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Ash.jpg" alt="Ash" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>ash.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Ash</div>
+                        <div class="wood-note">Pale, tight grain. Exceptional strength-to-weight ratio.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Beechnew.jpg" alt="Beech" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>beech.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Beech</div>
+                        <div class="wood-note">Fine, even texture. Finishes beautifully on a lathe.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="BirchNatural.jpg" alt="Birch" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>birch.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Birch</div>
+                        <div class="wood-note">Creamy white to pale brown. Smooth and consistent grain.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Cedar-Aromatic.jpg" alt="Cedar Aromatic" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>cedar-aromatic.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Cedar- Aromatic</div>
+                        <div class="wood-note">Distinctive warm scent. Reddish heartwood. Very light weight.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="cherry.png" alt="Cherry" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>cherry.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Cherry</div>
+                        <div class="wood-note">Rich amber-red. Darkens beautifully with age and use.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Maple-Ambrosia.jpg" alt="Maple Ambrosia" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>maple-ambrosia.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Maple- Ambrosia</div>
+                        <div class="wood-note">Creamy base with dark fungal streaks. The fungus ensures that each piece is one-of-a-kind.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Maple-Roasted.jpg" alt="Maple Roasted" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>maple-roasted.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Maple- Roasted</div>
+                        <div class="wood-note">Heat-treated for rich amber colour and stability.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Oak-Red.jpg" alt="Oak" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>oak.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Oak</div>
+                        <div class="wood-note">Heavy, dense and durable with a pronounced open grain. A legendary domestic hardwood</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Hickory.jpg" alt="Hickory" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>hickory.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Hickory</div>
+                        <div class="wood-note">Extremely hard and strong. The hardest wood native to North America.</div>
+                    </div>                     
+                </div>                 
+                <!-- Uncommon -->                 
+                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--parchment);">Domestic Uncommon- +$25</p> 
+                <div class="material-grid reveal rd1"> 
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Butternut.jpg" alt="Butternut" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>butternut.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Butternut</div>
+                        <div class="wood-note">Lighter cousin of Walnut. One of the softest hardwoods. Dents and scratches easily, but beautiful when cared for.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="WALNUT.jpg" alt="Walnut Basic" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>walnut-basic.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Walnut- Basic</div>
+                        <div class="wood-note">The North American classic. The definition of refined taste.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Oak-White.jpg" alt="Oak White" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>oak-white.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Oak- White</div>
+                        <div class="wood-note">Tighter grain than red oak for an even harder, toughr piece. A true workhorse, and perfect for a high-use piece.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="osage-orange.jpg" alt="Osage Orange" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>osage-orange.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Osage Orange</div>
+                        <div class="wood-note">Grain can be darkened by exposure to UV light- will turn increasingly dark amber with exposure.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="CedarWR.jpg" alt="Cedar Western Red" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>cedar-western-red.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Cedar- Western Red</div>
+                        <div class="wood-note">Aromatic. Reddish-brown, and extremely light.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="ROASTEDBIRDSEYE.jpg" alt="Maple Roasted Birds Eye" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>maple-roasted-birds-eye.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Maple- Roasted Bird's Eye</div>
+                        <div class="wood-note">Selected sections of roasted maple with distinct patterns. Extraordinary finish.</div>
+                    </div>                     
+                </div>                 
+                <!-- Non-Domestic -->                 
+                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--parchment);">Non-Domestic- +$50</p> 
+                <div class="material-grid reveal rd1"> 
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Mahogany-African.jpg" alt="Mahogany African" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>mahogany-african.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Mahogany- African</div>
+                        <div class="wood-note">The gold standard for non-domestic mid-weight woods. Rich reddish-brown.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Tigerwood.jpg" alt="Tigerwood" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>tigerwood.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Tigerwood</div>
+                        <div class="wood-note">Dense, strong and hard. Orange with dark parallel striping.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Olivewood.jpg" alt="Olivewood" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>olivewood.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Olivewood</div>
+                        <div class="wood-note">Creamy pale with irregular dark streaks. Grain can vary wildly.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="PauAmarello.jpg" alt="Yellowheart" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>yellowheart.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Yellowheart</div>
+                        <div class="wood-note">Vivid lemon-yellow. Striking when paired with dark falls and accessories.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Sapele.jpg" alt="Sapele" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>sapele.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Sapele</div>
+                        <div class="wood-note">Starts dark brown, and darkens with age. Grain patterns can differ wildly by piece.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Ipe.jpg" alt="Ipe" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>ipe.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Ipe</div>
+                        <div class="wood-note">Extremely hard and dense, with a near-black finish. </div>
+                    </div>                     
+                </div>                 
+                <!-- Exotics -->                 
+                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--ember-glow);">Exotics- Premium Pricing</p> 
+                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">The rarest materials. Some available only when the right blank presents itself.</p> 
+                <div class="material-grid reveal rd2"> 
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="African-Blackwood.jpg" alt="African Blackwood" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>african-blackwood.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">African Blackwood</div>
+                        <div class="wood-price">+$750-$1,500 · If Available</div>
+                        <div class="wood-note">Among the densest woods on earth. Near-black with purple undertone. Rarely available due to scarcity- the "Holy Grail" of flogger handles.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="ebony-gabon.jpg" alt="Ebony Gabon" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>ebony-gabon.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Ebony- Gabon</div>
+                        <div class="wood-price">+$750-$1,000 · If Available</div>
+                        <div class="wood-note">The blackest wood. Perfectly uniform. Extraordinarily heavy. Can be difficult to find, but is the highest quality of wood available with any regularity.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Cocobolo.jpg" alt="Cocobolo" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>cocobolo.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Cocobolo</div>
+                        <div class="wood-price">+$500 · If Available</div>
+                        <div class="wood-note">Extremely hard, heavy and dense. Grain can be Kaleidoscopic grain- red, orange, yellow, purple in a single blank. A stunning wood that guarantees conversation.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Ebony-macassar.jpg" alt="Ebony Macassar" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>ebony-macassar.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Ebony- Macassar</div>
+                        <div class="wood-price">+$750</div>
+                        <div class="wood-note">Lighter grain than its Gabon cousin, a stunning black with caramel streaks. Dramatic and unmistakable, it is the centerpiece of any collection.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Bloodwood.jpg" alt="Bloodwood" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>bloodwood.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Bloodwood</div>
+                        <div class="wood-price">+$100</div>
+                        <div class="wood-note">Deep arterial red. Heavy, attention-grabbing, and truly striking.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Purpleheart.jpg" alt="Purpleheart" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>purpleheart.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Purpleheart</div>
+                        <div class="wood-price">+$100</div>
+                        <div class="wood-note">Vivid violet-purple when freshly cut. Darkens over time. Like Bloodwood, visually striking and attention-grabbing.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Padauk.jpg" alt="Padauk" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>padauk.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Padauk</div>
+                        <div class="wood-price">+$100</div>
+                        <div class="wood-note">Brilliant coral-orange that will darken over time. For truly wild aesthetic profiles.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="BOCOTE.jpg" alt="Bocote" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>bocote.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Bocote</div>
+                        <div class="wood-price">+$300</div>
+                        <div class="wood-note">Golden-brown with dramatic black figure lines. A striking finish that demands attention.</div>
+                    </div>                     
+                    <div class="wood-card">
+                        <div style="width:72px;height:72px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="Wenge.jpg" alt="Wenge" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>wenge.jpg</span>'"> 
+                        </div>
+                        <div class="wood-name">Wenge</div>
+                        <div class="wood-price">+$200</div>
+                        <div class="wood-note"> Lightens when exposed to UV, but darkens almost to black when finished with oil. Requires careful work to match perfectly.</div>
+                    </div>                     
+                </div>                 
+            </div>             
+        </section>         
+        <!-- LEATHER -->         
+        <section class="section"> 
+            <div class="section-bg" style="background-image:url('image1.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.88);"></div>             
+            <div class="section-inner"> 
+                <p class="eyebrow reveal">Fall Materials</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Leather <em>Beyond</em></h2> 
+                <p class="section-body reveal rd3"> 
+      The falls determine everything about sensation. Thickness, cut, species, and tanning method 
+      all contribute. We source 100% full-grain premium-grade hides, inspected by hand before any cut is made. 
+      Pricing for all leathers varies with market conditions at time of order. </p> 
+                <div class="leather-grid reveal rd4"> 
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-cowhide.jpg" alt="Cowhide" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-cowhide.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Cowhide</div>
+                        <div class="leather-note">The benchmark. Predictable, durable. The staple for most floggers.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-suede.jpg" alt="Suede" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-suede.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Suede</div>
+                        <div class="leather-note">Softer surface on both sides of the fall. Thuddy, warm sensation.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-kangaroo.jpg" alt="Kangaroo" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-kangaroo.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Kangaroo</div>
+                        <div class="leather-note">Remarkably strong for its weight. Fine, even grain. A premium choice for speed floggers.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-elk.jpg" alt="Elk" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-elk.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Elk</div>
+                        <div class="leather-note">Supple and heavy. Excellent drape and a good thud. Perfect for warmup flogging</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-deer.jpg" alt="Deer" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-deer.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Deer</div>
+                        <div class="leather-note">Soft, pliable. Light sensation. Good for beginners.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-moose.jpg" alt="Moose" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-moose.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Moose</div>
+                        <div class="leather-note">Large, coarse-grained. Heavy falls with significant thud.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-bison.jpg" alt="Bison" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-bison.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Bison</div>
+                        <div class="leather-note">Rougher texture. Amongst the heaviest leather. Excellent for a booming sound profile.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-buffalo.jpg" alt="Buffalo" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-buffalo.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Buffalo</div>
+                        <div class="leather-note">Open grain, very tough. Substantial impact.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-horse.jpg" alt="Horse" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-horse.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Horse</div>
+                        <div class="leather-note">Tight, fine grain. Excellent strength. A  traditional choice.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-bull.jpg" alt="Bull" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-bull.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Bull</div>
+                        <div class="leather-note">Dense and heavy. Maximum impact potential.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-lamb.jpg" alt="Lamb" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-lamb.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Lamb</div>
+                        <div class="leather-note">Extremely soft. Lightest sensation. Luxuriously fine.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-sheep.jpg" alt="Sheep" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-sheep.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Sheep</div>
+                        <div class="leather-note">Softer than cowhide. Gentle, consistent sensation.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-ostrich.jpg" alt="Ostrich" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-ostrich.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Ostrich</div>
+                        <div class="leather-note">Distinctive quill pattern. Exotic and tactile.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-stingray.jpg" alt="Stingray" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-stingray.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Stingray</div>
+                        <div class="leather-note">Armoured surface. Unique texture against skin.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-alligator.jpg" alt="Alligator" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-alligator.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Alligator</div>
+                        <div class="leather-note">Scute-patterned. Assertive texture. Extraordinary piece.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-python.jpg" alt="Python / Snake" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-python.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Python / Snake</div>
+                        <div class="leather-note">Scale texture. Unique sensory experience.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-eel.jpg" alt="Eel" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-eel.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Eel</div>
+                        <div class="leather-note">Smooth, fine-scaled. Supple and distinctive.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-kodiak.jpg" alt="Kodiak" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-kodiak.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Kodiak</div>
+                        <div class="leather-note">Heavy, dense. Maximum weight falls.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-beaver-tail.jpg" alt="Beaver Tail" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-beaver-tail.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Beaver Tail</div>
+                        <div class="leather-note">Scaly skin texture. Unusual and tactile.</div>
+                    </div>                     
+                    <div class="leather-card">
+                        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/leather/leather-fish-scale.jpg" alt="Fish Scale" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:4px;\'>leather-fish-scale.jpg</span>'"> 
+                        </div>
+                        <div class="leather-name">Fish Scale</div>
+                        <div class="leather-note">Delicate surface pattern. Visually stunning.</div>
+                    </div>                     
+                </div>                 
+                <p class="section-body reveal" style="font-style:italic;font-size:0.95rem;margin-top:2rem;"> 
+      Non-leather options also available: braided rope, latex, horsehair, kevlar, nylon,  paracord, and metal falls. Discussed during commission. </p> 
+            </div>             
+        </section>         
+        <!-- METALS & FINISHES -->         
+        <section class="section" style="padding:8rem 4rem;"> 
+            <div class="section-bg" style="background-image:url('image5.jpg');"></div>             
+            <div class="section-overlay"></div>             
+            <div class="section-inner" style="max-width:800px;"> 
+                <p class="eyebrow reveal">Hardware</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Metal &amp; <em>Fibre</em></h2> 
+                <p class="section-body reveal rd3"> 
+      Neck hardware, grip wrapping, and butt treatments are selected to complement the handle 
+      wood and fall leather â€” not as afterthoughts, but as integral elements of the whole. </p> 
+                <div class="metal-row reveal rd4"> 
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/metal-steel.jpg" alt="Steel" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>metal-steel.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Steel</div>
+                        <div class="metal-note">CNC or Neck Â· Polished or Matte</div>
+                    </div>                     
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/metal-brass.jpg" alt="Brass" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>metal-brass.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Brass</div>
+                        <div class="metal-note">Warm gold tone Â· Can be engraved</div>
+                    </div>                     
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/metal-copper.jpg" alt="Copper" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>metal-copper.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Copper</div>
+                        <div class="metal-note">Living finish Â· Ages distinctively</div>
+                    </div>                     
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/metal-aluminum.jpg" alt="Aluminum" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>metal-aluminum.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Aluminum</div>
+                        <div class="metal-note">Lightweight Â· Anodised options</div>
+                    </div>                     
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/material-carbon-fibre.jpg" alt="Carbon Fibre" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>material-carbon-fibre.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Carbon Fibre</div>
+                        <div class="metal-note">CNC handles Â· Extraordinary contrast</div>
+                    </div>                     
+                </div>                 
+                <p class="eyebrow reveal" style="margin-top:3rem;color:var(--parchment);">Grip &amp; Neck Wrapping</p> 
+                <div class="metal-row reveal rd1"> 
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/wrap-jute.jpg" alt="Jute" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>wrap-jute.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Jute</div>
+                        <div class="metal-note">Natural Â· Rustic Â· Firm grip</div>
+                    </div>                     
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/wrap-hemp.jpg" alt="Hemp" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>wrap-hemp.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Hemp</div>
+                        <div class="metal-note">Coarse texture Â· Traditional</div>
+                    </div>                     
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/wrap-bamboo.jpg" alt="Bamboo" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>wrap-bamboo.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Bamboo</div>
+                        <div class="metal-note">Smooth Â· Contemporary</div>
+                    </div>                     
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/wrap-cotton.jpg" alt="Cotton" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>wrap-cotton.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Cotton</div>
+                        <div class="metal-note">Soft Â· Subtle Â· Clean</div>
+                    </div>                     
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/wrap-paracord.jpg" alt="Paracord" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>wrap-paracord.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Paracord</div>
+                        <div class="metal-note">Resilient Â· Many colours</div>
+                    </div>                     
+                    <div class="metal-chip">
+                        <div style="width:56px;height:56px;border:1px solid var(--whisper);overflow:hidden;background:var(--deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;"> 
+                            <img src="img/materials/wrap-sinew.jpg" alt="Sinew" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:var(--font-ui);font-size:0.3rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--whisper);text-align:center;padding:3px;\'>wrap-sinew.jpg</span>'"> 
+                        </div>
+                        <div class="metal-name">Sinew</div>
+                        <div class="metal-note">Traditional Â· Can match falls</div>
+                    </div>                     
+                </div>                 
+            </div>             
+        </section>         
+        <!-- CTA -->         
+        <section class="section" style="padding:7rem 4rem;"> 
+            <div class="section-bg" style="background-image:url('image7.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.88);"></div>             
+            <div class="section-inner" style="max-width:700px;"> 
+                <p class="eyebrow reveal">Next Step</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2" style="font-size:2.5rem;">Every selection is a conversation</h2> 
+                <p class="section-body reveal rd3">No order blank is filled in isolation. These choices are made together, with context, with purpose.</p> 
+                <a href="commission.html" class="btn reveal rd4">Begin Your Commission</a> 
+            </div>             
+        </section>         
+        <footer> 
+            <img class="footer-logo" src="Transparent logo white font.png" alt="Blackwall"> 
+            <div class="footer-rule"></div>             
+            <p class="footer-artisan">J. Christophe Aishe &nbsp;Â·&nbsp; Artisan</p> 
+            <p class="footer-copy">&copy; 2025 Blackwall &nbsp;Â·&nbsp; All rights reserved &nbsp;Â·&nbsp; Bespoke BDSM Equipment</p> 
+        </footer>         
+        <script>});</script>         
+    <script src="shared.js"></script>
+</body>     
 </html>
