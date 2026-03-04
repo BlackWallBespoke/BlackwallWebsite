@@ -61,7 +61,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
 .reveal.visible{opacity:1;transform:translateY(0);}
 .rd1{transition-delay:.15s;}.rd2{transition-delay:.3s;}.rd3{transition-delay:.45s;}.rd4{transition-delay:.6s;}
 @media(max-width:900px){nav{gap:2rem;padding:1rem 2rem;}.nav-links{gap:2rem;}.section{padding:7rem 2rem;}}
-@media(max-width:600px){.nav-links{display:none;}}
+}
 
 /* == END SHARED == */
 
@@ -84,70 +84,95 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
 .cat-panel:hover .cat-cta{opacity:1;transform:translateY(0);}
 .cat-sep{display:none;}
 @media(max-width:900px){.cat-menu{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.nav-links{display:none;}.cat-menu{grid-template-columns:1fr;}.cat-panel{min-height:220px;}}
+.cat-menu{grid-template-columns:1fr;}.cat-panel{min-height:220px;}}
 
-/* ── MOBILE NAV ── */
-.nav-hamburger {
+  nav { justify-content: center; padding: 1rem 2rem; }
+  .nav-logo { height: 70px; }
+}
+
+
+/* ── TOUCH: hide custom cursor ── */
+@media (hover: none), (pointer: coarse) {
+  .cur-dot, .cur-ring { display: none !important; }
+  body { cursor: auto !important; }
+}
+
+/* ── HAMBURGER BUTTON ── */
+.bw-ham {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  position: fixed;
+  top: 1.1rem;
+  right: 1.2rem;
+  z-index: 500;
+  background: none;
+  border: none;
   cursor: pointer;
   padding: 0.5rem;
-  position: fixed;
-  top: 1.2rem;
-  right: 1.5rem;
-  z-index: 300;
+  flex-direction: column;
+  gap: 6px;
 }
-.nav-hamburger span {
+.bw-ham span {
   display: block;
-  width: 24px;
+  width: 26px;
   height: 1px;
-  background: var(--gold-dim);
-  transition: all 0.3s var(--ease);
+  background: var(--gold);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-.nav-mobile-menu {
+.bw-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.bw-ham.open span:nth-child(2) { opacity: 0; }
+.bw-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE FULLSCREEN MENU ── */
+.bw-mob-menu {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 250;
-  background: rgba(5,4,7,0.97);
+  z-index: 490;
+  background: rgba(5,4,7,0.98);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2.5rem;
 }
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a {
-  font-family: var(--font-display);
+.bw-mob-menu.open { display: flex; }
+.bw-mob-menu a {
+  font-family: var(--font-display, 'Cinzel', serif);
   font-weight: 300;
-  font-size: 1.6rem;
-  letter-spacing: 0.12em;
-  color: var(--cream);
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  color: var(--cream, #e8dcc8);
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 0.25s;
+  transition: color 0.2s;
 }
-.nav-mobile-menu a:hover { color: var(--gold-light); }
-.nav-mobile-close {
+.bw-mob-menu a:hover { color: var(--gold-light, #e2c97e); }
+.bw-mob-close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-family: var(--font-ui);
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--dusk);
+  top: 1.2rem;
+  right: 1.4rem;
+  background: none;
+  border: none;
+  color: var(--dusk, #6a5e4e);
+  font-size: 2rem;
   cursor: pointer;
-  transition: color 0.25s;
+  line-height: 1;
+  transition: color 0.2s;
 }
-.nav-mobile-close:hover { color: var(--gold); }
-@media(max-width:600px) {
-  .nav-hamburger { display: flex; }
-  nav { justify-content: center; padding: 1rem 2rem; }
-  .nav-logo { height: 70px; }
+.bw-mob-close:hover { color: var(--gold, #c9a84c); }
+
+/* ── SHOW HAMBURGER ON MOBILE ── */
+@media (max-width: 700px) {
+  .bw-ham { display: flex; }
+  .nav-links { display: none !important; }
+  nav { justify-content: center; padding: 0.8rem 1rem; }
+  .nav-logo { height: 65px !important; }
+  .section, .page-hero + .section { padding: 5rem 1.5rem; }
+  .section-body { font-size: 1rem; }
+  .section-title { font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .process-steps { grid-template-columns: 1fr !important; }
+  .gallery-grid { grid-template-columns: 1fr !important; }
+  footer { padding: 3rem 1.5rem; }
 }
 
 </style>
@@ -166,6 +191,21 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
         <li><a href="pricing.html">Pricing</a></li>
     </ul>
 </nav>
+
+<!-- Mobile hamburger -->
+<button class="bw-ham" id="bwHam" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="bw-mob-menu" id="bwMobMenu">
+  <button class="bw-mob-close" id="bwMobClose" aria-label="Close menu">&times;</button>
+  <a href="home.html">Home</a>
+  <a href="artisan.html">The Artisan</a>
+  <a href="materials.html">Materials</a>
+  <a href="commission.html">Commission</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="process.html">Process</a>
+</div>
+
 
 <div class="page-hero">
     <div class="hero-bg" style="background-image:url('image4.jpg');"></div>
@@ -293,5 +333,20 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
 })();
 
 </script>
+
+<script>
+(function(){
+  var ham = document.getElementById('bwHam');
+  var menu = document.getElementById('bwMobMenu');
+  var close = document.getElementById('bwMobClose');
+  if(!ham || !menu) return;
+  function open(){ ham.classList.add('open'); menu.classList.add('open'); document.body.style.overflow='hidden'; }
+  function shut(){ ham.classList.remove('open'); menu.classList.remove('open'); document.body.style.overflow=''; }
+  ham.addEventListener('click', function(){ menu.classList.contains('open') ? shut() : open(); });
+  close.addEventListener('click', shut);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', shut); });
+})();
+</script>
+
 </body>
 </html>
