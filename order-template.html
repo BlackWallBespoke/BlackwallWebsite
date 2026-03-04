@@ -297,6 +297,27 @@ const upEl = document.getElementById('updatesEl');
 document.querySelectorAll('a').forEach(el=>{el.addEventListener('mouseenter',()=>ring.style.width=ring.style.height='60px');el.addEventListener('mouseleave',()=>ring.style.width=ring.style.height='40px');});
 
 // Reveal</script>
-<script src="shared.js"></script>
+<script>
+/* Blackwall — shared.js
+   Custom cursor + scroll-reveal used on every page.
+   Page-specific hover targets can be passed via window.BW_HOVER
+   e.g. window.BW_HOVER = 'a,button,.enh-card,.faq-item';
+*/
+(function(){
+  var dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
+  if(!dot||!ring)return;
+  var cx=0,cy=0,rx=0,ry=0;
+  document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
+  (function a(){rx+=(cx-rx)*0.1;ry+=(cy-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+  var sel=window.BW_HOVER||'a,button';
+  document.querySelectorAll(sel).forEach(function(el){
+    el.addEventListener('mouseenter',function(){dot.classList.add('active');ring.classList.add('active');});
+    el.addEventListener('mouseleave',function(){dot.classList.remove('active');ring.classList.remove('active');});
+  });
+  var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+})();
+
+</script>
 </body>
 </html>
