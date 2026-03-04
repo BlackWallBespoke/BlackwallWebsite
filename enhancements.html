@@ -64,7 +64,72 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
 @media(max-width:600px){.nav-links{display:none;}}
 
 /* == END SHARED == */
-/* ENHANCEMENTS-SPECIFIC */.enh-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 950px; width: 100%; border: 1px solid var(--whisper); margin-top: 3rem; } .enh-card { display: grid; grid-template-columns: 80px 1fr; gap: 0; border-bottom: 1px solid var(--whisper); transition: background var(--t-mid); cursor: default; } .enh-card:last-child { border-bottom: none; } .enh-card:hover { background: rgba(201,168,76,0.03); } .enh-num { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2rem; color: var(--gold-dim); opacity: 0.2; border-right: 1px solid var(--whisper); padding: 2.5rem 1rem; line-height: 1; } .enh-body { padding: 2.5rem 3rem; text-align: left; } .enh-tier { font-family: var(--font-ui); font-size: 0.48rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.6rem; } .enh-name { font-family: var(--font-display); font-size: 1.3rem; color: var(--cream); letter-spacing: 0.04em; margin-bottom: 1rem; } .enh-desc { font-size: 1.05rem; color: var(--parchment); line-height: 1.9; max-width: 680px; } .enh-note { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); padding: 0.6rem 1rem; border-left: 2px solid var(--gold-dim); background: rgba(201,168,76,0.04); margin-top: 1.2rem; display: inline-block; } .enh-badge { display: inline-block; font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ember-glow); border: 1px solid var(--ember-dark); padding: 0.3rem 0.75rem; margin-bottom: 0.6rem; } .tier-label { display: flex; align-items: center; gap: 2rem; margin: 4rem 0 0; max-width: 950px; width: 100%; } .tier-line { flex: 1; height: 1px; background: var(--whisper); } .tier-name { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-dim); white-space: nowrap; } @media (max-width:700px){ .enh-card {  grid-template-columns: 50px 1fr; }  .enh-num {  font-size: 1.4rem;  padding: 1.5rem 0.5rem; }  .enh-body {  padding: 2rem 1.5rem; } }</style>
+/* ENHANCEMENTS-SPECIFIC */.enh-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 950px; width: 100%; border: 1px solid var(--whisper); margin-top: 3rem; } .enh-card { display: grid; grid-template-columns: 80px 1fr; gap: 0; border-bottom: 1px solid var(--whisper); transition: background var(--t-mid); cursor: default; } .enh-card:last-child { border-bottom: none; } .enh-card:hover { background: rgba(201,168,76,0.03); } .enh-num { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2rem; color: var(--gold-dim); opacity: 0.2; border-right: 1px solid var(--whisper); padding: 2.5rem 1rem; line-height: 1; } .enh-body { padding: 2.5rem 3rem; text-align: left; } .enh-tier { font-family: var(--font-ui); font-size: 0.48rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.6rem; } .enh-name { font-family: var(--font-display); font-size: 1.3rem; color: var(--cream); letter-spacing: 0.04em; margin-bottom: 1rem; } .enh-desc { font-size: 1.05rem; color: var(--parchment); line-height: 1.9; max-width: 680px; } .enh-note { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); padding: 0.6rem 1rem; border-left: 2px solid var(--gold-dim); background: rgba(201,168,76,0.04); margin-top: 1.2rem; display: inline-block; } .enh-badge { display: inline-block; font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ember-glow); border: 1px solid var(--ember-dark); padding: 0.3rem 0.75rem; margin-bottom: 0.6rem; } .tier-label { display: flex; align-items: center; gap: 2rem; margin: 4rem 0 0; max-width: 950px; width: 100%; } .tier-line { flex: 1; height: 1px; background: var(--whisper); } .tier-name { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-dim); white-space: nowrap; } @media (max-width:700px){ .enh-card {  grid-template-columns: 50px 1fr; }  .enh-num {  font-size: 1.4rem;  padding: 1.5rem 0.5rem; }  .enh-body {  padding: 2rem 1.5rem; } }
+/* ── MOBILE NAV ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 300;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold-dim);
+  transition: all 0.3s var(--ease);
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: rgba(5,4,7,0.97);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.6rem;
+  letter-spacing: 0.12em;
+  color: var(--cream);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.25s;
+}
+.nav-mobile-menu a:hover { color: var(--gold-light); }
+.nav-mobile-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--dusk);
+  cursor: pointer;
+  transition: color 0.25s;
+}
+.nav-mobile-close:hover { color: var(--gold); }
+@media(max-width:600px) {
+  .nav-hamburger { display: flex; }
+  nav { justify-content: center; padding: 1rem 2rem; }
+  .nav-logo { height: 70px; }
+}
+
+</style>
     </head>
     <body>
         <div class="cur-dot" id="curDot"></div>
