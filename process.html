@@ -6,7 +6,16 @@
         <title>Blackwall â€” The Commission Process</title>         
         <meta name="description" content="How a Blackwall bespoke flogger commission unfolds, from first email to finished piece."> 
         <meta name="robots" content="noindex, nofollow"> 
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
+        <style>
+        /* icon encoding fix */
+        .pmt-icon { font-size: 0 !important; }
+        .pmt-icon::after { font-size: 1.4rem; color: var(--gold); }
+        .pmt-grid .pmt-box:nth-child(1) .pmt-icon::after { content: '\0024'; }
+        .pmt-grid .pmt-box:nth-child(2) .pmt-icon::after { content: 'V'; }
+        .pmt-grid .pmt-box:nth-child(3) .pmt-icon::after { content: '\21C4'; }
+        .pmt-box.btc .pmt-icon::after { content: '\20BF'; }
+        </style> 
         <style>/* == SHARED CSS == *//* ═══════════════════════════════════════════
    BLACKWALL — Shared Styles
    Loaded by every page. Page-specific CSS
@@ -60,7 +69,7 @@
                 <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color: var(--gold-light);margin-bottom:1.5rem;">Something That Has Never Existed Before</p> 
                 <div class="gold-rule-c"></div>                 
                 <h1 class="hero-title">The Commission<br><em>Process</em></h1> 
-                <p style="font-family: var(--font-ui); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--parchment); margin-top: 1rem; display: flex; justify-content: center; align-items: center; gap: 1.5em;"><span>Private</span><span style="letter-spacing:0;opacity:0.5;">&middot;</span><span>Unhurried</span><span style="letter-spacing:0;opacity:0.5;">&middot;</span><span>Without Compromise</span></p> 
+                <p style="font-family: var(--font-ui); font-weight: 300; font-size: 0.58rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--parchment); margin-top: 1.5rem; line-height: 2.8;">Private<br>Unhurried<br>Without Compromise</p> 
             </div>             
         </div>         
         <!-- INTRO -->         
@@ -81,10 +90,10 @@
             <div class="section-bg" style="background-image:url('image2.jpg');"></div>             
             <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>             
             <div class="section-inner"> 
-                <p class="eyebrow reveal">Step by Step</p> 
-                <div class="gold-rule reveal rd1"></div>                 
-                <h2 class="section-title reveal rd2">From first contact<br>to <em>finished piece</em></h2> 
-                <div class="step-grid reveal rd3"> 
+                <p class="eyebrow">Step by Step</p> 
+                <div class="gold-rule"></div>                 
+                <h2 class="section-title">From first contact<br>to <em>finished piece</em></h2> 
+                <div class="step-grid"> 
                     <div class="step-block"> 
                         <div class="step-num-lg">01</div>                         
                         <div class="step-content"> 
@@ -178,7 +187,7 @@
                         </div>                         
                     </div>                     
                 </div>                 
-                <a href="commission.html" class="btn reveal" style="margin-top:4rem;"> 
+                <a href="commission.html" class="btn" style="margin-top:4rem;"> 
       &larr; Back to Commission </a> 
             </div>             
         </section>         
