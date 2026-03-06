@@ -1,435 +1,297 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blackwall – Synthetic Handle Materials</title>
-        <meta name="description" content="Synthetic handle materials for Blackwall bespoke floggers — acrylic, resin, G10, Micarta, and beyond.">
-        <meta name="robots" content="noindex, nofollow">
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,900;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
-        <style>
-/* == SHARED CSS == */
-/* ═══════════════════════════════════════════
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Blackwall – Synthetic Handle Materials</title>         
+        <meta name="description" content="Synthetic handle materials for Blackwall bespoke floggers — acrylic, resin, G10, Micarta, and beyond."> 
+        <meta name="robots" content="noindex, nofollow"> 
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,900;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet"> 
+        <style>/* == SHARED CSS == *//* ═══════════════════════════════════════════
    BLACKWALL — Shared Styles
    Loaded by every page. Page-specific CSS
    stays in each file's own <style> block.
-═══════════════════════════════════════════ */
-:root{--void:#050407;--abyss:#080610;--deep:#0e0b14;--surface:#141118;--ember:#c9762a;--ember-dark:#5c3510;--ember-glow:#d4944e;--gold:#c9a84c;--gold-light:#e2c97e;--gold-dim:#7a5f2a;--cream:#e8dcc8;--parchment:#c4b49a;--dusk:#6a5e4e;--whisper:#2a2220;--font-display:'Cinzel','Palatino Linotype',serif;--font-body:'Cormorant Garamond','Georgia',serif;--font-ui:'Raleway','Futura',sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--t-slow:0.9s;--t-mid:0.5s;--t-fast:0.25s;}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--cream);font-family:var(--font-body);font-weight:300;line-height:1.8;overflow-x:hidden;cursor:none;}
-.cur-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
-.cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .4s var(--ease),height .4s var(--ease),border-color .3s;}
-.cur-dot.active{width:12px;height:12px;}
-.cur-ring.active{width:64px;height:64px;border-color:rgba(201,168,76,0.7);}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:center;gap:5rem;padding:1.5rem 4rem;background:linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%);}
-.nav-links{display:flex;gap:4rem;list-style:none;align-items:center;}
-.nav-links a{font-family:var(--font-ui);font-weight:200;font-size:0.62rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--dusk);text-decoration:none;transition:color var(--t-fast);display:inline-block;text-align:center;line-height:1.7;}
-.nav-links a:hover{color:var(--gold-light);}
-.nav-logo{height:114px;opacity:0.9;transition:opacity var(--t-fast);}
-.nav-logo:hover{opacity:1;}
-.section{position:relative;padding:10rem 4rem;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.section-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
-.section-overlay{position:absolute;inset:0;background:rgba(5,4,7,0.84);}
-.section-inner{position:relative;z-index:2;max-width:1100px;display:flex;flex-direction:column;align-items:center;gap:2rem;width:100%;}
-.eyebrow{font-family:var(--font-ui);font-weight:200;font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);}
-.section-title{font-family:var(--font-display);font-weight:300;font-size:clamp(2rem,5vw,3.8rem);letter-spacing:0.06em;color:var(--cream);line-height:1.25;}
-.section-title em{font-style:italic;color:var(--ember-glow);}
-.section-body{font-size:1.2rem;color:var(--cream);line-height:2;max-width:700px;}
-.gold-rule{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);}
-.btn{font-family:var(--font-ui);font-weight:200;font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;text-decoration:none;padding:1rem 2.8rem;display:inline-block;transition:all var(--t-mid) var(--ease);position:relative;overflow:hidden;border:1px solid var(--gold-dim);color:var(--gold-light);}
-.btn::before{content:'';position:absolute;inset:0;transform:scaleX(0);transform-origin:left;transition:transform var(--t-mid) var(--ease);z-index:-1;background:var(--gold);}
-.btn:hover::before{transform:scaleX(1);}
-.btn:hover{color:var(--void);border-color:var(--gold);}
-.page-hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:hZ 18s ease-in-out infinite alternate;}
-@keyframes hZ{from{transform:scale(1.04);}to{transform:scale(1.08);}}
-.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%);}
-.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%);animation:gB 6s ease-in-out infinite;}
-@keyframes gB{0%,100%{opacity:.7;}50%{opacity:1;}}
-.hero-content{position:relative;z-index:2;padding:2rem;animation:hF 2s var(--ease) both;}
-@keyframes hF{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.hero-title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.5rem,7vw,5.5rem);color:var(--cream);letter-spacing:0.08em;line-height:1.2;margin-bottom:1.5rem;}
-.hero-title em{font-style:italic;color:var(--ember-glow);}
-.gold-rule-c{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);margin:2rem auto;}
-footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;display:flex;flex-direction:column;align-items:center;gap:2rem;text-align:center;}
-.footer-logo{height:28px;opacity:0.65;}
-.footer-rule{width:200px;height:1px;background:linear-gradient(to right,transparent,var(--whisper),transparent);}
-.footer-artisan{font-family:var(--font-body);font-style:italic;font-size:1rem;color:var(--parchment);}
-.footer-copy{font-family:var(--font-ui);font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--dusk);}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.rd1{transition-delay:.15s;}.rd2{transition-delay:.3s;}.rd3{transition-delay:.45s;}.rd4{transition-delay:.6s;}
-@media(max-width:900px){nav{gap:2rem;padding:1rem 2rem;}.nav-links{gap:2rem;}.section{padding:7rem 2rem;}}
+═══════════════════════════════════════════ */:root { --void: #050407; --abyss: #080610; --deep: #0e0b14; --surface: #141118; --ember: #c9762a; --ember-dark: #5c3510; --ember-glow: #d4944e; --gold: #c9a84c; --gold-light: #e2c97e; --gold-dim: #7a5f2a; --cream: #e8dcc8; --parchment: #c4b49a; --dusk: #6a5e4e; --whisper: #2a2220; --font-display: 'Cinzel','Palatino Linotype',serif; --font-body: 'Cormorant Garamond','Georgia',serif; --font-ui: 'Raleway','Futura',sans-serif; --ease: cubic-bezier(0.16,1,0.3,1); --t-slow: 0.9s; --t-mid: 0.5s; --t-fast: 0.25s; } * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: var(--void); color: var(--cream); font-family: var(--font-body); font-weight: 300; line-height: 1.8; overflow-x: hidden; cursor: none; } .cur-dot { position: fixed; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s,height .3s; } .cur-ring { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(201,168,76,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .4s var(--ease),height .4s var(--ease),border-color .3s; } .cur-dot.active { width: 12px; height: 12px; } .cur-ring.active { width: 64px; height: 64px; border-color: rgba(201,168,76,0.7); } nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 5rem; padding: 1.5rem 4rem; background: linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%); } .nav-links { display: flex; gap: 4rem; list-style: none; align-items: center; } .nav-links a { font-family: var(--font-ui); font-weight: 200; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); text-decoration: none; transition: color var(--t-fast); display: inline-block; text-align: center; line-height: 1.7; } .nav-links a:hover { color: var(--gold-light); } .nav-logo { height: 114px; opacity: 0.9; transition: opacity var(--t-fast); } .nav-logo:hover { opacity: 1; } .section { position: relative; padding: 10rem 4rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; } .section-overlay { position: absolute; inset: 0; background: rgba(5,4,7,0.84); } .section-inner { position: relative; z-index: 2; max-width: 1100px; display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; } .eyebrow { font-family: var(--font-ui); font-weight: 200; font-size: 0.58rem; letter-spacing: 0.55em; text-transform: uppercase; color: var(--gold-dim); } .section-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem,5vw,3.8rem); letter-spacing: 0.06em; color: var(--cream); line-height: 1.25; } .section-title em { font-style: italic; color: var(--ember-glow); } .section-body { font-size: 1.2rem; color: var(--cream); line-height: 2; max-width: 700px; } .gold-rule { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); } .btn { font-family: var(--font-ui); font-weight: 200; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; display: inline-block; transition: all var(--t-mid) var(--ease); position: relative; overflow: hidden; border: 1px solid var(--gold-dim); color: var(--gold-light); } .btn::before { content: ''; position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; transition: transform var(--t-mid) var(--ease); z-index: -1; background: var(--gold); } .btn:hover::before { transform: scaleX(1); } .btn:hover { color: var(--void); border-color: var(--gold); } .page-hero { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; animation: hZ 18s ease-in-out infinite alternate; } @keyframes hZ{ from {  transform: scale(1.04); }  to {  transform: scale(1.08); } } .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%); } .hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%); animation: gB 6s ease-in-out infinite; } @keyframes gB{ 0%, 100% {  opacity: .7; }  50% {  opacity: 1; } } .hero-content { position: relative; z-index: 2; padding: 2rem; animation: hF 2s var(--ease) both; } @keyframes hF{ from {  opacity: 0;  transform: translateY(30px); }  to {  opacity: 1;  transform: translateY(0); } } .hero-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem,7vw,5.5rem); color: var(--cream); letter-spacing: 0.08em; line-height: 1.2; margin-bottom: 1.5rem; } .hero-title em { font-style: italic; color: var(--ember-glow); } .gold-rule-c { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); margin: 2rem auto; } footer { background: var(--void); border-top: 1px solid var(--whisper); padding: 4rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; } .footer-logo { height: 28px; opacity: 0.65; } .footer-rule { width: 200px; height: 1px; background: linear-gradient(to right,transparent,var(--whisper),transparent); } .footer-artisan { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--parchment); } .footer-copy { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dusk); } .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.1s var(--ease),transform 1.1s var(--ease); } .reveal.visible { opacity: 1; transform: translateY(0); } .rd1 { transition-delay: .15s; } .rd2 { transition-delay: .3s; } .rd3 { transition-delay: .45s; } .rd4 { transition-delay: .6s; } @media (max-width:900px){ nav {  gap: 2rem;  padding: 1rem 2rem; }  .nav-links {  gap: 2rem; }  .section {  padding: 7rem 2rem; } } /* == END SHARED == */:root { --void: #050407; --abyss: #080610; --deep: #0e0b14; --surface: #141118; --ember: #c9762a; --ember-dark: #5c3510; --ember-glow: #d4944e; --gold: #c9a84c; --gold-light: #e2c97e; --gold-dim: #7a5f2a; --cream: #e8dcc8; --parchment: #c4b49a; --dusk: #6a5e4e; --whisper: #2a2220; --font-display: 'Cinzel','Palatino Linotype',serif; --font-body: 'Cormorant Garamond','Georgia',serif; --font-ui: 'Raleway','Futura',sans-serif; --ease: cubic-bezier(0.16,1,0.3,1); --t-slow: 0.9s; --t-mid: 0.5s; --t-fast: 0.25s; } * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: var(--void); color: var(--cream); font-family: var(--font-body); font-weight: 300; line-height: 1.8; overflow-x: hidden; cursor: none; } .cur-dot { position: fixed; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s,height .3s; } .cur-ring { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(201,168,76,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .4s var(--ease),height .4s var(--ease),border-color .3s; } .cur-dot.active { width: 12px; height: 12px; } .cur-ring.active { width: 64px; height: 64px; border-color: rgba(201,168,76,0.7); } nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 5rem; padding: 1.5rem 4rem; background: linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%); } .nav-links { display: flex; gap: 4rem; list-style: none; align-items: center; } .nav-links a { font-family: var(--font-ui); font-weight: 200; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); text-decoration: none; transition: color var(--t-fast); display: inline-block; text-align: center; line-height: 1.7; } .nav-links a:hover { color: var(--gold-light); } .nav-logo { height: 114px; opacity: 0.9; transition: opacity var(--t-fast); } .nav-logo:hover { opacity: 1; } .mat-subnav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 199; display: flex; justify-content: center; padding: 0 0 0.5rem 0; } .mat-subnav-inner { display: flex; align-items: stretch; background: rgba(5,4,7,0.97); border: 1px solid var(--whisper); border-bottom: none; } .mat-subnav-inner a { font-family: var(--font-ui); font-weight: 200; font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--dusk); text-decoration: none; padding: 1rem 2.5rem; transition: color var(--t-fast),background var(--t-fast); border-right: 1px solid var(--whisper); } .mat-subnav-inner a:last-child { border-right: none; } .mat-subnav-inner a:hover { color: var(--gold-light); } .mat-subnav-inner a.active { color: var(--gold); background: rgba(201,168,76,0.06); } .page-hero { position: relative; min-height: 55vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; animation: hZ 18s ease-in-out infinite alternate; } @keyframes hZ{ from {  transform: scale(1.04); }  to {  transform: scale(1.08); } } .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%); } .hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%); animation: gB 6s ease-in-out infinite; } @keyframes gB{ 0%, 100% {  opacity: .7; }  50% {  opacity: 1; } } .hero-content { position: relative; z-index: 2; padding: 2rem; animation: hF 2s var(--ease) both; } @keyframes hF{ from {  opacity: 0;  transform: translateY(30px); }  to {  opacity: 1;  transform: translateY(0); } } .hero-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem,7vw,5.5rem); color: var(--cream); letter-spacing: 0.08em; line-height: 1.2; margin-bottom: 1.5rem; } .hero-title em { font-style: italic; color: var(--ember-glow); } .gold-rule-c { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); margin: 2rem auto; } .section { position: relative; padding: 10rem 4rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; } .section-overlay { position: absolute; inset: 0; background: rgba(5,4,7,0.84); } .section-inner { position: relative; z-index: 2; max-width: 1100px; display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; } .eyebrow { font-family: var(--font-ui); font-weight: 200; font-size: 0.58rem; letter-spacing: 0.55em; text-transform: uppercase; color: var(--gold-dim); } .section-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem,5vw,3.8rem); letter-spacing: 0.06em; color: var(--cream); line-height: 1.25; } .section-title em { font-style: italic; color: var(--ember-glow); } .section-body { font-size: 1.15rem; color: var(--parchment); line-height: 2; max-width: 700px; } .gold-rule { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); } .btn { font-family: var(--font-ui); font-weight: 200; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; display: inline-block; transition: all var(--t-mid) var(--ease); position: relative; overflow: hidden; border: 1px solid var(--gold-dim); color: var(--gold-light); } .btn::before { content: ''; position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; transition: transform var(--t-mid) var(--ease); z-index: -1; background: var(--gold); } .btn:hover::before { transform: scaleX(1); } .btn:hover { color: var(--void); border-color: var(--gold); } .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.1s var(--ease),transform 1.1s var(--ease); } .reveal.visible { opacity: 1; transform: translateY(0); } .rd1 { transition-delay: .15s; } .rd2 { transition-delay: .3s; } .rd3 { transition-delay: .45s; } .rd4 { transition-delay: .6s; } footer { background: var(--void); border-top: 1px solid var(--whisper); padding: 4rem 4rem 7rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; } .footer-logo { height: 28px; opacity: 0.65; } .footer-rule { width: 200px; height: 1px; background: linear-gradient(to right,transparent,var(--whisper),transparent); } .footer-artisan { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--dusk); } .footer-copy { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--whisper); } .material-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--whisper); width: 100%; max-width: 1100px; margin-top: 2rem; } .wood-card { background: var(--deep); padding: 2.5rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; transition: background var(--t-mid); cursor: default; } .wood-card:hover { background: var(--surface); } .wood-name { font-family: var(--font-display); font-size: 1.05rem; color: var(--cream); letter-spacing: 0.05em; } .wood-note { font-family: var(--font-body); font-style: italic; font-size: 0.85rem; color: var(--dusk); } .wood-price { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.25em; color: var(--ember-glow); } .mat-swatch { width: 72px; height: 72px; border-radius: 50%; border: 1px solid var(--whisper); overflow: hidden; background: var(--surface); display: flex; align-items: center; justify-content: center; flex-shrink: 0; } .mat-swatch img { width: 100%; height: 100%; object-fit: cover; } .cross-links { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--whisper); width: 100%; max-width: 1100px; margin-top: 4rem; } .cross-link { background: var(--deep); padding: 2rem 2.5rem; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; transition: background var(--t-mid); } .cross-link:hover { background: var(--surface); } .cross-link-label { font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-dim); } .cross-link-title { font-family: var(--font-display); font-size: 1.3rem; color: var(--cream); } .cross-link-sub { font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); } .note-block { max-width: 1100px; width: 100%; border-left: 2px solid var(--gold-dim); padding: 1.5rem 2rem; background: rgba(201,168,76,0.03); margin-top: 1.5rem; } .note-block p { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--dusk); line-height: 1.9; } @media (max-width:900px){ nav {  gap: 2rem;  padding: 1rem 2rem; }  .nav-links {  gap: 2rem; }  .section {  padding: 7rem 2rem; }  .material-grid {  grid-template-columns: repeat(2,1fr); } } @media (max-width:600px){ .nav-links {  display: none; }  .material-grid {  grid-template-columns: 1fr; }  .cross-links {  grid-template-columns: 1fr; } } nav { justify-content: center; padding: 1rem 2rem; } .nav-logo { height: 70px; } /* ── TOUCH: hide custom cursor ── */@media (hover: none), (pointer: coarse) { .cur-dot, .cur-ring {  display: none !important; }  body {  cursor: auto !important; } } /* ── HAMBURGER BUTTON ── */.bw-ham { display: none; position: fixed; top: 1.1rem; right: 1.2rem; z-index: 500; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 6px; } .bw-ham span { display: block; width: 26px; height: 1px; background: var(--gold); transition: transform 0.3s ease, opacity 0.3s ease; } .bw-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); } .bw-ham.open span:nth-child(2) { opacity: 0; } .bw-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); } /* ── MOBILE FULLSCREEN MENU ── */.bw-mob-menu { display: none; position: fixed; inset: 0; z-index: 490; background: rgba(5,4,7,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; } .bw-mob-menu.open { display: flex; } .bw-mob-menu a { font-family: var(--font-display, 'Cinzel', serif); font-weight: 300; font-size: 1.8rem; letter-spacing: 0.1em; color: var(--cream, #e8dcc8); text-decoration: none; text-transform: uppercase; transition: color 0.2s; } .bw-mob-menu a:hover { color: var(--gold-light, #e2c97e); } .bw-mob-close { position: absolute; top: 1.2rem; right: 1.4rem; background: none; border: none; color: var(--dusk, #6a5e4e); font-size: 2rem; cursor: pointer; line-height: 1; transition: color 0.2s; } .bw-mob-close:hover { color: var(--gold, #c9a84c); } /* ── SHOW HAMBURGER ON MOBILE ── */@media (max-width: 700px) { .bw-ham {  display: flex; }  .nav-links {  display: none !important; }  nav {  justify-content: center;  padding: 0.8rem 1rem; }  .nav-logo {  height: 65px !important; }  .section, .page-hero + .section {  padding: 5rem 1.5rem; }  .section-body {  font-size: 1rem; }  .section-title {  font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }  .hero-cta {  flex-direction: column;  align-items: center; }  .process-steps {  grid-template-columns: 1fr !important; }  .gallery-grid {  grid-template-columns: 1fr !important; }  footer {  padding: 3rem 1.5rem; } }
 }
-
-/* == END SHARED == */
-:root { --void: #050407; --abyss: #080610; --deep: #0e0b14; --surface: #141118; --ember: #c9762a; --ember-dark: #5c3510; --ember-glow: #d4944e; --gold: #c9a84c; --gold-light: #e2c97e; --gold-dim: #7a5f2a; --cream: #e8dcc8; --parchment: #c4b49a; --dusk: #6a5e4e; --whisper: #2a2220; --font-display: 'Cinzel','Palatino Linotype',serif; --font-body: 'Cormorant Garamond','Georgia',serif; --font-ui: 'Raleway','Futura',sans-serif; --ease: cubic-bezier(0.16,1,0.3,1); --t-slow: 0.9s; --t-mid: 0.5s; --t-fast: 0.25s; } * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: var(--void); color: var(--cream); font-family: var(--font-body); font-weight: 300; line-height: 1.8; overflow-x: hidden; cursor: none; } .cur-dot { position: fixed; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s,height .3s; } .cur-ring { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(201,168,76,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .4s var(--ease),height .4s var(--ease),border-color .3s; } .cur-dot.active { width: 12px; height: 12px; } .cur-ring.active { width: 64px; height: 64px; border-color: rgba(201,168,76,0.7); } nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 5rem; padding: 1.5rem 4rem; background: linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%); } .nav-links { display: flex; gap: 4rem; list-style: none; align-items: center; } .nav-links a { font-family: var(--font-ui); font-weight: 200; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); text-decoration: none; transition: color var(--t-fast); display: inline-block; text-align: center; line-height: 1.7; } .nav-links a:hover { color: var(--gold-light); } .nav-logo { height: 114px; opacity: 0.9; transition: opacity var(--t-fast); } .nav-logo:hover { opacity: 1; } .mat-subnav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 199; display: flex; justify-content: center; padding: 0 0 0.5rem 0; } .mat-subnav-inner { display: flex; align-items: stretch; background: rgba(5,4,7,0.97); border: 1px solid var(--whisper); border-bottom: none; } .mat-subnav-inner a { font-family: var(--font-ui); font-weight: 200; font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--dusk); text-decoration: none; padding: 1rem 2.5rem; transition: color var(--t-fast),background var(--t-fast); border-right: 1px solid var(--whisper); } .mat-subnav-inner a:last-child { border-right: none; } .mat-subnav-inner a:hover { color: var(--gold-light); } .mat-subnav-inner a.active { color: var(--gold); background: rgba(201,168,76,0.06); } .page-hero { position: relative; min-height: 55vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; animation: hZ 18s ease-in-out infinite alternate; } @keyframes hZ{ from {  transform: scale(1.04); }  to {  transform: scale(1.08); } } .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%); } .hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%); animation: gB 6s ease-in-out infinite; } @keyframes gB{ 0%, 100% {  opacity: .7; }  50% {  opacity: 1; } } .hero-content { position: relative; z-index: 2; padding: 2rem; animation: hF 2s var(--ease) both; } @keyframes hF{ from {  opacity: 0;  transform: translateY(30px); }  to {  opacity: 1;  transform: translateY(0); } } .hero-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem,7vw,5.5rem); color: var(--cream); letter-spacing: 0.08em; line-height: 1.2; margin-bottom: 1.5rem; } .hero-title em { font-style: italic; color: var(--ember-glow); } .gold-rule-c { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); margin: 2rem auto; } .section { position: relative; padding: 10rem 4rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; } .section-overlay { position: absolute; inset: 0; background: rgba(5,4,7,0.84); } .section-inner { position: relative; z-index: 2; max-width: 1100px; display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; } .eyebrow { font-family: var(--font-ui); font-weight: 200; font-size: 0.58rem; letter-spacing: 0.55em; text-transform: uppercase; color: var(--gold-dim); } .section-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem,5vw,3.8rem); letter-spacing: 0.06em; color: var(--cream); line-height: 1.25; } .section-title em { font-style: italic; color: var(--ember-glow); } .section-body { font-size: 1.15rem; color: var(--parchment); line-height: 2; max-width: 700px; } .gold-rule { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); } .btn { font-family: var(--font-ui); font-weight: 200; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; display: inline-block; transition: all var(--t-mid) var(--ease); position: relative; overflow: hidden; border: 1px solid var(--gold-dim); color: var(--gold-light); } .btn::before { content: ''; position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; transition: transform var(--t-mid) var(--ease); z-index: -1; background: var(--gold); } .btn:hover::before { transform: scaleX(1); } .btn:hover { color: var(--void); border-color: var(--gold); } .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.1s var(--ease),transform 1.1s var(--ease); } .reveal.visible { opacity: 1; transform: translateY(0); } .rd1 { transition-delay: .15s; } .rd2 { transition-delay: .3s; } .rd3 { transition-delay: .45s; } .rd4 { transition-delay: .6s; } footer { background: var(--void); border-top: 1px solid var(--whisper); padding: 4rem 4rem 7rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; } .footer-logo { height: 28px; opacity: 0.65; } .footer-rule { width: 200px; height: 1px; background: linear-gradient(to right,transparent,var(--whisper),transparent); } .footer-artisan { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--dusk); } .footer-copy { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--whisper); } .material-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--whisper); width: 100%; max-width: 1100px; margin-top: 2rem; } .wood-card { background: var(--deep); padding: 2.5rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; transition: background var(--t-mid); cursor: default; } .wood-card:hover { background: var(--surface); } .wood-name { font-family: var(--font-display); font-size: 1.05rem; color: var(--cream); letter-spacing: 0.05em; } .wood-note { font-family: var(--font-body); font-style: italic; font-size: 0.85rem; color: var(--dusk); } .wood-price { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.25em; color: var(--ember-glow); } .mat-swatch { width: 72px; height: 72px; border-radius: 50%; border: 1px solid var(--whisper); overflow: hidden; background: var(--surface); display: flex; align-items: center; justify-content: center; flex-shrink: 0; } .mat-swatch img { width: 100%; height: 100%; object-fit: cover; } .cross-links { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--whisper); width: 100%; max-width: 1100px; margin-top: 4rem; } .cross-link { background: var(--deep); padding: 2rem 2.5rem; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; transition: background var(--t-mid); } .cross-link:hover { background: var(--surface); } .cross-link-label { font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-dim); } .cross-link-title { font-family: var(--font-display); font-size: 1.3rem; color: var(--cream); } .cross-link-sub { font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); } .note-block { max-width: 1100px; width: 100%; border-left: 2px solid var(--gold-dim); padding: 1.5rem 2rem; background: rgba(201,168,76,0.03); margin-top: 1.5rem; } .note-block p { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--dusk); line-height: 1.9; } @media (max-width:900px){ nav {  gap: 2rem;  padding: 1rem 2rem; }  .nav-links {  gap: 2rem; }  .section {  padding: 7rem 2rem; }  .material-grid {  grid-template-columns: repeat(2,1fr); } } @media (max-width:600px){ .nav-links {  display: none; }  .material-grid {  grid-template-columns: 1fr; }  .cross-links {  grid-template-columns: 1fr; } }
-  nav { justify-content: center; padding: 1rem 2rem; }
-  .nav-logo { height: 70px; }
-}
-
-
-/* ── TOUCH: hide custom cursor ── */
-@media (hover: none), (pointer: coarse) {
-  .cur-dot, .cur-ring { display: none !important; }
-  body { cursor: auto !important; }
-}
-
-/* ── HAMBURGER BUTTON ── */
-.bw-ham {
-  display: none;
-  position: fixed;
-  top: 1.1rem;
-  right: 1.2rem;
-  z-index: 500;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  flex-direction: column;
-  gap: 6px;
-}
-.bw-ham span {
-  display: block;
-  width: 26px;
-  height: 1px;
-  background: var(--gold);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.bw-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.bw-ham.open span:nth-child(2) { opacity: 0; }
-.bw-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ── MOBILE FULLSCREEN MENU ── */
-.bw-mob-menu {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 490;
-  background: rgba(5,4,7,0.98);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-}
-.bw-mob-menu.open { display: flex; }
-.bw-mob-menu a {
-  font-family: var(--font-display, 'Cinzel', serif);
-  font-weight: 300;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: var(--cream, #e8dcc8);
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.bw-mob-menu a:hover { color: var(--gold-light, #e2c97e); }
-.bw-mob-close {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.4rem;
-  background: none;
-  border: none;
-  color: var(--dusk, #6a5e4e);
-  font-size: 2rem;
-  cursor: pointer;
-  line-height: 1;
-  transition: color 0.2s;
-}
-.bw-mob-close:hover { color: var(--gold, #c9a84c); }
-
-/* ── SHOW HAMBURGER ON MOBILE ── */
-@media (max-width: 700px) {
-  .bw-ham { display: flex; }
-  .nav-links { display: none !important; }
-  nav { justify-content: center; padding: 0.8rem 1rem; }
-  .nav-logo { height: 65px !important; }
-  .section, .page-hero + .section { padding: 5rem 1.5rem; }
-  .section-body { font-size: 1rem; }
-  .section-title { font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }
-  .hero-cta { flex-direction: column; align-items: center; }
-  .process-steps { grid-template-columns: 1fr !important; }
-  .gallery-grid { grid-template-columns: 1fr !important; }
-  footer { padding: 3rem 1.5rem; }
-}
-
-</style>
-    </head>
-    <body>
-        <div class="cur-dot" id="curDot"></div>
-        <div class="cur-ring" id="curRing"></div>
-        <div class="mat-subnav"><div class="mat-subnav-inner"><a href="materials.html">&larr; Materials</a></div></div>
-<nav>
-            <ul class="nav-links">
-                <li>
-                    <a href="artisan.html">The<br>Artisan</a>
-                </li>
-                <li>
-                    <a href="materials.html">Materials</a>
-                </li>
-            </ul>
-            <a href="home.html"><img class="nav-logo" src="Transparent logo white font.png" alt="Blackwall"></a>
-            <ul class="nav-links">
-                <li>
-                    <a href="commission.html">Commission</a>
-                </li>
-                <li>
-                    <a href="pricing.html">Pricing</a>
-                </li>
-            </ul>
-        </nav>
-
-<!-- Mobile hamburger -->
-<button class="bw-ham" id="bwHam" aria-label="Open menu">
-  <span></span><span></span><span></span>
-</button>
-<div class="bw-mob-menu" id="bwMobMenu">
-  <button class="bw-mob-close" id="bwMobClose" aria-label="Close menu">&times;</button>
-  <a href="home.html">Home</a>
-  <a href="artisan.html">The Artisan</a>
-  <a href="materials.html">Materials</a>
-  <a href="commission.html">Commission</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="process.html">Process</a>
-</div>
-
-        <!-- BOTTOM MATERIALS SUB-NAV -->
-        
-        <div class="page-hero">
-            <div class="hero-bg" style="background-image:url('image3.jpg');"></div>
-            <div class="hero-vignette"></div>
-            <div class="hero-glow"></div>
-            <div class="hero-content">
-                <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;">Component One — Alternative</p>
-                <div class="gold-rule-c"></div>
-                <h1 class="hero-title">Beyond <em>Wood</em></h1>
-                <p style="font-family:var(--font-ui);font-weight:100;font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--dusk);margin-top:1rem;">Handle Materials &nbsp;·&nbsp; Synthetic</p>
+}</style>         
+    </head>     
+    <body> 
+        <div class="cur-dot" id="curDot"></div>         
+        <div class="cur-ring" id="curRing"></div>         
+        <div class="mat-subnav">
+            <div class="mat-subnav-inner">
+                <a href="materials.html">&larr; Materials</a>
             </div>
-        </div>
-        <section class="section">
-            <div class="section-bg" style="background-image:url('image3.jpg');"></div>
-            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>
-            <div class="section-inner">
-                <p class="eyebrow reveal">Synthetic Handle Materials</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2">Engineered <em>to Endure</em></h2>
-                <p class="section-body reveal rd3">Synthetic handle materials offer properties that wood cannot replicate — extreme resistance to moisture, temperature swings, and wear; visual effects impossible in natural grain; colours that do not fade; surfaces that do not absorb what they encounter. Each synthetic handle is turned by hand on the lathe to the same exacting standard as the wood line. The finished piece is indistinguishable in quality from its wooden counterpart, and often surpasses it in durability. For certain applications and aesthetics, there is no substitute.</p>
-                <!-- CAST ACRYLICS -->
-                <p class="eyebrow reveal" style="margin-top:3rem;color:var(--parchment);">Cast Acrylic Base- $500</p>
-                <div class="material-grid reveal rd1">
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);"></div>
-                        <div class="wood-name">Midnight Black Acrylic</div>
-                        <div class="wood-note">Deep, uniform black with a glass-smooth finish. The most formal option in the synthetic line.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#f5f0e8,#e8dcc8,#d4c9b0);"></div>
-                        <div class="wood-name">Ivory Acrylic</div>
-                        <div class="wood-note">Warm, creamy white. Clean and refined. Pairs exceptionally well with dark falls and gold hardware.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#8b0000,#c0392b,#922b21);"></div>
-                        <div class="wood-name">Deep Red Acrylic</div>
-                        <div class="wood-note">Rich arterial red. Uniform, saturated, and striking. Available in matte or gloss finish.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#2c3e50,#34495e,#1a252f);"></div>
-                        <div class="wood-name">Slate Grey Acrylic</div>
-                        <div class="wood-note">Cool, industrial tone. Subdued but visually precise. An excellent complement to steel hardware.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#1a472a,#2e7d32,#1b5e20);"></div>
-                        <div class="wood-name">Forest Green Acrylic</div>
-                        <div class="wood-note">Deep, saturated green. Pairs well with brass or bronze hardware for an organic-meets-industrial aesthetic.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#4a0072,#7b1fa2,#6a1b9a);"></div>
-                        <div class="wood-name">Violet Acrylic</div>
-                        <div class="wood-note">Bold, vivid purple. Uniform colour without the fading over time associated with Purpleheart wood.</div>
-                    </div>
-                </div>
-                <!-- PATTERNED / SWIRL ACRYLICS -->
-                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--parchment);">Patterned &amp; Swirl Acrylic &#8212;+$50</p>
-                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">Cast with internal movement. No two blanks are identical — the pattern is a function of the pour.</p>
-                <div class="material-grid reveal rd2">
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:conic-gradient(from 0deg,#c9a84c,#1a1a1a,#c9a84c,#3a3a3a,#e2c97e,#1a1a1a);border-radius:50%;"></div>
-                        <div class="wood-name">Black &amp; Gold Swirl</div>
-                        <div class="wood-note">High-contrast swirl of black and metallic gold. Dramatic and composed. The most requested patterned acrylic.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:conic-gradient(from 45deg,#f5f5f5,#222,#f0f0f0,#333,#fafafa,#111);border-radius:50%;"></div>
-                        <div class="wood-name">Black &amp; White Swirl</div>
-                        <div class="wood-note">Classic contrast. The internal pattern varies by blank — each piece is uniquely figured.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:conic-gradient(from 90deg,#8b0000,#1a1a1a,#c0392b,#0d0d0d,#800000);border-radius:50%;"></div>
-                        <div class="wood-name">Red &amp; Black Swirl</div>
-                        <div class="wood-note">Intense and visceral. The combination is visually aggressive in a way no natural material achieves.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:conic-gradient(from 30deg,#4a0072,#1a1a2e,#7b1fa2,#0d1117,#6a1b9a);border-radius:50%;"></div>
-                        <div class="wood-name">Purple &amp; Black Swirl</div>
-                        <div class="wood-note">Dark and theatrical. Deep violet moving through near-black. An unmistakable aesthetic statement.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:conic-gradient(from 60deg,#b8860b,#8b4513,#daa520,#654321,#cd853f);border-radius:50%;"></div>
-                        <div class="wood-name">Amber &amp; Brown Swirl</div>
-                        <div class="wood-note">Warm tones that suggest organic material while remaining entirely synthetic. Pairs naturally with leather falls.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:conic-gradient(from 120deg,#00695c,#1a1a2e,#00838f,#0d1117,#004d40);border-radius:50%;"></div>
-                        <div class="wood-name">Teal &amp; Black Swirl</div>
-                        <div class="wood-note">Cool, electric contrast. The teal shifts between blue and green depending on light and angle.</div>
-                    </div>
-                </div>
-                <!-- RESIN STABILISED -->
-                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--parchment);">Resin-Stabilised Blanks &#8212; From +$250</p>
-                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">Natural material infused with coloured resin under vacuum pressure. The result bridges organic and synthetic — the texture and variation of wood or fibre with the permanence and colour saturation of engineered material.</p>
-                <div class="material-grid reveal rd2">
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#4a3728,#6b4c3b,#3d2b1f);border:1px solid var(--whisper);"></div>
-                        <div class="wood-name">Stabilised Maple</div>
-                        <div class="wood-note">Maple blank infused with black, red, or teal resin. Grain remains visible beneath the colour saturation.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#2d1b0e,#8b4513,#4a2c17);border:1px solid var(--whisper);"></div>
-                        <div class="wood-name">Stabilised Buckeye Burl</div>
-                        <div class="wood-note">Wild, chaotic grain structure infused with resin. No two blanks are remotely alike.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#1a1a1a,#2d2d2d,#111);border:1px solid var(--whisper);"></div>
-                        <div class="wood-name">Stabilised Carbon Fibre Weave</div>
-                        <div class="wood-note">Carbon fibre fabric set in resin and turned on the lathe. Dramatic woven texture with extraordinary hardness.</div>
-                    </div>
-                </div>
-                <!-- ENGINEERING GRADE -->
-                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--ember-glow);">Engineering-Grade Materials — Premium Pricing</p>
-                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">Materials specified by performance as much as aesthetics. The hardest, most durable options in the synthetic line.</p>
-                <div class="material-grid reveal rd2">
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:repeating-linear-gradient(45deg,#1a1a1a 0px,#1a1a1a 4px,#2d2d2d 4px,#2d2d2d 8px);"></div>
-                        <div class="wood-name">G10 — Black</div>
-                        <div class="wood-price">+$200 &middot; Confirm Availability</div>
-                        <div class="wood-note">Fibreglass laminate. Virtually indestructible, impervious to moisture, and machines to a precise finish. The most utilitarian material in the line.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:repeating-linear-gradient(135deg,#2a2015 0px,#2a2015 4px,#3d3020 4px,#3d3020 8px);"></div>
-                        <div class="wood-name">Micarta — Linen</div>
-                        <div class="wood-price">+$200 &middot; Confirm Availability</div>
-                        <div class="wood-note">Linen cloth set in phenolic resin under pressure. Warm khaki-brown tones with a subtle textile texture. Develops a patina with use.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:repeating-linear-gradient(90deg,#1a1a1a 0px,#1a1a1a 3px,#2a2a2a 3px,#2a2a2a 6px);"></div>
-                        <div class="wood-name">Micarta — Black Canvas</div>
-                        <div class="wood-price">+$300 &middot; Confirm Availability</div>
-                        <div class="wood-note">Dense canvas cloth in black phenolic resin. Hard, grippy surface texture. Aggressive, purposeful aesthetic.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#e8e8e8,#d4d4d4,#f0f0f0,#c8c8c8);"></div>
-                        <div class="wood-name">Corian — White</div>
-                        <div class="wood-price">+$200</div>
-                        <div class="wood-note">Solid surface material. Non-porous, seamless, and turns to a flawless satin finish. The cleanest visual in the synthetic range.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#2a2a3e,#3d3d5c,#1a1a2e);"></div>
-                        <div class="wood-name">Kirinite — Deep Space</div>
-                        <div class="wood-price">+$300 &middot; Confirm Availability</div>
-                        <div class="wood-note">Proprietary acrylic-hybrid with internal metallic and iridescent effects. Changes character under different lighting conditions. Among the most visually complex materials available.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(135deg,#f0f0f0,#e8e8e0,#d8d8d0);background-image:radial-gradient(circle at 30% 40%,rgba(255,255,255,0.4) 0%,transparent 50%),radial-gradient(circle at 70% 60%,rgba(200,200,180,0.3) 0%,transparent 40%);"></div>
-                        <div class="wood-name">Kirinite — Pearl White</div>
-                        <div class="wood-price">+$300 &middot; Confirm Availability</div>
-                        <div class="wood-note">Soft iridescent white with internal shimmer. The antithesis of aggressive — refined, luminous, and uncommon.</div>
-                    </div>
-                </div>
-                <!-- FORDITE -->
-                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--ember-glow);">Fordite &#8212; If Available (Market pricing)</p>
-                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">Detroit Agate. <br>A literal piece of industrial history.<br>Layers of automotive enamel paint, built up over decades on the jigs and skids of old car assembly lines, then cut and polished like stone. <br>Every piece is a geological record of production &#8212; the colour bands are the actual paint schemes of actual cars, compressed into a material that no longer exists anywhere else. <br>Historical Fordite cannot be manufactured: It can only be found. <br>When a blank presents itself that is suitable for turning, it is offered. <br>There is no other way to acquire it.</p>
-                <div class="reveal" style="width:100%;max-width:1100px;margin-top:2rem;display:flex;flex-direction:column;align-items:center;">
-                    <div style="overflow:hidden;border:1px solid var(--whisper);width:20%;">
-                        <img src="fordite.jpg" alt="Close-up of historical Fordite showing layered enamel bands" style="width:100%;height:84px;object-fit:cover;display:block;">
-                    </div>
-                    <p style="font-family:var(--font-ui);font-size:0.45rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--dusk);padding:0.5rem 0;">Historical Fordite &nbsp;&middot;&nbsp; Cross-section detail</p>
-                </div>
-                <div class="material-grid reveal rd2">
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(180deg,#c0392b 0%,#1a1a1a 10%,#2980b9 20%,#1a1a1a 28%,#f39c12 38%,#1a1a1a 46%,#27ae60 56%,#1a1a1a 64%,#8e44ad 74%,#1a1a1a 82%,#e74c3c 100%);"></div>
-                        <div class="wood-name">Classic Detroit Fordite</div>
-                        <div class="wood-price">Priced Per Piece · If Available</div>
-                        <div class="wood-note">Multi-layer bands of original automotive enamel from Detroit-era assembly lines. Reds, blacks, blues, greens — the exact colours depend entirely on the blank. No two are alike in any meaningful sense.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(180deg,#2c3e50 0%,#0d0d0d 12%,#7f8c8d 22%,#0d0d0d 30%,#bdc3c7 40%,#0d0d0d 48%,#95a5a6 58%,#0d0d0d 66%,#34495e 76%,#0d0d0d 86%,#2c3e50 100%);"></div>
-                        <div class="wood-name">Fordite — Industrial Palette</div>
-                        <div class="wood-price">Priced Per Piece · If Available</div>
-                        <div class="wood-note">Blanks dominated by greys, blacks, and muted industrial tones from fleet and commercial vehicle production runs. Quieter in colour, no less extraordinary in origin.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(180deg,#f8e71c 0%,#0d0d0d 10%,#ff6b35 20%,#0d0d0d 30%,#f8e71c 40%,#0d0d0d 50%,#ff4444 60%,#0d0d0d 70%,#ffa500 80%,#0d0d0d 90%,#f8e71c 100%);"></div>
-                        <div class="wood-name">Fordite — Hot Rod Palette</div>
-                        <div class="wood-price">Priced Per Piece · If Available</div>
-                        <div class="wood-note">Blanks with strong concentrations of yellows, oranges, and reds — the signature colours of performance and muscle car lines. Vivid, warm, and unmistakably American.</div>
-                    </div>
-                </div>
-                <div class="note-block reveal" style="border-color:var(--ember-dark);">
-                    <p style="font-weight: 900;">Historical Fordite is a finite material. The assembly lines that produced it no longer exist, and the supply diminishes with every piece cut. <br><br>Pricing reflects both the rarity and the individual character of each piece, and is confirmed at the time the blank is presented. <br><br>If historical Fordite is of interest, mention it during the commission conversation &#8212; pieces are occasionally held for clients with a standing interest.</p>
-                </div>
-                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--ember-glow);">Recreated Fordite — From $5,000</p>
-                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">A commission-specific process in which the layered enamel structure of historical Fordite is deliberately recreated from scratch. Automotive-grade enamels are applied in successive coats, built up to the required depth, cured between layers, and then turned on the lathe as a single blank. <br><br>The palette, layer sequence, and thickness distribution are designed in collaboration with the client. The result is a piece with the same cross-sectional character as the original &#8212; banded, geological, unrepeatable &#8212; but conceived entirely for the commission rather than found.<br><br>This process is extremely long, incredibly expensive, and highly labour intensive labour intensive. <br>Shattered pieces that require a complete restart of the creation are extremely common, even for the most experienced turners. While every Blackwall piece has no concrete date of completion, Recreated Fordite buyers should expect significant wait times beyond anything you would experience from even the rarest wood handles: Recreating decades of history is neither quick nor easy.<br><br>The result of this patient, time-consuming process is an absolutely heart-stopping piece, a museum-quality heirloom of singular beauty, unmatched by anything other than histotical Fordite.</p>
-                <div class="reveal" style="width:100%;max-width:1100px;margin-top:2rem;display:flex;flex-direction:column;align-items:center;">
-                    <div style="overflow:hidden;border:1px solid var(--whisper);width:20%;">
-                        <img src="fordite2.jpg" alt="Completed Fordite flogger handle showing finished surface" style="width:100%;height:84px;object-fit:cover;display:block;">
-                    </div>
-                    <p style="font-family:var(--font-ui);font-size:0.45rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--dusk);padding:0.5rem 0;">Recreated Fordite &nbsp;&middot;&nbsp; Completed handle</p>
-                </div>
-                <div class="material-grid reveal rd2">
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(180deg,#1a1a1a 0%,#c0392b 8%,#1a1a1a 16%,#2980b9 24%,#1a1a1a 32%,#c9a84c 40%,#1a1a1a 48%,#8e44ad 56%,#1a1a1a 64%,#27ae60 72%,#1a1a1a 80%,#e74c3c 88%,#1a1a1a 100%);"></div>
-                        <div class="wood-name">Bespoke Palette</div>
-                        <div class="wood-price">From $5,000 · Commission Only</div>
-                        <div class="wood-note">Colour sequence, layer count, and palette designed in full collaboration with the client. Every layer is chosen. Every band is intentional. The finished cross-section is a designed object, not a found one.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(180deg,#1a1a1a 0%,#8b0000 10%,#1a1a1a 20%,#8b0000 30%,#1a1a1a 40%,#c0392b 50%,#1a1a1a 60%,#922b21 70%,#1a1a1a 80%,#8b0000 90%,#1a1a1a 100%);"></div>
-                        <div class="wood-name">Monochrome Palette</div>
-                        <div class="wood-price">From $5,000 · Commission Only</div>
-                        <div class="wood-note">A single colour family built across all layers — graduated in tone and saturation, black-separated. The discipline of a single hue pushed to its limit across the full depth of the blank.</div>
-                    </div>
-                    <div class="wood-card">
-                        <div class="mat-swatch" style="background:linear-gradient(180deg,#1a1a1a 0%,#c9a84c 9%,#1a1a1a 18%,#c9762a 27%,#1a1a1a 36%,#e2c97e 45%,#1a1a1a 54%,#5c3510 63%,#1a1a1a 72%,#c9a84c 81%,#1a1a1a 90%,#d4944e 100%);"></div>
-                        <div class="wood-name">Signature Palette</div>
-                        <div class="wood-price">From $5,000 · Commission Only</div>
-                        <div class="wood-note">Built around the Blackwall colour language — ember, gold, and void. A handle that is, identifiably and unrepeatable, a Blackwall piece from cross-section to surface.</div>
-                    </div>
-                </div>
-                <div class="note-block reveal" style="border-color:var(--ember-dark);">
-                    <p>Recreated Fordite is a labour-intensive commission process. The build-up, curing, and turning of a bespoke layered blank is not a quick undertaking — lead time is substantial, and the process requires a dedicated design conversation before any work begins. The starting price reflects the time, materials, and irreversibility of the process. Each recreated Fordite handle is a one-of-one object by definition.</p>
-                </div>
-                <div class="note-block reveal">
-                    <p>Synthetic handle pricing starts at $500. All material selections, enhancements, fall configurations, and hardware choices are confirmed during the design conversation. Availability of specific blanks — particularly Kirinite, G10, and stabilised materials — is confirmed at time of commission. Colour options in cast acrylics extend well beyond those listed here; if you have a specific colour or pattern in mind, ask.</p>
-                </div>
-                <a href="materials.html" class="btn reveal rd1">&larr; Back to Materials</a>
-        </section>
-        <section class="section" style="padding:7rem 4rem;">
-            <div class="section-bg" style="background-image:url('image7.jpg');"></div>
-            <div class="section-overlay" style="background:rgba(5,4,7,0.88);"></div>
-            <div class="section-inner" style="max-width:700px;">
-                <p class="eyebrow reveal">Next Step</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2" style="font-size:2.5rem;">Every selection is a conversation</h2>
-                <p class="section-body reveal rd3">No order blank is filled in isolation. These choices are made together, with context, with purpose.</p>
-                <a href="commission.html" class="btn reveal rd4">Begin Your Commission</a>
-            </div>
-        </section>
-        <footer>
-            <img class="footer-logo" src="Transparent logo white font.png" alt="Blackwall">
-            <div class="footer-rule"></div>
-            <p class="footer-artisan">J. Christophe Aishe &nbsp;·&nbsp; Artisan</p>
-            <p class="footer-copy">&copy; 2025 Blackwall &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Bespoke BDSM Equipment</p>
-        </footer>
+        </div>         
+        <nav> 
+            <ul class="nav-links"> 
+                <li> 
+                    <a href="artisan.html">The<br>Artisan</a> 
+                </li>                 
+                <li> 
+                    <a href="materials.html">Materials</a> 
+                </li>                 
+            </ul>             
+            <a href="home.html"><img class="nav-logo" src="Transparent logo white font.png" alt="Blackwall"></a> 
+            <ul class="nav-links"> 
+                <li> 
+                    <a href="commission.html">Commission</a> 
+                </li>                 
+                <li> 
+                    <a href="pricing.html">Pricing</a> 
+                </li>                 
+            </ul>             
+        </nav>         
+        <!-- Mobile hamburger -->         
+        <button class="bw-ham" id="bwHam" aria-label="Open menu"> 
+            <span></span>
+            <span></span>
+            <span></span> 
+        </button>         
+        <div class="bw-mob-menu" id="bwMobMenu"> 
+            <button class="bw-mob-close" id="bwMobClose" aria-label="Close menu">&times;</button>             
+            <a href="home.html">Home</a> 
+            <a href="artisan.html">The Artisan</a> 
+            <a href="materials.html">Materials</a> 
+            <a href="commission.html">Commission</a> 
+            <a href="pricing.html">Pricing</a> 
+            <a href="process.html">Process</a> 
+        </div>         
+        <!-- BOTTOM MATERIALS SUB-NAV -->         
+        <div class="page-hero"> 
+            <div class="hero-bg" style="background-image:url('image3.jpg');"></div>             
+            <div class="hero-vignette"></div>             
+            <div class="hero-glow"></div>             
+            <div class="hero-content"> 
+                <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;">Component One — Alternative</p> 
+                <div class="gold-rule-c"></div>                 
+                <h1 class="hero-title">Beyond <em>Wood</em></h1> 
+                <p style="font-family:var(--font-ui);font-weight:100;font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--dusk);margin-top:1rem;">Handle Materials &nbsp;·&nbsp; Synthetic</p> 
+            </div>             
+        </div>         
+        <section class="section"> 
+            <div class="section-bg" style="background-image:url('image3.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>             
+            <div class="section-inner"> 
+                <p class="eyebrow reveal">Synthetic Handle Materials</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Engineered <em>to Endure</em></h2> 
+                <p class="section-body reveal rd3">Synthetic handle materials offer properties that wood cannot replicate — extreme resistance to moisture, temperature swings, and wear; visual effects impossible in natural grain; colours that do not fade; surfaces that do not absorb what they encounter. Each synthetic handle is turned by hand on the lathe to the same exacting standard as the wood line. The finished piece is indistinguishable in quality from its wooden counterpart, and often surpasses it in durability. For certain applications and aesthetics, there is no substitute.</p> 
+                <!-- CAST ACRYLICS -->                 
+                <p class="eyebrow reveal" style="margin-top:3rem;color:var(--parchment);">Cast Acrylic Base- $500</p> 
+                <div class="material-grid reveal rd1"> 
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);"></div>                         
+                        <div class="wood-name">Midnight Black Acrylic</div>                         
+                        <div class="wood-note">Deep, uniform black with a glass-smooth finish. The most formal option in the synthetic line.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#f5f0e8,#e8dcc8,#d4c9b0);"></div>                         
+                        <div class="wood-name">Ivory Acrylic</div>                         
+                        <div class="wood-note">Warm, creamy white. Clean and refined. Pairs exceptionally well with dark falls and gold hardware.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#8b0000,#c0392b,#922b21);"></div>                         
+                        <div class="wood-name">Deep Red Acrylic</div>                         
+                        <div class="wood-note">Rich arterial red. Uniform, saturated, and striking. Available in matte or gloss finish.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#2c3e50,#34495e,#1a252f);"></div>                         
+                        <div class="wood-name">Slate Grey Acrylic</div>                         
+                        <div class="wood-note">Cool, industrial tone. Subdued but visually precise. An excellent complement to steel hardware.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#1a472a,#2e7d32,#1b5e20);"></div>                         
+                        <div class="wood-name">Forest Green Acrylic</div>                         
+                        <div class="wood-note">Deep, saturated green. Pairs well with brass or bronze hardware for an organic-meets-industrial aesthetic.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#4a0072,#7b1fa2,#6a1b9a);"></div>                         
+                        <div class="wood-name">Violet Acrylic</div>                         
+                        <div class="wood-note">Bold, vivid purple. Uniform colour without the fading over time associated with Purpleheart wood.</div>                         
+                    </div>                     
+                </div>                 
+                <!-- PATTERNED / SWIRL ACRYLICS -->                 
+                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--parchment);">Patterned &amp; Swirl Acrylic &#8212;+$50</p> 
+                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">Cast with internal movement. No two blanks are identical — the pattern is a function of the pour.</p> 
+                <div class="material-grid reveal rd2"> 
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:conic-gradient(from 0deg,#c9a84c,#1a1a1a,#c9a84c,#3a3a3a,#e2c97e,#1a1a1a);border-radius:50%;"></div>                         
+                        <div class="wood-name">Black &amp; Gold Swirl</div>                         
+                        <div class="wood-note">High-contrast swirl of black and metallic gold. Dramatic and composed. The most requested patterned acrylic.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:conic-gradient(from 45deg,#f5f5f5,#222,#f0f0f0,#333,#fafafa,#111);border-radius:50%;"></div>                         
+                        <div class="wood-name">Black &amp; White Swirl</div>                         
+                        <div class="wood-note">Classic contrast. The internal pattern varies by blank — each piece is uniquely figured.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:conic-gradient(from 90deg,#8b0000,#1a1a1a,#c0392b,#0d0d0d,#800000);border-radius:50%;"></div>                         
+                        <div class="wood-name">Red &amp; Black Swirl</div>                         
+                        <div class="wood-note">Intense and visceral. The combination is visually aggressive in a way no natural material achieves.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:conic-gradient(from 30deg,#4a0072,#1a1a2e,#7b1fa2,#0d1117,#6a1b9a);border-radius:50%;"></div>                         
+                        <div class="wood-name">Purple &amp; Black Swirl</div>                         
+                        <div class="wood-note">Dark and theatrical. Deep violet moving through near-black. An unmistakable aesthetic statement.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:conic-gradient(from 60deg,#b8860b,#8b4513,#daa520,#654321,#cd853f);border-radius:50%;"></div>                         
+                        <div class="wood-name">Amber &amp; Brown Swirl</div>                         
+                        <div class="wood-note">Warm tones that suggest organic material while remaining entirely synthetic. Pairs naturally with leather falls.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:conic-gradient(from 120deg,#00695c,#1a1a2e,#00838f,#0d1117,#004d40);border-radius:50%;"></div>                         
+                        <div class="wood-name">Teal &amp; Black Swirl</div>                         
+                        <div class="wood-note">Cool, electric contrast. The teal shifts between blue and green depending on light and angle.</div>                         
+                    </div>                     
+                </div>                 
+                <!-- RESIN STABILISED -->                 
+                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--parchment);">Resin-Stabilised Blanks &#8212; From +$250</p> 
+                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">Natural material infused with coloured resin under vacuum pressure. The result bridges organic and synthetic — the texture and variation of wood or fibre with the permanence and colour saturation of engineered material.</p> 
+                <div class="material-grid reveal rd2"> 
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#4a3728,#6b4c3b,#3d2b1f);border:1px solid var(--whisper);"></div>                         
+                        <div class="wood-name">Stabilised Maple</div>                         
+                        <div class="wood-note">Maple blank infused with black, red, or teal resin. Grain remains visible beneath the colour saturation.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#2d1b0e,#8b4513,#4a2c17);border:1px solid var(--whisper);"></div>                         
+                        <div class="wood-name">Stabilised Buckeye Burl</div>                         
+                        <div class="wood-note">Wild, chaotic grain structure infused with resin. No two blanks are remotely alike.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#1a1a1a,#2d2d2d,#111);border:1px solid var(--whisper);"></div>                         
+                        <div class="wood-name">Stabilised Carbon Fibre Weave</div>                         
+                        <div class="wood-note">Carbon fibre fabric set in resin and turned on the lathe. Dramatic woven texture with extraordinary hardness.</div>                         
+                    </div>                     
+                </div>                 
+                <!-- ENGINEERING GRADE -->                 
+                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--ember-glow);">Engineering-Grade Materials — Premium Pricing</p> 
+                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">Materials specified by performance as much as aesthetics. The hardest, most durable options in the synthetic line.</p> 
+                <div class="material-grid reveal rd2"> 
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:repeating-linear-gradient(45deg,#1a1a1a 0px,#1a1a1a 4px,#2d2d2d 4px,#2d2d2d 8px);"></div>                         
+                        <div class="wood-name">G10 — Black</div>                         
+                        <div class="wood-price">+$200 &middot; Confirm Availability</div>                         
+                        <div class="wood-note">Fibreglass laminate. Virtually indestructible, impervious to moisture, and machines to a precise finish. The most utilitarian material in the line.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:repeating-linear-gradient(135deg,#2a2015 0px,#2a2015 4px,#3d3020 4px,#3d3020 8px);"></div>                         
+                        <div class="wood-name">Micarta — Linen</div>                         
+                        <div class="wood-price">+$200 &middot; Confirm Availability</div>                         
+                        <div class="wood-note">Linen cloth set in phenolic resin under pressure. Warm khaki-brown tones with a subtle textile texture. Develops a patina with use.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:repeating-linear-gradient(90deg,#1a1a1a 0px,#1a1a1a 3px,#2a2a2a 3px,#2a2a2a 6px);"></div>                         
+                        <div class="wood-name">Micarta — Black Canvas</div>                         
+                        <div class="wood-price">+$300 &middot; Confirm Availability</div>                         
+                        <div class="wood-note">Dense canvas cloth in black phenolic resin. Hard, grippy surface texture. Aggressive, purposeful aesthetic.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#e8e8e8,#d4d4d4,#f0f0f0,#c8c8c8);"></div>                         
+                        <div class="wood-name">Corian — White</div>                         
+                        <div class="wood-price">+$200</div>                         
+                        <div class="wood-note">Solid surface material. Non-porous, seamless, and turns to a flawless satin finish. The cleanest visual in the synthetic range.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#2a2a3e,#3d3d5c,#1a1a2e);"></div>                         
+                        <div class="wood-name">Kirinite — Deep Space</div>                         
+                        <div class="wood-price">+$300 &middot; Confirm Availability</div>                         
+                        <div class="wood-note">Proprietary acrylic-hybrid with internal metallic and iridescent effects. Changes character under different lighting conditions. Among the most visually complex materials available.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(135deg,#f0f0f0,#e8e8e0,#d8d8d0);background-image:radial-gradient(circle at 30% 40%,rgba(255,255,255,0.4) 0%,transparent 50%),radial-gradient(circle at 70% 60%,rgba(200,200,180,0.3) 0%,transparent 40%);"></div>                         
+                        <div class="wood-name">Kirinite — Pearl White</div>                         
+                        <div class="wood-price">+$300 &middot; Confirm Availability</div>                         
+                        <div class="wood-note">Soft iridescent white with internal shimmer. The antithesis of aggressive — refined, luminous, and uncommon.</div>                         
+                    </div>                     
+                </div>                 
+                <!-- FORDITE -->                 
+                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--ember-glow);">Fordite &#8212; If Available (Market pricing)</p> 
+                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">Detroit Agate. <br>A literal piece of industrial history.<br>Layers of automotive enamel paint, built up over decades on the jigs and skids of old car assembly lines, then cut and polished like stone. <br>Every piece is a geological record of production &#8212; the colour bands are the actual paint schemes of actual cars, compressed into a material that no longer exists anywhere else. <br>Historical Fordite cannot be manufactured: It can only be found. <br>When a blank presents itself that is suitable for turning, it is offered. <br>There is no other way to acquire it.</p> 
+                <div class="reveal" style="width:100%;max-width:1100px;margin-top:2rem;display:flex;flex-direction:column;align-items:center;"> 
+                    <div style="overflow:hidden;border:1px solid var(--whisper);width:20%;"> 
+                        <img src="fordite.jpg" alt="Close-up of historical Fordite showing layered enamel bands" style="width:100%;height:84px;object-fit:cover;display:block;"> 
+                    </div>                     
+                    <p style="font-family:var(--font-ui);font-size:0.45rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--dusk);padding:0.5rem 0;">Historical Fordite &nbsp;&middot;&nbsp; Cross-section detail</p> 
+                </div>                 
+                <div class="material-grid reveal rd2"> 
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(180deg,#c0392b 0%,#1a1a1a 10%,#2980b9 20%,#1a1a1a 28%,#f39c12 38%,#1a1a1a 46%,#27ae60 56%,#1a1a1a 64%,#8e44ad 74%,#1a1a1a 82%,#e74c3c 100%);"></div>                         
+                        <div class="wood-name">Classic Detroit Fordite</div>                         
+                        <div class="wood-price">Priced Per Piece · If Available</div>                         
+                        <div class="wood-note">Multi-layer bands of original automotive enamel from Detroit-era assembly lines. Reds, blacks, blues, greens — the exact colours depend entirely on the blank. No two are alike in any meaningful sense.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(180deg,#2c3e50 0%,#0d0d0d 12%,#7f8c8d 22%,#0d0d0d 30%,#bdc3c7 40%,#0d0d0d 48%,#95a5a6 58%,#0d0d0d 66%,#34495e 76%,#0d0d0d 86%,#2c3e50 100%);"></div>                         
+                        <div class="wood-name">Fordite — Industrial Palette</div>                         
+                        <div class="wood-price">Priced Per Piece · If Available</div>                         
+                        <div class="wood-note">Blanks dominated by greys, blacks, and muted industrial tones from fleet and commercial vehicle production runs. Quieter in colour, no less extraordinary in origin.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(180deg,#f8e71c 0%,#0d0d0d 10%,#ff6b35 20%,#0d0d0d 30%,#f8e71c 40%,#0d0d0d 50%,#ff4444 60%,#0d0d0d 70%,#ffa500 80%,#0d0d0d 90%,#f8e71c 100%);"></div>                         
+                        <div class="wood-name">Fordite — Hot Rod Palette</div>                         
+                        <div class="wood-price">Priced Per Piece · If Available</div>                         
+                        <div class="wood-note">Blanks with strong concentrations of yellows, oranges, and reds — the signature colours of performance and muscle car lines. Vivid, warm, and unmistakably American.</div>                         
+                    </div>                     
+                </div>                 
+                <div class="note-block reveal" style="border-color:var(--ember-dark);"> 
+                    <p style="font-weight: 900;">Historical Fordite is a finite material. The assembly lines that produced it no longer exist, and the supply diminishes with every piece cut. <br><br>Pricing reflects both the rarity and the individual character of each piece, and is confirmed at the time the blank is presented. <br><br>If historical Fordite is of interest, mention it during the commission conversation &#8212; pieces are occasionally held for clients with a standing interest.</p> 
+                </div>                 
+                <p class="eyebrow reveal" style="margin-top:4rem;color:var(--ember-glow);">Recreated Fordite — From $5,000</p> 
+                <p class="section-body reveal rd1" style="font-style:italic;font-size:0.95rem;">A commission-specific process in which the layered enamel structure of historical Fordite is deliberately recreated from scratch. Automotive-grade enamels are applied in successive coats, built up to the required depth, cured between layers, and then turned on the lathe as a single blank. <br><br>The palette, layer sequence, and thickness distribution are designed in collaboration with the client. The result is a piece with the same cross-sectional character as the original &#8212; banded, geological, unrepeatable &#8212; but conceived entirely for the commission rather than found.<br><br>This process is extremely long, incredibly expensive, and highly labour intensive labour intensive. <br>Shattered pieces that require a complete restart of the creation are extremely common, even for the most experienced turners. While every Blackwall piece has no concrete date of completion, Recreated Fordite buyers should expect significant wait times beyond anything you would experience from even the rarest wood handles: Recreating decades of history is neither quick nor easy.<br><br>The result of this patient, time-consuming process is an absolutely heart-stopping piece, a museum-quality heirloom of singular beauty, unmatched by anything other than histotical Fordite.</p> 
+                <div class="reveal" style="width:100%;max-width:1100px;margin-top:2rem;display:flex;flex-direction:column;align-items:center;"> 
+                    <div style="overflow:hidden;border:1px solid var(--whisper);width:20%;"> 
+                        <img src="fordite2.jpg" alt="Completed Fordite flogger handle showing finished surface" style="width:100%;height:84px;object-fit:cover;display:block;"> 
+                    </div>                     
+                    <p style="font-family:var(--font-ui);font-size:0.45rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--dusk);padding:0.5rem 0;">Recreated Fordite &nbsp;&middot;&nbsp; Completed handle</p> 
+                </div>                 
+                <div class="material-grid reveal rd2"> 
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(180deg,#1a1a1a 0%,#c0392b 8%,#1a1a1a 16%,#2980b9 24%,#1a1a1a 32%,#c9a84c 40%,#1a1a1a 48%,#8e44ad 56%,#1a1a1a 64%,#27ae60 72%,#1a1a1a 80%,#e74c3c 88%,#1a1a1a 100%);"></div>                         
+                        <div class="wood-name">Bespoke Palette</div>                         
+                        <div class="wood-price">From $5,000 · Commission Only</div>                         
+                        <div class="wood-note">Colour sequence, layer count, and palette designed in full collaboration with the client. Every layer is chosen. Every band is intentional. The finished cross-section is a designed object, not a found one.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(180deg,#1a1a1a 0%,#8b0000 10%,#1a1a1a 20%,#8b0000 30%,#1a1a1a 40%,#c0392b 50%,#1a1a1a 60%,#922b21 70%,#1a1a1a 80%,#8b0000 90%,#1a1a1a 100%);"></div>                         
+                        <div class="wood-name">Monochrome Palette</div>                         
+                        <div class="wood-price">From $5,000 · Commission Only</div>                         
+                        <div class="wood-note">A single colour family built across all layers — graduated in tone and saturation, black-separated. The discipline of a single hue pushed to its limit across the full depth of the blank.</div>                         
+                    </div>                     
+                    <div class="wood-card"> 
+                        <div class="mat-swatch" style="background:linear-gradient(180deg,#1a1a1a 0%,#c9a84c 9%,#1a1a1a 18%,#c9762a 27%,#1a1a1a 36%,#e2c97e 45%,#1a1a1a 54%,#5c3510 63%,#1a1a1a 72%,#c9a84c 81%,#1a1a1a 90%,#d4944e 100%);"></div>                         
+                        <div class="wood-name">Signature Palette</div>                         
+                        <div class="wood-price">From $5,000 · Commission Only</div>                         
+                        <div class="wood-note">Built around the Blackwall colour language — ember, gold, and void. A handle that is, identifiably and unrepeatable, a Blackwall piece from cross-section to surface.</div>                         
+                    </div>                     
+                </div>                 
+                <div class="note-block reveal" style="border-color:var(--ember-dark);"> 
+                    <p>Recreated Fordite is a labour-intensive commission process. The build-up, curing, and turning of a bespoke layered blank is not a quick undertaking — lead time is substantial, and the process requires a dedicated design conversation before any work begins. The starting price reflects the time, materials, and irreversibility of the process. Each recreated Fordite handle is a one-of-one object by definition.</p> 
+                </div>                 
+                <div class="note-block reveal"> 
+                    <p>Synthetic handle pricing starts at $500. All material selections, enhancements, fall configurations, and hardware choices are confirmed during the design conversation. Availability of specific blanks — particularly Kirinite, G10, and stabilised materials — is confirmed at time of commission. Colour options in cast acrylics extend well beyond those listed here; if you have a specific colour or pattern in mind, ask.</p> 
+                </div>                 
+                <a href="materials.html" class="btn reveal rd1">&larr; Back to Materials</a> 
+        </section>         
+        <section class="section" style="padding:7rem 4rem;"> 
+            <div class="section-bg" style="background-image:url('image7.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.88);"></div>             
+            <div class="section-inner" style="max-width:700px;"> 
+                <p class="eyebrow reveal">Next Step</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2" style="font-size:2.5rem;">Every selection is a conversation</h2> 
+                <p class="section-body reveal rd3">No order blank is filled in isolation. These choices are made together, with context, with purpose.</p> 
+                <a href="commission.html" class="btn reveal rd4">Begin Your Commission</a> 
+            </div>             
+        </section>         
+        <footer> 
+            <img class="footer-logo" src="Transparent logo white font.png" alt="Blackwall" style="width: 190px; height: 120px;"> 
+            <div class="footer-rule"></div>             
+            <p class="footer-artisan">J. Christophe Aishe &nbsp;·&nbsp; Artisan</p> 
+            <p class="footer-copy">&copy; 2025 Blackwall &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Bespoke BDSM Equipment</p> 
+        </footer>         
         <script>
 const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');let cx=0,cy=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
@@ -437,9 +299,8 @@ document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;dot.style.le
 document.querySelectorAll('a,button,.wood-card').forEach(el=>{el.addEventListener('mouseenter',()=>{dot.classList.add('active');ring.classList.add('active');});el.addEventListener('mouseleave',()=>{dot.classList.remove('active');ring.classList.remove('active');});});
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-        </script>
-    
-<script>
+        </script>         
+        <script>
 /* Blackwall — shared.js
    Custom cursor + scroll-reveal used on every page.
    Page-specific hover targets can be passed via window.BW_HOVER
@@ -460,9 +321,8 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 })();
 
-</script>
-
-<script>
+</script>         
+        <script>
 (function(){
   var ham = document.getElementById('bwHam');
   var menu = document.getElementById('bwMobMenu');
@@ -474,7 +334,6 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   close.addEventListener('click', shut);
   menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', shut); });
 })();
-</script>
-
-</body>
+</script>         
+    </body>     
 </html>

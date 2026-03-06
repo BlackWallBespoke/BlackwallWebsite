@@ -4,157 +4,16 @@
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Blackwall â€” The Commission Process</title>         
-        <meta name="description" content="How a Blackwall bespoke flogger commission unfolds â€” from first email to finished piece."> 
+        <meta name="description" content="How a Blackwall bespoke flogger commission unfolds, from first email to finished piece."> 
         <meta name="robots" content="noindex, nofollow"> 
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
-<style>
-/* == SHARED CSS == */
-/* ═══════════════════════════════════════════
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet"> 
+        <style>/* == SHARED CSS == *//* ═══════════════════════════════════════════
    BLACKWALL — Shared Styles
    Loaded by every page. Page-specific CSS
    stays in each file's own <style> block.
-═══════════════════════════════════════════ */
-:root{--void:#050407;--abyss:#080610;--deep:#0e0b14;--surface:#141118;--ember:#c9762a;--ember-dark:#5c3510;--ember-glow:#d4944e;--gold:#c9a84c;--gold-light:#e2c97e;--gold-dim:#7a5f2a;--cream:#e8dcc8;--parchment:#c4b49a;--dusk:#6a5e4e;--whisper:#2a2220;--font-display:'Cinzel','Palatino Linotype',serif;--font-body:'Cormorant Garamond','Georgia',serif;--font-ui:'Raleway','Futura',sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--t-slow:0.9s;--t-mid:0.5s;--t-fast:0.25s;}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--cream);font-family:var(--font-body);font-weight:300;line-height:1.8;overflow-x:hidden;cursor:none;}
-.cur-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
-.cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .4s var(--ease),height .4s var(--ease),border-color .3s;}
-.cur-dot.active{width:12px;height:12px;}
-.cur-ring.active{width:64px;height:64px;border-color:rgba(201,168,76,0.7);}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:center;gap:5rem;padding:1.5rem 4rem;background:linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%);}
-.nav-links{display:flex;gap:4rem;list-style:none;align-items:center;}
-.nav-links a{font-family:var(--font-ui);font-weight:200;font-size:0.62rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--dusk);text-decoration:none;transition:color var(--t-fast);display:inline-block;text-align:center;line-height:1.7;}
-.nav-links a:hover{color:var(--gold-light);}
-.nav-logo{height:114px;opacity:0.9;transition:opacity var(--t-fast);}
-.nav-logo:hover{opacity:1;}
-.section{position:relative;padding:10rem 4rem;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.section-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
-.section-overlay{position:absolute;inset:0;background:rgba(5,4,7,0.84);}
-.section-inner{position:relative;z-index:2;max-width:1100px;display:flex;flex-direction:column;align-items:center;gap:2rem;width:100%;}
-.eyebrow{font-family:var(--font-ui);font-weight:200;font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);}
-.section-title{font-family:var(--font-display);font-weight:300;font-size:clamp(2rem,5vw,3.8rem);letter-spacing:0.06em;color:var(--cream);line-height:1.25;}
-.section-title em{font-style:italic;color:var(--ember-glow);}
-.section-body{font-size:1.2rem;color:var(--cream);line-height:2;max-width:700px;}
-.gold-rule{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);}
-.btn{font-family:var(--font-ui);font-weight:200;font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;text-decoration:none;padding:1rem 2.8rem;display:inline-block;transition:all var(--t-mid) var(--ease);position:relative;overflow:hidden;border:1px solid var(--gold-dim);color:var(--gold-light);}
-.btn::before{content:'';position:absolute;inset:0;transform:scaleX(0);transform-origin:left;transition:transform var(--t-mid) var(--ease);z-index:-1;background:var(--gold);}
-.btn:hover::before{transform:scaleX(1);}
-.btn:hover{color:var(--void);border-color:var(--gold);}
-.page-hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:hZ 18s ease-in-out infinite alternate;}
-@keyframes hZ{from{transform:scale(1.04);}to{transform:scale(1.08);}}
-.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%);}
-.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%);animation:gB 6s ease-in-out infinite;}
-@keyframes gB{0%,100%{opacity:.7;}50%{opacity:1;}}
-.hero-content{position:relative;z-index:2;padding:2rem;animation:hF 2s var(--ease) both;}
-@keyframes hF{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.hero-title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.5rem,7vw,5.5rem);color:var(--cream);letter-spacing:0.08em;line-height:1.2;margin-bottom:1.5rem;}
-.hero-title em{font-style:italic;color:var(--ember-glow);}
-.gold-rule-c{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);margin:2rem auto;}
-footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;display:flex;flex-direction:column;align-items:center;gap:2rem;text-align:center;}
-.footer-logo{height:28px;opacity:0.65;}
-.footer-rule{width:200px;height:1px;background:linear-gradient(to right,transparent,var(--whisper),transparent);}
-.footer-artisan{font-family:var(--font-body);font-style:italic;font-size:1rem;color:var(--parchment);}
-.footer-copy{font-family:var(--font-ui);font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--dusk);}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.rd1{transition-delay:.15s;}.rd2{transition-delay:.3s;}.rd3{transition-delay:.45s;}.rd4{transition-delay:.6s;}
-@media(max-width:900px){nav{gap:2rem;padding:1rem 2rem;}.nav-links{gap:2rem;}.section{padding:7rem 2rem;}}
+═══════════════════════════════════════════ */:root { --void: #050407; --abyss: #080610; --deep: #0e0b14; --surface: #141118; --ember: #c9762a; --ember-dark: #5c3510; --ember-glow: #d4944e; --gold: #c9a84c; --gold-light: #e2c97e; --gold-dim: #7a5f2a; --cream: #e8dcc8; --parchment: #c4b49a; --dusk: #6a5e4e; --whisper: #2a2220; --font-display: 'Cinzel','Palatino Linotype',serif; --font-body: 'Cormorant Garamond','Georgia',serif; --font-ui: 'Raleway','Futura',sans-serif; --ease: cubic-bezier(0.16,1,0.3,1); --t-slow: 0.9s; --t-mid: 0.5s; --t-fast: 0.25s; } * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: var(--void); color: var(--cream); font-family: var(--font-body); font-weight: 300; line-height: 1.8; overflow-x: hidden; cursor: none; } .cur-dot { position: fixed; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s,height .3s; } .cur-ring { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(201,168,76,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .4s var(--ease),height .4s var(--ease),border-color .3s; } .cur-dot.active { width: 12px; height: 12px; } .cur-ring.active { width: 64px; height: 64px; border-color: rgba(201,168,76,0.7); } nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 5rem; padding: 1.5rem 4rem; background: linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%); } .nav-links { display: flex; gap: 4rem; list-style: none; align-items: center; } .nav-links a { font-family: var(--font-ui); font-weight: 200; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); text-decoration: none; transition: color var(--t-fast); display: inline-block; text-align: center; line-height: 1.7; } .nav-links a:hover { color: var(--gold-light); } .nav-logo { height: 114px; opacity: 0.9; transition: opacity var(--t-fast); } .nav-logo:hover { opacity: 1; } .section { position: relative; padding: 10rem 4rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; } .section-overlay { position: absolute; inset: 0; background: rgba(5,4,7,0.84); } .section-inner { position: relative; z-index: 2; max-width: 1100px; display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; } .eyebrow { font-family: var(--font-ui); font-weight: 200; font-size: 0.58rem; letter-spacing: 0.55em; text-transform: uppercase; color: var(--gold-dim); } .section-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem,5vw,3.8rem); letter-spacing: 0.06em; color: var(--cream); line-height: 1.25; } .section-title em { font-style: italic; color: var(--ember-glow); } .section-body { font-size: 1.2rem; color: var(--cream); line-height: 2; max-width: 700px; } .gold-rule { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); } .btn { font-family: var(--font-ui); font-weight: 200; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; display: inline-block; transition: all var(--t-mid) var(--ease); position: relative; overflow: hidden; border: 1px solid var(--gold-dim); color: var(--gold-light); } .btn::before { content: ''; position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; transition: transform var(--t-mid) var(--ease); z-index: -1; background: var(--gold); } .btn:hover::before { transform: scaleX(1); } .btn:hover { color: var(--void); border-color: var(--gold); } .page-hero { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; animation: hZ 18s ease-in-out infinite alternate; } @keyframes hZ{ from {  transform: scale(1.04); }  to {  transform: scale(1.08); } } .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%); } .hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%); animation: gB 6s ease-in-out infinite; } @keyframes gB{ 0%, 100% {  opacity: .7; }  50% {  opacity: 1; } } .hero-content { position: relative; z-index: 2; padding: 2rem; animation: hF 2s var(--ease) both; } @keyframes hF{ from {  opacity: 0;  transform: translateY(30px); }  to {  opacity: 1;  transform: translateY(0); } } .hero-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem,7vw,5.5rem); color: var(--cream); letter-spacing: 0.08em; line-height: 1.2; margin-bottom: 1.5rem; } .hero-title em { font-style: italic; color: var(--ember-glow); } .gold-rule-c { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); margin: 2rem auto; } footer { background: var(--void); border-top: 1px solid var(--whisper); padding: 4rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; } .footer-logo { height: 28px; opacity: 0.65; } .footer-rule { width: 200px; height: 1px; background: linear-gradient(to right,transparent,var(--whisper),transparent); } .footer-artisan { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--parchment); } .footer-copy { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dusk); } .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.1s var(--ease),transform 1.1s var(--ease); } .reveal.visible { opacity: 1; transform: translateY(0); } .rd1 { transition-delay: .15s; } .rd2 { transition-delay: .3s; } .rd3 { transition-delay: .45s; } .rd4 { transition-delay: .6s; } @media (max-width:900px){ nav {  gap: 2rem;  padding: 1rem 2rem; }  .nav-links {  gap: 2rem; }  .section {  padding: 7rem 2rem; } } /* == END SHARED == *//* COMMISSION-SPECIFIC */.step-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 900px; width: 100%; margin-top: 3rem; } .step-block { display: grid; grid-template-columns: 120px 1fr; gap: 3rem; padding: 4rem 3rem; border-bottom: 1px solid var(--whisper); text-align: left; align-items: start; transition: background var(--t-mid); } .step-block:last-child { border-bottom: none; } .step-block:hover { background: rgba(201,168,76,0.03); } .step-num-lg { font-family: var(--font-display); font-size: 5rem; color: var(--gold-dim); opacity: 0.18; line-height: 1; padding-top: 0.3rem; } .step-content { display: flex; flex-direction: column; gap: 1rem; } .step-title-lg { font-family: var(--font-display); font-size: 1.5rem; color: var(--cream); letter-spacing: 0.05em; } .step-body-lg { font-size: 1.05rem; color: var(--parchment); line-height: 1.9; } .step-note { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-dim); padding: 0.75rem 1.25rem; border-left: 2px solid var(--gold-dim); background: rgba(201,168,76,0.04); } /* FAQ */.faq-wrap { max-width: 800px; width: 100%; margin-top: 3rem; } .faq-item { border-bottom: 1px solid var(--whisper); overflow: hidden; } .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; cursor: pointer; font-family: var(--font-display); font-size: 1.1rem; color: var(--cream); letter-spacing: 0.03em; transition: color var(--t-fast); user-select: none; } .faq-q:hover { color: var(--gold-light); } .faq-arrow { font-size: 1.2rem; color: var(--gold-dim); transition: transform var(--t-mid) var(--ease); flex-shrink: 0; margin-left: 2rem; } .faq-item.open .faq-arrow { transform: rotate(45deg); color: var(--gold); } .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.6s var(--ease),padding 0.4s; font-size: 1.05rem; color: var(--parchment); line-height: 1.9; padding: 0 0; } .faq-item.open .faq-a { max-height: 400px; padding-bottom: 2rem; } /* PAYMENT BOX */.pmt-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; } .pmt-box { padding: 2.5rem 2rem; border: 1px solid var(--whisper); min-width: 150px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; transition: border-color var(--t-mid),background var(--t-mid); } .pmt-box:hover { border-color: var(--gold-dim); background: rgba(201,168,76,0.03); } .pmt-icon { font-size: 1.4rem; color: var(--gold); } .pmt-name { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--parchment); } .pmt-note { font-family: var(--font-body); font-style: italic; font-size: 0.8rem; color: var(--dusk); } .pmt-box.btc { opacity: 0.28; position: relative; } .pmt-box.btc::after { content: 'Coming Soon'; position: absolute; top: -10px; font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); background: var(--abyss); padding: 0 0.5rem; } /* CONTACT ANCHOR */.contact-anchor { display: flex; flex-direction: column; align-items: center; gap: 2rem; max-width: 700px; text-align: center; } .contact-email-lg { font-family: var(--font-display); font-weight: 300; font-size: clamp(1.2rem,3.5vw,2rem); color: var(--gold-light); text-decoration: none; letter-spacing: 0.06em; border-bottom: 1px solid var(--gold-dim); padding-bottom: 0.3rem; transition: color var(--t-fast),border-color var(--t-fast); } .contact-email-lg:hover { color: var(--cream); border-color: var(--gold); } .disclaimer { font-family: var(--font-ui); font-size: 0.5rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--whisper); max-width: 600px; line-height: 2; } @media (max-width:700px){ .step-block {  grid-template-columns: 1fr;  gap: 1rem; }  .step-num-lg {  font-size: 3rem; } } .step-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 950px; width: 100%; border: 1px solid var(--whisper); margin-top: 3rem; } .step-block { display: grid; grid-template-columns: 120px 1fr; gap: 0; border-bottom: 1px solid var(--whisper); transition: background var(--t-mid); } .step-block:last-child { border-bottom: none; } .step-block:hover { background: rgba(201,168,76,0.03); } .step-num-lg { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 4.5rem; color: var(--gold-dim); opacity: 0.18; border-right: 1px solid var(--whisper); padding: 2.5rem 1rem; line-height: 1; } .step-content { padding: 3rem 3.5rem; text-align: left; display: flex; flex-direction: column; gap: 1rem; } .step-title-lg { font-family: var(--font-display); font-size: 1.4rem; color: var(--cream); letter-spacing: 0.05em; } .step-body-lg { font-size: 1.05rem; color: var(--parchment); line-height: 1.9; } .step-note { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); padding: 0.6rem 1rem; border-left: 2px solid var(--gold-dim); background: rgba(201,168,76,0.04); display: inline-block; } .faq-wrap { max-width: 800px; width: 100%; margin-top: 3rem; } .faq-item { border-bottom: 1px solid var(--whisper); overflow: hidden; } .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; cursor: pointer; font-family: var(--font-display); font-size: 1.1rem; color: var(--cream); letter-spacing: 0.03em; transition: color var(--t-fast); user-select: none; } .faq-q:hover { color: var(--gold-light); } .faq-arrow { font-size: 1.2rem; color: var(--gold-dim); transition: transform var(--t-mid) var(--ease); flex-shrink: 0; margin-left: 2rem; } .faq-item.open .faq-arrow { transform: rotate(45deg); color: var(--gold); } .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.6s var(--ease),padding 0.4s; font-size: 1.05rem; color: var(--parchment); line-height: 1.9; padding: 0; } .faq-item.open .faq-a { max-height: 400px; padding-bottom: 2rem; } .pmt-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; } .pmt-box { padding: 2.5rem 2rem; border: 1px solid var(--whisper); min-width: 150px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; transition: border-color var(--t-mid),background var(--t-mid); } .pmt-box:hover { border-color: var(--gold-dim); background: rgba(201,168,76,0.03); } .pmt-icon { font-size: 1.4rem; color: var(--gold); } .pmt-name { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--parchment); } .pmt-note { font-family: var(--font-body); font-style: italic; font-size: 0.8rem; color: var(--dusk); } .pmt-box.btc { opacity: 0.28; position: relative; } .pmt-box.btc::after { content: 'Coming Soon'; position: absolute; top: -10px; font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); background: var(--abyss); padding: 0 0.5rem; } @media (max-width:700px){ .step-block {  grid-template-columns: 1fr; }  .step-num-lg {  border-right: none;  border-bottom: 1px solid var(--whisper);  font-size: 2.5rem;  padding: 1.5rem; }  .step-content {  padding: 2rem 1.5rem; } } nav { justify-content: center; padding: 1rem 2rem; } .nav-logo { height: 70px; } /* ── TOUCH: hide custom cursor ── */@media (hover: none), (pointer: coarse) { .cur-dot, .cur-ring {  display: none !important; }  body {  cursor: auto !important; } } /* ── HAMBURGER BUTTON ── */.bw-ham { display: none; position: fixed; top: 1.1rem; right: 1.2rem; z-index: 500; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 6px; } .bw-ham span { display: block; width: 26px; height: 1px; background: var(--gold); transition: transform 0.3s ease, opacity 0.3s ease; } .bw-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); } .bw-ham.open span:nth-child(2) { opacity: 0; } .bw-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); } /* ── MOBILE FULLSCREEN MENU ── */.bw-mob-menu { display: none; position: fixed; inset: 0; z-index: 490; background: rgba(5,4,7,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; } .bw-mob-menu.open { display: flex; } .bw-mob-menu a { font-family: var(--font-display, 'Cinzel', serif); font-weight: 300; font-size: 1.8rem; letter-spacing: 0.1em; color: var(--cream, #e8dcc8); text-decoration: none; text-transform: uppercase; transition: color 0.2s; } .bw-mob-menu a:hover { color: var(--gold-light, #e2c97e); } .bw-mob-close { position: absolute; top: 1.2rem; right: 1.4rem; background: none; border: none; color: var(--dusk, #6a5e4e); font-size: 2rem; cursor: pointer; line-height: 1; transition: color 0.2s; } .bw-mob-close:hover { color: var(--gold, #c9a84c); } /* ── SHOW HAMBURGER ON MOBILE ── */@media (max-width: 700px) { .bw-ham {  display: flex; }  .nav-links {  display: none !important; }  nav {  justify-content: center;  padding: 0.8rem 1rem; }  .nav-logo {  height: 65px !important; }  .section, .page-hero + .section {  padding: 5rem 1.5rem; }  .section-body {  font-size: 1rem; }  .section-title {  font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }  .hero-cta {  flex-direction: column;  align-items: center; }  .process-steps {  grid-template-columns: 1fr !important; }  .gallery-grid {  grid-template-columns: 1fr !important; }  footer {  padding: 3rem 1.5rem; } }
 }
-
-/* == END SHARED == */
-/* COMMISSION-SPECIFIC */.step-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 900px; width: 100%; margin-top: 3rem; } .step-block { display: grid; grid-template-columns: 120px 1fr; gap: 3rem; padding: 4rem 3rem; border-bottom: 1px solid var(--whisper); text-align: left; align-items: start; transition: background var(--t-mid); } .step-block:last-child { border-bottom: none; } .step-block:hover { background: rgba(201,168,76,0.03); } .step-num-lg { font-family: var(--font-display); font-size: 5rem; color: var(--gold-dim); opacity: 0.18; line-height: 1; padding-top: 0.3rem; } .step-content { display: flex; flex-direction: column; gap: 1rem; } .step-title-lg { font-family: var(--font-display); font-size: 1.5rem; color: var(--cream); letter-spacing: 0.05em; } .step-body-lg { font-size: 1.05rem; color: var(--parchment); line-height: 1.9; } .step-note { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-dim); padding: 0.75rem 1.25rem; border-left: 2px solid var(--gold-dim); background: rgba(201,168,76,0.04); } /* FAQ */.faq-wrap { max-width: 800px; width: 100%; margin-top: 3rem; } .faq-item { border-bottom: 1px solid var(--whisper); overflow: hidden; } .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; cursor: pointer; font-family: var(--font-display); font-size: 1.1rem; color: var(--cream); letter-spacing: 0.03em; transition: color var(--t-fast); user-select: none; } .faq-q:hover { color: var(--gold-light); } .faq-arrow { font-size: 1.2rem; color: var(--gold-dim); transition: transform var(--t-mid) var(--ease); flex-shrink: 0; margin-left: 2rem; } .faq-item.open .faq-arrow { transform: rotate(45deg); color: var(--gold); } .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.6s var(--ease),padding 0.4s; font-size: 1.05rem; color: var(--parchment); line-height: 1.9; padding: 0 0; } .faq-item.open .faq-a { max-height: 400px; padding-bottom: 2rem; } /* PAYMENT BOX */.pmt-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; } .pmt-box { padding: 2.5rem 2rem; border: 1px solid var(--whisper); min-width: 150px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; transition: border-color var(--t-mid),background var(--t-mid); } .pmt-box:hover { border-color: var(--gold-dim); background: rgba(201,168,76,0.03); } .pmt-icon { font-size: 1.4rem; color: var(--gold); } .pmt-name { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--parchment); } .pmt-note { font-family: var(--font-body); font-style: italic; font-size: 0.8rem; color: var(--dusk); } .pmt-box.btc { opacity: 0.28; position: relative; } .pmt-box.btc::after { content: 'Coming Soon'; position: absolute; top: -10px; font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); background: var(--abyss); padding: 0 0.5rem; } /* CONTACT ANCHOR */.contact-anchor { display: flex; flex-direction: column; align-items: center; gap: 2rem; max-width: 700px; text-align: center; } .contact-email-lg { font-family: var(--font-display); font-weight: 300; font-size: clamp(1.2rem,3.5vw,2rem); color: var(--gold-light); text-decoration: none; letter-spacing: 0.06em; border-bottom: 1px solid var(--gold-dim); padding-bottom: 0.3rem; transition: color var(--t-fast),border-color var(--t-fast); } .contact-email-lg:hover { color: var(--cream); border-color: var(--gold); } .disclaimer { font-family: var(--font-ui); font-size: 0.5rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--whisper); max-width: 600px; line-height: 2; } @media (max-width:700px){ .step-block {  grid-template-columns: 1fr;  gap: 1rem; }  .step-num-lg {  font-size: 3rem; } } .step-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 950px; width: 100%; border: 1px solid var(--whisper); margin-top: 3rem; } .step-block { display: grid; grid-template-columns: 120px 1fr; gap: 0; border-bottom: 1px solid var(--whisper); transition: background var(--t-mid); } .step-block:last-child { border-bottom: none; } .step-block:hover { background: rgba(201,168,76,0.03); } .step-num-lg { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 4.5rem; color: var(--gold-dim); opacity: 0.18; border-right: 1px solid var(--whisper); padding: 2.5rem 1rem; line-height: 1; } .step-content { padding: 3rem 3.5rem; text-align: left; display: flex; flex-direction: column; gap: 1rem; } .step-title-lg { font-family: var(--font-display); font-size: 1.4rem; color: var(--cream); letter-spacing: 0.05em; } .step-body-lg { font-size: 1.05rem; color: var(--parchment); line-height: 1.9; } .step-note { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); padding: 0.6rem 1rem; border-left: 2px solid var(--gold-dim); background: rgba(201,168,76,0.04); display: inline-block; } .faq-wrap { max-width: 800px; width: 100%; margin-top: 3rem; } .faq-item { border-bottom: 1px solid var(--whisper); overflow: hidden; } .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; cursor: pointer; font-family: var(--font-display); font-size: 1.1rem; color: var(--cream); letter-spacing: 0.03em; transition: color var(--t-fast); user-select: none; } .faq-q:hover { color: var(--gold-light); } .faq-arrow { font-size: 1.2rem; color: var(--gold-dim); transition: transform var(--t-mid) var(--ease); flex-shrink: 0; margin-left: 2rem; } .faq-item.open .faq-arrow { transform: rotate(45deg); color: var(--gold); } .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.6s var(--ease),padding 0.4s; font-size: 1.05rem; color: var(--parchment); line-height: 1.9; padding: 0; } .faq-item.open .faq-a { max-height: 400px; padding-bottom: 2rem; } .pmt-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; } .pmt-box { padding: 2.5rem 2rem; border: 1px solid var(--whisper); min-width: 150px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; transition: border-color var(--t-mid),background var(--t-mid); } .pmt-box:hover { border-color: var(--gold-dim); background: rgba(201,168,76,0.03); } .pmt-icon { font-size: 1.4rem; color: var(--gold); } .pmt-name { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--parchment); } .pmt-note { font-family: var(--font-body); font-style: italic; font-size: 0.8rem; color: var(--dusk); } .pmt-box.btc { opacity: 0.28; position: relative; } .pmt-box.btc::after { content: 'Coming Soon'; position: absolute; top: -10px; font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); background: var(--abyss); padding: 0 0.5rem; } @media (max-width:700px){ .step-block {  grid-template-columns: 1fr; }  .step-num-lg {  border-right: none;  border-bottom: 1px solid var(--whisper);  font-size: 2.5rem;  padding: 1.5rem; }  .step-content {  padding: 2rem 1.5rem; } }
-  nav { justify-content: center; padding: 1rem 2rem; }
-  .nav-logo { height: 70px; }
-}
-
-
-/* ── TOUCH: hide custom cursor ── */
-@media (hover: none), (pointer: coarse) {
-  .cur-dot, .cur-ring { display: none !important; }
-  body { cursor: auto !important; }
-}
-
-/* ── HAMBURGER BUTTON ── */
-.bw-ham {
-  display: none;
-  position: fixed;
-  top: 1.1rem;
-  right: 1.2rem;
-  z-index: 500;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  flex-direction: column;
-  gap: 6px;
-}
-.bw-ham span {
-  display: block;
-  width: 26px;
-  height: 1px;
-  background: var(--gold);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.bw-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.bw-ham.open span:nth-child(2) { opacity: 0; }
-.bw-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ── MOBILE FULLSCREEN MENU ── */
-.bw-mob-menu {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 490;
-  background: rgba(5,4,7,0.98);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-}
-.bw-mob-menu.open { display: flex; }
-.bw-mob-menu a {
-  font-family: var(--font-display, 'Cinzel', serif);
-  font-weight: 300;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: var(--cream, #e8dcc8);
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.bw-mob-menu a:hover { color: var(--gold-light, #e2c97e); }
-.bw-mob-close {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.4rem;
-  background: none;
-  border: none;
-  color: var(--dusk, #6a5e4e);
-  font-size: 2rem;
-  cursor: pointer;
-  line-height: 1;
-  transition: color 0.2s;
-}
-.bw-mob-close:hover { color: var(--gold, #c9a84c); }
-
-/* ── SHOW HAMBURGER ON MOBILE ── */
-@media (max-width: 700px) {
-  .bw-ham { display: flex; }
-  .nav-links { display: none !important; }
-  nav { justify-content: center; padding: 0.8rem 1rem; }
-  .nav-logo { height: 65px !important; }
-  .section, .page-hero + .section { padding: 5rem 1.5rem; }
-  .section-body { font-size: 1rem; }
-  .section-title { font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }
-  .hero-cta { flex-direction: column; align-items: center; }
-  .process-steps { grid-template-columns: 1fr !important; }
-  .gallery-grid { grid-template-columns: 1fr !important; }
-  footer { padding: 3rem 1.5rem; }
-}
-
-</style>         
+}</style>         
     </head>     
     <body> 
         <div class="cur-dot" id="curDot"></div>         
@@ -177,22 +36,22 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                     <a href="pricing.html">Pricing</a> 
                 </li>                 
             </ul>             
-        </nav>
-
-<!-- Mobile hamburger -->
-<button class="bw-ham" id="bwHam" aria-label="Open menu">
-  <span></span><span></span><span></span>
-</button>
-<div class="bw-mob-menu" id="bwMobMenu">
-  <button class="bw-mob-close" id="bwMobClose" aria-label="Close menu">&times;</button>
-  <a href="home.html">Home</a>
-  <a href="artisan.html">The Artisan</a>
-  <a href="materials.html">Materials</a>
-  <a href="commission.html">Commission</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="process.html">Process</a>
-</div>
-         
+        </nav>         
+        <!-- Mobile hamburger -->         
+        <button class="bw-ham" id="bwHam" aria-label="Open menu"> 
+            <span></span>
+            <span></span>
+            <span></span> 
+        </button>         
+        <div class="bw-mob-menu" id="bwMobMenu"> 
+            <button class="bw-mob-close" id="bwMobClose" aria-label="Close menu">&times;</button>             
+            <a href="home.html">Home</a> 
+            <a href="artisan.html">The Artisan</a> 
+            <a href="materials.html">Materials</a> 
+            <a href="commission.html">Commission</a> 
+            <a href="pricing.html">Pricing</a> 
+            <a href="process.html">Process</a> 
+        </div>         
         <div class="page-hero"> 
             <div class="hero-bg" style="background-image:url('image1.jpg');"></div>             
             <div class="hero-vignette"></div>             
@@ -201,7 +60,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                 <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;">Something That Has Never Existed Before</p> 
                 <div class="gold-rule-c"></div>                 
                 <h1 class="hero-title">The Commission<br><em>Process</em></h1> 
-                <p style="font-family:var(--font-ui);font-weight:100;font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--dusk);margin-top:1rem;">Private &nbsp;Â·&nbsp; Unhurried &nbsp;Â·&nbsp; Without Compromise</p> 
+                <p style="font-family: var(--font-ui); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--dusk); margin-top: 1rem;">Private&nbsp; &nbsp; &middot;&nbsp; &nbsp; &nbsp;Unhurried&nbsp; &nbsp; &middot;&nbsp; &nbsp; Without Compromise</p> 
             </div>             
         </div>         
         <!-- INTRO -->         
@@ -231,7 +90,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                         <div class="step-content"> 
                             <div class="step-title-lg">The First Email</div>                             
                             <p class="step-body-lg">Reach out to <a href="mailto:info@blackwallbdsm.com" style="color:var(--gold-light);text-decoration:none;">info@blackwallbdsm.com</a> with whatever you have in mind: A clear vision, a vague idea, or simply a desire to understand what is possible. There is no wrong starting point and no commitment required at this stage. Every piece begins with a question.</p> 
-                            <div class="step-note">This is A conversation with the maker, not an automated reply.&nbsp;</div>                             
+                            <div class="step-note" style="font-weight: 800;">This is A conversation with the maker, not an automated reply.&nbsp;</div>                             
                         </div>                         
                     </div>                     
                     <div class="step-block"> 
@@ -239,20 +98,20 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                         <div class="step-content"> 
                             <div class="step-title-lg">The Design Conversation</div>                             
                             <p class="step-body-lg">We discuss the piece in detail- type, handle, neck and butt hardware, fall species and cut, fall ends, any engraving or personalisation, and anything else that needs to be addressed. Every element is considered in relation to every other. Weight, balance, sensation, and aesthetics are all part of this conversation. It may take one exchange or several. It takes as long as it needs to.</p> 
-                            <div class="step-note">No decisions are rushed&nbsp; &nbsp; Revisions welcome before the order blank is signed</div>                             
+                            <div class="step-note" style="font-weight: 800;">No decisions are rushed&nbsp; &nbsp; Revisions welcome before the order blank is signed</div>                             
                         </div>                         
                     </div>                     
                     <div class="step-block"> 
                         <div class="step-num-lg">03</div>                         
                         <div class="step-content"> 
-                            <div class="step-title-lg">Biomechanical Analysis <span style="font-family:var(--font-ui);font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ember-glow);vertical-align:middle;margin-left:0.5rem;">Optional</span> 
+                            <div class="step-title-lg">Biomechanical Analysis <span style="font-family:var(--font-ui);font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ember-glow);vertical-align:middle;margin-left:0.5rem;">Optional + Extra cost</span>
                             </div>                             
                             <p class="step-body-lg">For clients who want a piece optimised specifically to their body and practice, a biomechanical analysis is available. This assesses hand size, grip strength, swing mechanics, and intended use pattern to determine the precise handle diameter, length, weight distribution, and fall configuration that will perform best for that individual. No two analyses produce the same result. This step adds meaningful depth to the piece, and meaningful time to the conversation.</p> 
-                            <div class="step-note">Conducted by correspondence or in person where possible.&nbsp;
-                                <div>
-                                    <p>Analysis Done via correspondence will require a kit being mailed to you for a cost&nbsp;</p>
-                                    <p>The Results inform every dimension of the final spec</p>
-                                </div>
+                            <div class="step-note" style="font-weight: 700;">Conducted by correspondence or in person where possible.&nbsp;
+                                <div> 
+                                    <p>Analysis Done via correspondence will require a kit being mailed to you for a cost&nbsp;</p> 
+                                    <p>The Results inform every dimension of the final spec</p> 
+                                </div>                                 
                             </div>                             
                         </div>                         
                     </div>                     
@@ -261,7 +120,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                         <div class="step-content"> 
                             <div class="step-title-lg">The Order Sheet &amp; Deposit</div>                             
                             <p class="step-body-lg">When the design is settled, a detailed order sheet is completed. This sheet captures every specification of the piece in writing. This document becomes the contract between maker and client. A deposit is required at this stage to secure your place in the production queue. The deposit amount is confirmed during the design conversation and varies with the complexity and material value of the piece.</p> 
-                            <div class="step-note">Your unique 5-digit order number is assigned at this stage&nbsp; &nbsp; &nbsp;                                Deposit secures queue position
+                            <div class="step-note" style="font-weight: 700;">Your unique 5-digit order number is assigned at this stage&nbsp; &nbsp; &nbsp;                                Deposit secures queue position
 </div>                             
                         </div>                         
                     </div>                     
@@ -270,7 +129,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                         <div class="step-content"> 
                             <div class="step-title-lg">Material Sourcing</div>                             
                             <p class="step-body-lg">Wood blanks and leather hides are sourced and inspected by hand. For common domestic species and standard leathers, this is typically immediate. For rare exotics- African Blackwood, Gabon Ebony, Cocobolo, Kangaroo, Stingray- sourcing may require additional time. The right blank is always preferred over an expedient substitute. You will be informed of any material delay that affects the timeline before work proceeds.</p> 
-                            <div class="step-note">Exotic material sourcing windows vary&nbsp; &nbsp; &nbsp; Quality is never traded for speed</div>                             
+                            <div class="step-note" style="font-weight: 700;">Exotic material sourcing windows vary&nbsp; &nbsp; &nbsp; Quality is never traded for speed</div>                             
                         </div>                         
                     </div>                     
                     <div class="step-block"> 
@@ -278,7 +137,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                         <div class="step-content"> 
                             <div class="step-title-lg">Handle Turning</div>                             
                             <p class="step-body-lg">The wood blank is mounted on the lathe, turned by hand, and assessed at every pass of the tool. The profile is developed in conversation with the grain of the specific piece of wood, not imposed on it. Diameter is held precisely to the spec established in the order blank. Where a biomechanical analysis has been conducted, grip shape may be subtly modified to suit the hand. Once the form is established, the handle is sanded through successive grits to 10,000, and finished with oil or wax appropriate to the species.</p> 
-                            <div class="step-note">Progress photographed and posted to your private order page<br>More detailed progress tracking available for a fee
+                            <div class="step-note" style="font-weight: 600;">Progress photographed and posted to your private order page<br>More detailed progress tracking available for a fee
                             </div>                             
                         </div>                         
                     </div>                     
@@ -287,7 +146,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                         <div class="step-content"> 
                             <div class="step-title-lg">Leather Preparation &amp; Fall Cutting</div>                             
                             <p class="step-body-lg">The selected hide is inspected once more- for consistency, for the absence of flaws at the cutting zone, and for thickness uniformity across the fall length. Falls are cut individually, not in batches, with attention to grain direction and edge quality. Width and length are held to the order blank specification. Ends- whether knotted, split, dragon-cut, braided, or woven- are executed after cutting. Where two-layer or clappered falls are specified, the layering and bonding is completed at this stage.</p> 
-                            <div class="step-note">Fall count, width, length, and end treatment per order Sheet                                No shortcuts in cutting
+                            <div class="step-note" style="font-weight: 600;">Fall count, width, length, and end treatment per order Sheet                                No shortcuts in cutting
 </div>                             
                         </div>                         
                     </div>                     
@@ -296,7 +155,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                         <div class="step-content"> 
                             <div class="step-title-lg">Assembly &amp; Wrapping</div>                             
                             <p class="step-body-lg">The handle, neck, falls, and grip are assembled into a single piece. Neck hardware is fitted and secured. Falls are gathered, ordered, and attached. Where a wrist tie is specified, it is measured, knotted, and threaded at this stage. The piece is weighed and balanced. Any asymmetry in fall hang is corrected before the assembly is finalised.</p> 
-                            <div class="step-note">Balance and fall hang assessed at completion of assembly                                Corrections made before finishing
+                            <div class="step-note" style="font-weight: 600;">Balance and fall hang assessed at completion of assembly                                Corrections made before finishing
 </div>                             
                         </div>                         
                     </div>                     
@@ -305,7 +164,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                         <div class="step-content"> 
                             <div class="step-title-lg">Finishing, Photography &amp; Quality Review</div>                             
                             <p class="step-body-lg">The completed piece is inspected in full- handle, neck, grip, falls, butt, and every transition between them. Leather is conditioned. Hardware is polished or treated to the specified finish. Any engraving confirmed during the design conversation is executed at this stage on cooled, finished metal. The piece is then photographed- handle, falls, full length, and detail- and the images are posted to your private order page. A final photograph is also sent to you by email before the balance is requested.</p> 
-                            <div class="step-note">Images posted to your private order page                                 No balance requested until you have seen the completed piece
+                            <div class="step-note" style="font-weight: 600;">Images posted to your private order page                                 No balance requested until you have seen the completed piece
 </div>                             
                         </div>                         
                     </div>                     
@@ -314,7 +173,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                         <div class="step-content"> 
                             <div class="step-title-lg">Payment, Packaging &amp; Delivery</div>                             
                             <p class="step-body-lg">Once the balance is settled, the piece is prepared for shipping. Packaging is discreet- plain outer box, no exterior branding identifying the sender or contents beyond a return address. Internally, the piece is wrapped to protect the handle and prevent the falls from being crushed or set out of shape in transit. Tracking is provided. Shipping method and carrier are confirmed at this stage. Where a presentation case or leather roll pouch has been commissioned, the piece ships inside it.</p> 
-                            <div class="step-note">Discreet packaging                                Full tracking provided                                Shipping costs confirmed at time of completion
+                            <div class="step-note" style="font-weight: 600;">Discreet packaging                                Full tracking provided                                Shipping costs confirmed at time of completion
 </div>                             
                         </div>                         
                     </div>                     
@@ -383,21 +242,21 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
                             <span>How long does a commission take?</span> 
                             <span class="faq-arrow">+</span> 
                         </div>                         
-                        <div class="faq-a">This depends significantly on material sourcing. Common domestic wood and standard leather â€” four to eight weeks from deposit to shipping. Exotic woods or rare hides can extend the timeline. The design conversation and queue position also affect timing. All timelines are discussed before the order blank is signed.</div>                         
+                        <div class="faq-a">The piece is done when it is done. No piece is ever rushed, and they are worked on one at a time. The process of creation takes as long as is required to make it perfect.  </div>                         
                     </div>                     
                     <div class="faq-item"> 
                         <div class="faq-q"> 
                             <span>Can I change my order after it has been placed?</span> 
                             <span class="faq-arrow">+</span> 
                         </div>                         
-                        <div class="faq-a">Minor adjustments are sometimes possible in the early stages â€” before sourcing is complete and before any material has been cut. Changes after work has begun on the piece may not be possible, and in some cases may incur additional cost. This is discussed case by case.</div>                         
+                        <div class="faq-a">Minor adjustments are sometimes possible in the early stages- before sourcing is complete and before any material has been cut. Changes after work has begun on the piece may not be possible, and in some cases may incur additional cost. This is discussed case by case.</div>                         
                     </div>                     
                     <div class="faq-item"> 
                         <div class="faq-q"> 
                             <span>Do you ship internationally?</span> 
                             <span class="faq-arrow">+</span> 
                         </div>                         
-                        <div class="faq-a">Yes. Shipping destinations are confirmed during the commission conversation. The client is responsible for understanding the import regulations of their country as they pertain to the materials in their piece. Some exotic materials have CITES restrictions that affect international shipping.</div>                         
+                        <div class="faq-a">We can ship anywhere, because you are paying shipping. Shipping destinations are confirmed during the commission conversation. The client is responsible for understanding the import regulations of their country as they pertain to the materials in their piece. Some exotic materials have CITES restrictions that affect international shipping.</div>                         
                     </div>                     
                     <div class="faq-item"> 
                         <div class="faq-q"> 
@@ -431,7 +290,7 @@ footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;d
             </div>             
         </section>         
         <footer> 
-            <img class="footer-logo" src="Transparent logo white font.png" alt="Blackwall"> 
+            <img class="footer-logo" src="Transparent logo white font.png" alt="Blackwall" style="width: 200px; height: 130px;"> 
             <div class="footer-rule"></div>             
             <p class="footer-artisan">J. Christophe Aishe &nbsp;Â·&nbsp; Artisan</p> 
             <p class="footer-copy">&copy; 2025 Blackwall &nbsp;Â·&nbsp; All rights reserved &nbsp;Â·&nbsp; Bespoke BDSM Equipment</p> 
@@ -454,7 +313,7 @@ document.querySelectorAll('.faq-item').forEach(item=>{
     if(!isOpen)item.classList.add('open');
   });
 });</script>         
-    <script>
+        <script>
 /* Blackwall — shared.js
    Custom cursor + scroll-reveal used on every page.
    Page-specific hover targets can be passed via window.BW_HOVER
@@ -475,9 +334,8 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 })();
 
-</script>
-
-<script>
+</script>         
+        <script>
 (function(){
   var ham = document.getElementById('bwHam');
   var menu = document.getElementById('bwMobMenu');
@@ -489,7 +347,6 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   close.addEventListener('click', shut);
   menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', shut); });
 })();
-</script>
-
-</body>     
+</script>         
+    </body>     
 </html>

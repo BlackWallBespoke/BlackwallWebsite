@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blackwall — Age Verification</title>
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
-  <style>
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Blackwall — Age Verification</title>         
+        <meta name="robots" content="noindex, nofollow"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet"> 
+        <style>
     @font-face {
       font-family: 'Iknu';
       src: url('Iknu-font.ttf') format('truetype'), url('Iknu font.otf') format('opentype');
@@ -181,32 +181,29 @@
   .nav-logo { height: 70px; }
 }
 
-</style>
-</head>
-<body>
-
-  <!-- AGE GATE -->
-  <div id="age-gate">
-    <span class="ag-logo">BLACKWALL</span>
-    <p class="ag-eyebrow">Age Verification Required</p>
-    <div class="ag-rule"></div>
-    <h1 class="ag-title">You must be 18 or older<br>to enter this site.</h1>
-    <p class="ag-body">Blackwall creates bespoke BDSM equipment for consenting adults. By entering, you confirm you are of legal age in your jurisdiction.</p>
-    <div class="ag-buttons">
-      <button class="ag-btn" id="agYes">I am 18 or older &mdash; Enter</button>
-      <button class="ag-btn decline" id="agNo">I am under 18 &mdash; Exit</button>
-    </div>
-    <p class="ag-disclaimer">This site contains content intended for adults only.<br>By entering you confirm your age and consent to view adult content.</p>
-  </div>
-
-  <!-- DENIED -->
-  <div id="age-denied">
-    <span class="ag-logo">BLACKWALL</span>
-    <p class="denied-title">Access Restricted</p>
-    <p class="ag-body" style="color:var(--dusk)">This site is for adults aged 18 and over only.</p>
-  </div>
-
-  <script>
+</style>         
+    </head>     
+    <body> 
+        <!-- AGE GATE -->         
+        <div id="age-gate"> 
+            <span class="ag-logo">BLACKWALL</span> 
+            <p class="ag-eyebrow">Age Verification Required</p> 
+            <div class="ag-rule"></div>             
+            <h1 class="ag-title">You must be 18 or older<br>to enter this site.</h1> 
+            <p class="ag-body">Blackwall creates bespoke BDSM equipment for consenting adults. By entering, you confirm you are of legal age in your jurisdiction.</p> 
+            <div class="ag-buttons"> 
+                <button class="ag-btn" id="agYes">I am 18 or older &mdash; Enter</button>                 
+                <button class="ag-btn decline" id="agNo">I am under 18 &mdash; Exit</button>                 
+            </div>             
+            <p class="ag-disclaimer">This site contains content intended for adults only.<br>By entering you confirm your age and consent to view adult content.</p> 
+        </div>         
+        <!-- DENIED -->         
+        <div id="age-denied"> 
+            <span class="ag-logo">BLACKWALL</span> 
+            <p class="denied-title">Access Restricted</p> 
+            <p class="ag-body" style="color:var(--dusk)">This site is for adults aged 18 and over only.</p> 
+        </div>         
+        <script>
     // If already verified, skip straight to home
     if (localStorage.getItem('bw_age_ok') === '1') {
       window.location.replace('home.html');
@@ -225,6 +222,6 @@
       document.getElementById('age-gate').style.display = 'none';
       document.getElementById('age-denied').classList.add('show');
     });
-  </script>
-</body>
+  </script>         
+    </body>     
 </html>

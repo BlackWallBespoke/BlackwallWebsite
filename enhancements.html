@@ -1,572 +1,446 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blackwall â€" Enhancements &amp; Additions</title>
-        <meta name="description" content="Elevate your Blackwall commission with bespoke enhancements â€" engraving, presentation cases, matching sets, and more."">
-        <meta name="robots" content="noindex, nofollow">
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
-<style>
-/* == SHARED CSS == */
-/* ═══════════════════════════════════════════
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Blackwall â€" Enhancements &amp; Additions</title>         
+        <meta name="description" content="Elevate your Blackwall Commission with Bespoke Enhancements" engraving, presentation cases, matching sets, and more.""> 
+        <meta name="robots" content="noindex, nofollow"> 
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet"> 
+        <style>/* == SHARED CSS == *//* ═══════════════════════════════════════════
    BLACKWALL — Shared Styles
    Loaded by every page. Page-specific CSS
    stays in each file's own <style> block.
-═══════════════════════════════════════════ */
-:root{--void:#050407;--abyss:#080610;--deep:#0e0b14;--surface:#141118;--ember:#c9762a;--ember-dark:#5c3510;--ember-glow:#d4944e;--gold:#c9a84c;--gold-light:#e2c97e;--gold-dim:#7a5f2a;--cream:#e8dcc8;--parchment:#c4b49a;--dusk:#6a5e4e;--whisper:#2a2220;--font-display:'Cinzel','Palatino Linotype',serif;--font-body:'Cormorant Garamond','Georgia',serif;--font-ui:'Raleway','Futura',sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--t-slow:0.9s;--t-mid:0.5s;--t-fast:0.25s;}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--cream);font-family:var(--font-body);font-weight:300;line-height:1.8;overflow-x:hidden;cursor:none;}
-.cur-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
-.cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .4s var(--ease),height .4s var(--ease),border-color .3s;}
-.cur-dot.active{width:12px;height:12px;}
-.cur-ring.active{width:64px;height:64px;border-color:rgba(201,168,76,0.7);}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:center;gap:5rem;padding:1.5rem 4rem;background:linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%);}
-.nav-links{display:flex;gap:4rem;list-style:none;align-items:center;}
-.nav-links a{font-family:var(--font-ui);font-weight:200;font-size:0.62rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--dusk);text-decoration:none;transition:color var(--t-fast);display:inline-block;text-align:center;line-height:1.7;}
-.nav-links a:hover{color:var(--gold-light);}
-.nav-logo{height:114px;opacity:0.9;transition:opacity var(--t-fast);}
-.nav-logo:hover{opacity:1;}
-.section{position:relative;padding:10rem 4rem;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.section-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
-.section-overlay{position:absolute;inset:0;background:rgba(5,4,7,0.84);}
-.section-inner{position:relative;z-index:2;max-width:1100px;display:flex;flex-direction:column;align-items:center;gap:2rem;width:100%;}
-.eyebrow{font-family:var(--font-ui);font-weight:200;font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);}
-.section-title{font-family:var(--font-display);font-weight:300;font-size:clamp(2rem,5vw,3.8rem);letter-spacing:0.06em;color:var(--cream);line-height:1.25;}
-.section-title em{font-style:italic;color:var(--ember-glow);}
-.section-body{font-size:1.2rem;color:var(--cream);line-height:2;max-width:700px;}
-.gold-rule{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);}
-.btn{font-family:var(--font-ui);font-weight:200;font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;text-decoration:none;padding:1rem 2.8rem;display:inline-block;transition:all var(--t-mid) var(--ease);position:relative;overflow:hidden;border:1px solid var(--gold-dim);color:var(--gold-light);}
-.btn::before{content:'';position:absolute;inset:0;transform:scaleX(0);transform-origin:left;transition:transform var(--t-mid) var(--ease);z-index:-1;background:var(--gold);}
-.btn:hover::before{transform:scaleX(1);}
-.btn:hover{color:var(--void);border-color:var(--gold);}
-.page-hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:hZ 18s ease-in-out infinite alternate;}
-@keyframes hZ{from{transform:scale(1.04);}to{transform:scale(1.08);}}
-.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%);}
-.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%);animation:gB 6s ease-in-out infinite;}
-@keyframes gB{0%,100%{opacity:.7;}50%{opacity:1;}}
-.hero-content{position:relative;z-index:2;padding:2rem;animation:hF 2s var(--ease) both;}
-@keyframes hF{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.hero-title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.5rem,7vw,5.5rem);color:var(--cream);letter-spacing:0.08em;line-height:1.2;margin-bottom:1.5rem;}
-.hero-title em{font-style:italic;color:var(--ember-glow);}
-.gold-rule-c{width:120px;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);margin:2rem auto;}
-footer{background:var(--void);border-top:1px solid var(--whisper);padding:4rem;display:flex;flex-direction:column;align-items:center;gap:2rem;text-align:center;}
-.footer-logo{height:28px;opacity:0.65;}
-.footer-rule{width:200px;height:1px;background:linear-gradient(to right,transparent,var(--whisper),transparent);}
-.footer-artisan{font-family:var(--font-body);font-style:italic;font-size:1rem;color:var(--parchment);}
-.footer-copy{font-family:var(--font-ui);font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--dusk);}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.rd1{transition-delay:.15s;}.rd2{transition-delay:.3s;}.rd3{transition-delay:.45s;}.rd4{transition-delay:.6s;}
-@media(max-width:900px){nav{gap:2rem;padding:1rem 2rem;}.nav-links{gap:2rem;}.section{padding:7rem 2rem;}}
+═══════════════════════════════════════════ */:root { --void: #050407; --abyss: #080610; --deep: #0e0b14; --surface: #141118; --ember: #c9762a; --ember-dark: #5c3510; --ember-glow: #d4944e; --gold: #c9a84c; --gold-light: #e2c97e; --gold-dim: #7a5f2a; --cream: #e8dcc8; --parchment: #c4b49a; --dusk: #6a5e4e; --whisper: #2a2220; --font-display: 'Cinzel','Palatino Linotype',serif; --font-body: 'Cormorant Garamond','Georgia',serif; --font-ui: 'Raleway','Futura',sans-serif; --ease: cubic-bezier(0.16,1,0.3,1); --t-slow: 0.9s; --t-mid: 0.5s; --t-fast: 0.25s; } * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: var(--void); color: var(--cream); font-family: var(--font-body); font-weight: 300; line-height: 1.8; overflow-x: hidden; cursor: none; } .cur-dot { position: fixed; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s,height .3s; } .cur-ring { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(201,168,76,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .4s var(--ease),height .4s var(--ease),border-color .3s; } .cur-dot.active { width: 12px; height: 12px; } .cur-ring.active { width: 64px; height: 64px; border-color: rgba(201,168,76,0.7); } nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 5rem; padding: 1.5rem 4rem; background: linear-gradient(to bottom,rgba(5,4,7,0.92) 0%,rgba(5,4,7,0.6) 60%,transparent 100%); } .nav-links { display: flex; gap: 4rem; list-style: none; align-items: center; } .nav-links a { font-family: var(--font-ui); font-weight: 200; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dusk); text-decoration: none; transition: color var(--t-fast); display: inline-block; text-align: center; line-height: 1.7; } .nav-links a:hover { color: var(--gold-light); } .nav-logo { height: 114px; opacity: 0.9; transition: opacity var(--t-fast); } .nav-logo:hover { opacity: 1; } .section { position: relative; padding: 10rem 4rem; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; } .section-overlay { position: absolute; inset: 0; background: rgba(5,4,7,0.84); } .section-inner { position: relative; z-index: 2; max-width: 1100px; display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; } .eyebrow { font-family: var(--font-ui); font-weight: 200; font-size: 0.58rem; letter-spacing: 0.55em; text-transform: uppercase; color: var(--gold-dim); } .section-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2rem,5vw,3.8rem); letter-spacing: 0.06em; color: var(--cream); line-height: 1.25; } .section-title em { font-style: italic; color: var(--ember-glow); } .section-body { font-size: 1.2rem; color: var(--cream); line-height: 2; max-width: 700px; } .gold-rule { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); } .btn { font-family: var(--font-ui); font-weight: 200; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; display: inline-block; transition: all var(--t-mid) var(--ease); position: relative; overflow: hidden; border: 1px solid var(--gold-dim); color: var(--gold-light); } .btn::before { content: ''; position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; transition: transform var(--t-mid) var(--ease); z-index: -1; background: var(--gold); } .btn:hover::before { transform: scaleX(1); } .btn:hover { color: var(--void); border-color: var(--gold); } .page-hero { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; } .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; animation: hZ 18s ease-in-out infinite alternate; } @keyframes hZ{ from {  transform: scale(1.04); }  to {  transform: scale(1.08); } } .hero-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%,rgba(5,4,7,0.2) 0%,rgba(5,4,7,0.7) 55%,rgba(5,4,7,0.97) 100%); } .hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 700px 400px at 50% 45%,rgba(180,110,30,0.15) 0%,transparent 70%); animation: gB 6s ease-in-out infinite; } @keyframes gB{ 0%, 100% {  opacity: .7; }  50% {  opacity: 1; } } .hero-content { position: relative; z-index: 2; padding: 2rem; animation: hF 2s var(--ease) both; } @keyframes hF{ from {  opacity: 0;  transform: translateY(30px); }  to {  opacity: 1;  transform: translateY(0); } } .hero-title { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.5rem,7vw,5.5rem); color: var(--cream); letter-spacing: 0.08em; line-height: 1.2; margin-bottom: 1.5rem; } .hero-title em { font-style: italic; color: var(--ember-glow); } .gold-rule-c { width: 120px; height: 1px; background: linear-gradient(to right,transparent,var(--gold-dim),transparent); margin: 2rem auto; } footer { background: var(--void); border-top: 1px solid var(--whisper); padding: 4rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; } .footer-logo { height: 28px; opacity: 0.65; } .footer-rule { width: 200px; height: 1px; background: linear-gradient(to right,transparent,var(--whisper),transparent); } .footer-artisan { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--parchment); } .footer-copy { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dusk); } .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.1s var(--ease),transform 1.1s var(--ease); } .reveal.visible { opacity: 1; transform: translateY(0); } .rd1 { transition-delay: .15s; } .rd2 { transition-delay: .3s; } .rd3 { transition-delay: .45s; } .rd4 { transition-delay: .6s; } @media (max-width:900px){ nav {  gap: 2rem;  padding: 1rem 2rem; }  .nav-links {  gap: 2rem; }  .section {  padding: 7rem 2rem; } } /* == END SHARED == *//* ENHANCEMENTS-SPECIFIC */.enh-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 950px; width: 100%; border: 1px solid var(--whisper); margin-top: 3rem; } .enh-card { display: grid; grid-template-columns: 80px 1fr; gap: 0; border-bottom: 1px solid var(--whisper); transition: background var(--t-mid); cursor: default; } .enh-card:last-child { border-bottom: none; } .enh-card:hover { background: rgba(201,168,76,0.03); } .enh-num { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2rem; color: var(--gold-dim); opacity: 0.2; border-right: 1px solid var(--whisper); padding: 2.5rem 1rem; line-height: 1; } .enh-body { padding: 2.5rem 3rem; text-align: left; } .enh-tier { font-family: var(--font-ui); font-size: 0.48rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.6rem; } .enh-name { font-family: var(--font-display); font-size: 1.3rem; color: var(--cream); letter-spacing: 0.04em; margin-bottom: 1rem; } .enh-desc { font-size: 1.05rem; color: var(--parchment); line-height: 1.9; max-width: 680px; } .enh-note { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); padding: 0.6rem 1rem; border-left: 2px solid var(--gold-dim); background: rgba(201,168,76,0.04); margin-top: 1.2rem; display: inline-block; } .enh-badge { display: inline-block; font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ember-glow); border: 1px solid var(--ember-dark); padding: 0.3rem 0.75rem; margin-bottom: 0.6rem; } .tier-label { display: flex; align-items: center; gap: 2rem; margin: 4rem 0 0; max-width: 950px; width: 100%; } .tier-line { flex: 1; height: 1px; background: var(--whisper); } .tier-name { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-dim); white-space: nowrap; } @media (max-width:700px){ .enh-card {  grid-template-columns: 50px 1fr; }  .enh-num {  font-size: 1.4rem;  padding: 1.5rem 0.5rem; }  .enh-body {  padding: 2rem 1.5rem; } } nav { justify-content: center; padding: 1rem 2rem; } .nav-logo { height: 70px; } /* ── TOUCH: hide custom cursor ── */@media (hover: none), (pointer: coarse) { .cur-dot, .cur-ring {  display: none !important; }  body {  cursor: auto !important; } } /* ── HAMBURGER BUTTON ── */.bw-ham { display: none; position: fixed; top: 1.1rem; right: 1.2rem; z-index: 500; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 6px; } .bw-ham span { display: block; width: 26px; height: 1px; background: var(--gold); transition: transform 0.3s ease, opacity 0.3s ease; } .bw-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); } .bw-ham.open span:nth-child(2) { opacity: 0; } .bw-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); } /* ── MOBILE FULLSCREEN MENU ── */.bw-mob-menu { display: none; position: fixed; inset: 0; z-index: 490; background: rgba(5,4,7,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; } .bw-mob-menu.open { display: flex; } .bw-mob-menu a { font-family: var(--font-display, 'Cinzel', serif); font-weight: 300; font-size: 1.8rem; letter-spacing: 0.1em; color: var(--cream, #e8dcc8); text-decoration: none; text-transform: uppercase; transition: color 0.2s; } .bw-mob-menu a:hover { color: var(--gold-light, #e2c97e); } .bw-mob-close { position: absolute; top: 1.2rem; right: 1.4rem; background: none; border: none; color: var(--dusk, #6a5e4e); font-size: 2rem; cursor: pointer; line-height: 1; transition: color 0.2s; } .bw-mob-close:hover { color: var(--gold, #c9a84c); } /* ── SHOW HAMBURGER ON MOBILE ── */@media (max-width: 700px) { .bw-ham {  display: flex; }  .nav-links {  display: none !important; }  nav {  justify-content: center;  padding: 0.8rem 1rem; }  .nav-logo {  height: 65px !important; }  .section, .page-hero + .section {  padding: 5rem 1.5rem; }  .section-body {  font-size: 1rem; }  .section-title {  font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }  .hero-cta {  flex-direction: column;  align-items: center; }  .process-steps {  grid-template-columns: 1fr !important; }  .gallery-grid {  grid-template-columns: 1fr !important; }  footer {  padding: 3rem 1.5rem; } }
 }
-
-/* == END SHARED == */
-/* ENHANCEMENTS-SPECIFIC */.enh-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 950px; width: 100%; border: 1px solid var(--whisper); margin-top: 3rem; } .enh-card { display: grid; grid-template-columns: 80px 1fr; gap: 0; border-bottom: 1px solid var(--whisper); transition: background var(--t-mid); cursor: default; } .enh-card:last-child { border-bottom: none; } .enh-card:hover { background: rgba(201,168,76,0.03); } .enh-num { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2rem; color: var(--gold-dim); opacity: 0.2; border-right: 1px solid var(--whisper); padding: 2.5rem 1rem; line-height: 1; } .enh-body { padding: 2.5rem 3rem; text-align: left; } .enh-tier { font-family: var(--font-ui); font-size: 0.48rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.6rem; } .enh-name { font-family: var(--font-display); font-size: 1.3rem; color: var(--cream); letter-spacing: 0.04em; margin-bottom: 1rem; } .enh-desc { font-size: 1.05rem; color: var(--parchment); line-height: 1.9; max-width: 680px; } .enh-note { font-family: var(--font-ui); font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); padding: 0.6rem 1rem; border-left: 2px solid var(--gold-dim); background: rgba(201,168,76,0.04); margin-top: 1.2rem; display: inline-block; } .enh-badge { display: inline-block; font-family: var(--font-ui); font-size: 0.45rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ember-glow); border: 1px solid var(--ember-dark); padding: 0.3rem 0.75rem; margin-bottom: 0.6rem; } .tier-label { display: flex; align-items: center; gap: 2rem; margin: 4rem 0 0; max-width: 950px; width: 100%; } .tier-line { flex: 1; height: 1px; background: var(--whisper); } .tier-name { font-family: var(--font-ui); font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-dim); white-space: nowrap; } @media (max-width:700px){ .enh-card {  grid-template-columns: 50px 1fr; }  .enh-num {  font-size: 1.4rem;  padding: 1.5rem 0.5rem; }  .enh-body {  padding: 2rem 1.5rem; } }
-  nav { justify-content: center; padding: 1rem 2rem; }
-  .nav-logo { height: 70px; }
-}
-
-
-/* ── TOUCH: hide custom cursor ── */
-@media (hover: none), (pointer: coarse) {
-  .cur-dot, .cur-ring { display: none !important; }
-  body { cursor: auto !important; }
-}
-
-/* ── HAMBURGER BUTTON ── */
-.bw-ham {
-  display: none;
-  position: fixed;
-  top: 1.1rem;
-  right: 1.2rem;
-  z-index: 500;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  flex-direction: column;
-  gap: 6px;
-}
-.bw-ham span {
-  display: block;
-  width: 26px;
-  height: 1px;
-  background: var(--gold);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.bw-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.bw-ham.open span:nth-child(2) { opacity: 0; }
-.bw-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ── MOBILE FULLSCREEN MENU ── */
-.bw-mob-menu {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 490;
-  background: rgba(5,4,7,0.98);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-}
-.bw-mob-menu.open { display: flex; }
-.bw-mob-menu a {
-  font-family: var(--font-display, 'Cinzel', serif);
-  font-weight: 300;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: var(--cream, #e8dcc8);
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.bw-mob-menu a:hover { color: var(--gold-light, #e2c97e); }
-.bw-mob-close {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.4rem;
-  background: none;
-  border: none;
-  color: var(--dusk, #6a5e4e);
-  font-size: 2rem;
-  cursor: pointer;
-  line-height: 1;
-  transition: color 0.2s;
-}
-.bw-mob-close:hover { color: var(--gold, #c9a84c); }
-
-/* ── SHOW HAMBURGER ON MOBILE ── */
-@media (max-width: 700px) {
-  .bw-ham { display: flex; }
-  .nav-links { display: none !important; }
-  nav { justify-content: center; padding: 0.8rem 1rem; }
-  .nav-logo { height: 65px !important; }
-  .section, .page-hero + .section { padding: 5rem 1.5rem; }
-  .section-body { font-size: 1rem; }
-  .section-title { font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }
-  .hero-cta { flex-direction: column; align-items: center; }
-  .process-steps { grid-template-columns: 1fr !important; }
-  .gallery-grid { grid-template-columns: 1fr !important; }
-  footer { padding: 3rem 1.5rem; }
-}
-
-</style>
-    </head>
-    <body>
-        <div class="cur-dot" id="curDot"></div>
-        <div class="cur-ring" id="curRing"></div>
-        <nav>
-            <ul class="nav-links">
-                <li>
-                    <a href="artisan.html">The<br>Artisan</a>
-                </li>
-                <li>
-                    <a href="materials.html">Materials</a>
-                </li>
-            </ul>
-            <a href="home.html"><img class="nav-logo" src="Transparent logo white font.png" alt="Blackwall"></a>
-            <ul class="nav-links">
-                <li>
-                    <a href="commission.html">Commission</a>
-                </li>
-                <li>
-                    <a href="pricing.html">Pricing</a>
-                </li>
-            </ul>
-        </nav>
-
-<!-- Mobile hamburger -->
-<button class="bw-ham" id="bwHam" aria-label="Open menu">
-  <span></span><span></span><span></span>
-</button>
-<div class="bw-mob-menu" id="bwMobMenu">
-  <button class="bw-mob-close" id="bwMobClose" aria-label="Close menu">&times;</button>
-  <a href="home.html">Home</a>
-  <a href="artisan.html">The Artisan</a>
-  <a href="materials.html">Materials</a>
-  <a href="commission.html">Commission</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="process.html">Process</a>
-</div>
-
-        <!-- HERO -->
-        <div class="page-hero">
-            <div class="hero-bg" style="background-image:url('image6.jpg');"></div>
-            <div class="hero-vignette"></div>
-            <div class="hero-glow"></div>
-            <div class="hero-content">
-                <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;">Beyond the Standard Commission</p>
-                <div class="gold-rule-c"></div>
-                <h1 class="hero-title">Enhancements &amp;<br><em>Additions</em></h1>
-                <p style="font-family:var(--font-ui);font-weight:100;font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--dusk);margin-top:1rem;">Every option discussed during the commission conversation</p>
-            </div>
-        </div>
-        <!-- INTRO -->
-        <section class="section" style="padding:8rem 4rem;">
-            <div class="section-bg" style="background-image:url('image4.jpg');"></div>
-            <div class="section-overlay"></div>
-            <div class="section-inner" style="max-width:800px;">
-                <p class="eyebrow reveal">Going Further</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2">The commission is the<br>beginning, not the <em>limit</em></h2>
-                <p class="section-body reveal rd3">
-      The standard commission already produces something extraordinary. These enhancements exist 
-      for clients who wish to go further â€" to contextualise the piece, personalise it at depth, 
-      or transform the experience of commissioning itself into something memorable. </p>
-                <p class="section-body reveal rd4">
-      Not every enhancement is available for every piece. All options are discussed during the 
-      commission conversation, and no price is confirmed until feasibility is established. 
-      Some require additional lead time. </p>
-            </div>
-        </section>
-        <!-- ENHANCEMENTS -->
-        <section class="section" style="padding-bottom:4rem;">
-            <div class="section-bg" style="background-image:url('image5.jpg');"></div>
-            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>
-            <div class="section-inner">
-                <p class="eyebrow reveal">Step One</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2">Enhancements</h2>
-                <p class="section-body reveal rd3">Structural and material enhancements that alter the character of the piece itself.</p>
-                <div class="enh-grid reveal rd4">
-                    <div class="enh-card">
-                        <div class="enh-num">1</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Enhancement</div>
-                            <div class="enh-name">Laser Cutting <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— $125</span>
-                            </div>
-                            <div class="enh-desc">Precision laser-cut falls with clean, exact edges and the option for intricate patterning along the length. Produces a distinct visual profile and a subtly different sensation at the tip. Available on leather and select synthetic falls.</div>
-                            <div class="enh-note">Discussed during commission · Subject to material compatibility</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">2</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Enhancement</div>
-                            <div class="enh-name">Latex / PVC Falls Coating <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">&#8212; $150</span>
-                            </div>
-                            <div class="enh-desc">A smooth, sealed latex or PVC coating applied to the falls. Changes both the aesthetic and the sensation profile — glossy, cool to the touch, and with a crisper impact character. Easy to clean and maintain.</div>
-                            <div class="enh-note">Discussed during commission · Subject to material compatibility</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">3</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Enhancement · Fall Colouring</div>
-                            <div class="enh-name">Two-Colour Falls <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— +$50</span>
-                            </div>
-                            <div class="enh-desc">Falls cut from two different dye colours of the same leather type, mixed within the same fall set. The contrast can be subtle — two tones of the same family — or deliberate. The material character and sensation profile remains consistent; only the visual changes. Colour pairing discussed and confirmed during commission.</div>
-                            <div class="enh-note">Same leather type throughout · Colour pairing confirmed during commission · Available on most leather falls</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">4</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Enhancement · Fall Colouring</div>
-                            <div class="enh-name">Three-Colour Falls <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— +$100</span>
-                            </div>
-                            <div class="enh-desc">Three dye colours of the same leather type distributed across the fall set. The effect can range from a graduated triadic blend to a structured pattern of intentional contrast. More complex to source and cut than a two-colour set, and the distribution of each colour is discussed before cutting begins.</div>
-                            <div class="enh-note">Same leather type throughout · Distribution and proportion confirmed before cutting · Longer sourcing lead time may apply</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">5</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Enhancement · Fall Colouring</div>
-                            <div class="enh-name">Four-Plus Colour Falls <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— +$150</span>
-                            </div>
-                            <div class="enh-desc">Four or more dye colours within a single fall set — all from the same leather type. At this range, the fall set becomes as much a visual statement as a functional one. Sourcing four or more distinct dye lots of the same species and tanning process takes time; this enhancement requires patience and a clear palette conversation upfront. The result justifies both.</div>
-                            <div class="enh-note">Same leather type throughout · Palette conversation required before work begins · Extended sourcing lead time expected</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">6</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Enhancement · Fall Construction</div>
-                            <div class="enh-name">Mixed Fall Types <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— From +$200</span>
-                            </div>
-                            <div class="enh-desc">Falls drawn from two or more different materials within the same set — combining, for example, cowhide and kangaroo, or suede and latex, or elk and horsehair. Each combination produces a sensation profile that no single material achieves alone: the thud of one layered against the sting of another, distributed across the same strike. Not all material pairings are compatible or advisable; the combination is discussed and assessed during commission. Pricing reflects the complexity of sourcing and construction.</div>
-                            <div class="enh-note">Compatibility of materials confirmed before commission · Sensation profile discussed in detail · Pricing confirmed per specific combination</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">7</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Enhancement · Fall Construction</div>
-                            <div class="enh-name">Fall Braiding <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— +$150</span>
-                            </div>
-                            <div class="enh-desc">Individual falls braided along part or all of their length before the final cut. Braiding adds weight, changes the drape, and alters the sensation profile — a braided fall lands with more focus and authority than a flat one of the same width. It also changes the visual character of the set considerably: braided falls have a rope-like texture that reads as deliberate and constructed. Works best on leathers with sufficient thickness and pliability — cowhide, kangaroo, elk, and horse are the most suitable. The braid pattern and length are discussed during commission.</div>
-                            <div class="enh-note">Not available on all leather types · Braid pattern and extent confirmed during commission · Adds weight and alters sensation profile</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">8</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Enhancement · Fall Construction</div>
-                            <div class="enh-name">Fall Accoutrements <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— From +$100</span>
-                            </div>
-                            <div class="enh-desc">Additions to the falls themselves — beyond the material and the cut. This includes tipping the ends of falls with metal, cord, or knotwork; adding small rings or charms threaded onto individual falls; weighting the fall tips with wrapped lead or brass; or finishing the fall ends with decorative whipping in contrasting thread or leather lace. Each addition changes both the appearance and the landing character of the fall. Some accoutrements are purely aesthetic; others alter the sensation profile meaningfully. The specific additions, their placement, and their effect are discussed during commission. Pricing depends on the complexity and number of accoutrements applied.</div>
-                            <div class="enh-note">Discussed and designed during commission · Some options affect sensation profile · Pricing confirmed per specific configuration</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- PERSONALISATION -->
-        <section class="section" style="padding-top:4rem;padding-bottom:4rem;">
-            <div class="section-bg" style="background-image:url('image2.jpg');"></div>
-            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>
-            <div class="section-inner">
-                <p class="eyebrow reveal">Step Two</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2">Personalisation</h2>
-                <p class="section-body reveal rd3">Marking the piece as specifically, unmistakably yours, or as a gift made for one person alone.</p>
-                <div class="enh-grid reveal rd4">
-                    <div class="enh-card">
-                        <div class="enh-num">01</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Personalisation</div>
-                            <div class="enh-name">Hardware Engraving <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">The metal neck band, collar, or butt cap can be engraved with initials, a date, a symbol, or a short text of your choosing. Engraving is executed by hand using a rotary tool, and the design is confirmed by email before work begins. Polished brass and copper take engraving particularly well. Matte finishes and steel are also possible but with different visual results.</p>
-                            <div class="enh-note">Design confirmation required before production begins Â· Works on all metal neck types</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">02</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Personalisation</div>
-                            <div class="enh-name">Branded Fall Stamp <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">A Blackwall maker&apos;s mark or a custom symbol of your choice can be pressed into the base of the falls using a heated brass die. Subtle visible only when the falls are held up but permanently part of the piece. Works best on thicker, smoother leathers: cowhide, horse, kangaroo, elk.</p>
-                            <div class="enh-note">Works on select leather types only Â· Design options discussed during commission</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">03</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Personalisation</div>
-                            <div class="enh-name">Custom Wrist Tie Medallion <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">A small hand-turned wooden disc or metal or matching wood disc- matching the handle or contrasting it- can be threaded onto the wrist tie, functioning both as an elegant weight and as a personalised detail. The disc can be left natural, engraved, or inlaid. Discussed per piece.</p>
-                            <div class="enh-note">Adds character to the butt treatment&nbsp; Available on most wrist tie configurations</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">04</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Personalisation</div>
-                            <div class="enh-badge">Gift Commission</div>
-                            <div class="enh-name">Gift Commissioning <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">Commissioning a piece for another person requires a different kind of conversation, one that gathers what you know about their preferences, their aesthetic, and their practice. Blackwall treats gift commissions with the same privacy and care as all others. The recipient&apos;s name is never attached to any online record. A gift message, if desired, is prepared privately and included with the piece.</p>
-                            <div class="enh-note">The recipient&apos;s details are kept entirely offline&nbsp; Gift message by request</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- PRESENTATION -->
-        <section class="section" style="padding-top:4rem;">
-            <div class="section-bg" style="background-image:url('image1.jpg');"></div>
-            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>
-            <div class="section-inner">
-                <p class="eyebrow reveal">Step Two</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2">Presentation &amp; <em>Storage</em></h2>
-                <p class="section-body reveal rd3">
-      How a piece is housed is part of how it is experienced. These options transform the receiving and keeping of the piece into something commensurate with its making. </p>
-                <div class="enh-grid reveal rd4">
-                    <div class="enh-card">
-                        <div class="enh-num">05</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Presentation</div>
-                            <div class="enh-badge">Most Requested</div>
-                            <div class="enh-name">Bespoke Presentation Case <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">A handmade wooden presentation case, lined in black velvet or leather, sized specifically to the piece inside. The case is made of wood selected to complement- or deliberately contrast- the handle material. Exterior finish options include natural oiled, ebonised, or leather-wrapped. A recessed lid can carry a small engraved brass plate. The case is designed to be kept: a place for the piece between uses, and a container worthy of what it holds.</p>
-                            <div class="enh-note">Lead time:weeks additional&nbsp; &nbsp;Wood and lining material selected during commission&nbsp; &nbsp;<br>Adds significant presentation value for gift commissions
-                            </div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">06</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Presentation</div>
-                            <div class="enh-name">Leather Roll Pouch <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">A hand-stitched leather roll pouch, tied with a leather lace, that holds the flogger in a way that protects it during travel and storage without compressing or distorting the falls. Made in vegetable-tanned leather in black, dark brown, or natural, with a material selected to complement the falls. Monogramming available.</p>
-                            <div class="enh-note">Practical daily storage option Â· More discreet than a full presentation case Â· Shipping-safe</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">07</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Presentation</div>
-                            <div class="enh-name">Certificate of Provenance</div>
-                            <p class="enh-desc">A hand-signed certificate on heavy cotton rag paper, noting the order number, the date of completion, the materials used, and the maker's signature. The certificate carries no client name â€" it belongs to the piece, not the person. Printed in a single colour with the Blackwall mark. Suitable for framing. A record of making.</p>
-                            <div class="enh-note">Included with every piece on request&nbsp; &nbsp;No additional charge&nbsp; &nbsp;Names are not recorded on the certificate</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">08</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Presentation</div>
-                            <div class="enh-name">Museum-Style Display Mount <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">A wall-mounted display bracket, fabricated in steel or brass, powder-coated matte black. Designed to hold the flogger horizontally, like a piece on display in a private collection. <br>Because that is exactly what it is. <br>The mount is custom-made to the diameter and length of the specific handle. Fixings and template included. <br>Gallery-quality finish.</p>
-                            <div class="enh-note">Custom-made per handle diameter Â· Matte black standard Â· Polished brass available on request</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- DOCUMENTATION & EXPERIENCE -->
-        <section class="section">
-            <div class="section-bg" style="background-image:url('image5.jpg');"></div>
-            <div class="section-overlay" style="background:rgba(5,4,7,0.89);"></div>
-            <div class="section-inner">
-                <p class="eyebrow reveal">Step Three</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2">Documentation &amp;<br><em>Experience</em></h2>
-                <p class="section-body reveal rd3">
-      Options that extend the commission beyond the object itself â€" into record, into relationship, into encounter. </p>
-                <div class="enh-grid reveal rd4">
-                    <div class="enh-card">
-                        <div class="enh-num">09</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Documentation</div>
-                            <div class="enh-name">The Complete Experience- +$1000</div>
-                            <p class="enh-desc">When you want to be involved in every step of creation, this is the ultimate way to be involved in an document your piece being made.<br><br>This experience includes:<br><br>&nbsp;- Mr. Aishe will vidchat with you, and allow you to see what blanks are available for your handle. You can personally select both the wood type, and the individual piece of wood that he will use to create your piece.<br><br>&nbsp;- Mr. Aishe will then repeat that process with the leather. He will vidchat with you inside the leather warehouse, allowing you to select the exact leather that you want for your piece.<br><br>&nbsp;- Mr. Aishe will document the ENTIRE wood and leather working process, from centering out the blanks for the lathe and measuring out the falls all the way to final polish and treatment. You will watch him hand-deliver it to UPS. You will have the option to be sent links to the videos as each step is completed, and/or be sent the entire footage package on a thumb drive included with your flogger.&nbsp; &nbsp;&nbsp;</p>
-                            <div class="enh-note" style="font-weight: 800;">NOTE: Certain proprietary techniques, including the biomechanical analysis and transferring those measurements to the piece, will not be filmed.. blackwall will never use the video of your piece being created without your express permission</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">10</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Documentation</div>
-                            <div class="enh-name">Making Documentary (Video)- +$500</div>
-                            <p class="enh-desc">A short (3-5 minute) documentary video of your piece being made- lathe turning, leather selection, cutting, assembly, finishing- edited with titles, music, and a close-up of the completed piece. Delivered as a private, unlisted file. A permanent record of the making, in motion. Available on request; lead time and production schedule permitting.</p>
-                            <div class="enh-note">Subject to production schedule availability&middot;&nbsp; &nbsp;Delivered as private video file<br>Music and edit discussed beforehand
-                            </div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">11</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Experience</div>
-                            <div class="enh-name">Wood and Leather Selection- $500</div>
-                            <p class="enh-desc">When you want to be present for material selection, but do not require the footage of it being made. <br><br>Mr Aishe will hold two Vidchats with you; one where he will take you through the selection process for wood blanks, and then, after the wood has been turned, he will take you into the leather warehouse and show you different leathers and colour combinations, so you can see first-hand how the finished handle looks against the leather.&nbsp; &nbsp;&nbsp;</p>
-                            <div class="enh-note">NOTE: while this option requires a fee, it is a fee for mr aishe&apos;s time. therefore, it will be scheduled according to mr aishe&apos;s schedule and availability. scheduling these vidchats may result in completion delays for your piece..<br>
+}</style>         
+    </head>     
+    <body> 
+        <div class="cur-dot" id="curDot"></div>         
+        <div class="cur-ring" id="curRing"></div>         
+        <nav> 
+            <ul class="nav-links"> 
+                <li> 
+                    <a href="artisan.html">The<br>Artisan</a> 
+                </li>                 
+                <li> 
+                    <a href="materials.html">Materials</a> 
+                </li>                 
+            </ul>             
+            <a href="home.html"><img class="nav-logo" src="Transparent logo white font.png" alt="Blackwall"></a> 
+            <ul class="nav-links"> 
+                <li> 
+                    <a href="commission.html">Commission</a> 
+                </li>                 
+                <li> 
+                    <a href="pricing.html">Pricing</a> 
+                </li>                 
+            </ul>             
+        </nav>         
+        <!-- Mobile hamburger -->         
+        <button class="bw-ham" id="bwHam" aria-label="Open menu"> 
+            <span></span>
+            <span></span>
+            <span></span> 
+        </button>         
+        <div class="bw-mob-menu" id="bwMobMenu"> 
+            <button class="bw-mob-close" id="bwMobClose" aria-label="Close menu">&times;</button>             
+            <a href="home.html">Home</a> 
+            <a href="artisan.html">The Artisan</a> 
+            <a href="materials.html">Materials</a> 
+            <a href="commission.html">Commission</a> 
+            <a href="pricing.html">Pricing</a> 
+            <a href="process.html">Process</a> 
+        </div>         
+        <!-- HERO -->         
+        <div class="page-hero"> 
+            <div class="hero-bg" style="background-image:url('image6.jpg');"></div>             
+            <div class="hero-vignette"></div>             
+            <div class="hero-glow"></div>             
+            <div class="hero-content"> 
+                <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;">Beyond the Standard Commission</p> 
+                <div class="gold-rule-c"></div>                 
+                <h1 class="hero-title">Enhancements &amp;<br><em>Additions</em></h1> 
+                <p style="font-family:var(--font-ui);font-weight:500;font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--dusk);margin-top:1rem;">Every option discussed during the commission conversation</p> 
+            </div>             
+        </div>         
+        <!-- INTRO -->         
+        <section class="section" style="padding:8rem 4rem;"> 
+            <div class="section-bg" style="background-image:url('image4.jpg');"></div>             
+            <div class="section-overlay"></div>             
+            <div class="section-inner" style="max-width:800px;"> 
+                <p class="eyebrow reveal">Going Further</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">The commission is the<br>beginning, not the <em>limit</em></h2> 
+                <p class="section-body reveal rd3">The standard commission already produces something extraordinary. <br><br>A singular piece unmatched in BDSM.<br><br>However, for those wishing to go further, to take their piece to the next level (and beyond); to contextualise the piece, personalise it at depth, 
+      or transform the experience of commissioning itself into something memorable.</p> 
+                <p class="section-body reveal rd4">Not every enhancement is available for every piece. All options are discussed during the 
+      commission conversation, and no price is confirmed until feasibility is established. <br><br>Certain enhancements require additional lead time.</p> 
+            </div>             
+        </section>         
+        <!-- ENHANCEMENTS -->         
+        <section class="section" style="padding-bottom:4rem;"> 
+            <div class="section-bg" style="background-image:url('image5.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>             
+            <div class="section-inner"> 
+                <p class="eyebrow reveal">Step One</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Enhancements</h2> 
+                <p class="section-body reveal rd3">Structural and material enhancements that alter the character of the piece itself.</p> 
+                <div class="enh-grid reveal rd4"> 
+                    <div class="enh-card"> 
+                        <div class="enh-num">1</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Enhancement</div>                             
+                            <div class="enh-name">Laser Cutting <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— $125</span> 
+                            </div>                             
+                            <div class="enh-desc">Precision laser-cut falls with clean, exact edges and the option for intricate patterning along the length. Produces a distinct visual profile and a subtly different sensation at the tip. Available on leather and select synthetic falls.</div>                             
+                            <div class="enh-note">Discussed during commission · Subject to material compatibility</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">2</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Enhancement</div>                             
+                            <div class="enh-name">Latex / PVC Falls Coating <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">&#8212; $150</span> 
+                            </div>                             
+                            <div class="enh-desc">A smooth, sealed latex or PVC coating applied to the falls. Changes both the aesthetic and the sensation profile — glossy, cool to the touch, and with a crisper impact character. Easy to clean and maintain.</div>                             
+                            <div class="enh-note">Discussed during commission · Subject to material compatibility</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">3</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Enhancement · Fall Colouring</div>                             
+                            <div class="enh-name">Two-Colour Falls <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— +$50</span> 
+                            </div>                             
+                            <div class="enh-desc">Falls cut from two different dye colours of the same leather type, mixed within the same fall set. The contrast can be subtle — two tones of the same family — or deliberate. The material character and sensation profile remains consistent; only the visual changes. Colour pairing discussed and confirmed during commission.</div>                             
+                            <div class="enh-note">Same leather type throughout · Colour pairing confirmed during commission · Available on most leather falls</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">4</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Enhancement · Fall Colouring</div>                             
+                            <div class="enh-name">Three-Colour Falls <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— +$100</span> 
+                            </div>                             
+                            <div class="enh-desc">Three dye colours of the same leather type distributed across the fall set. The effect can range from a graduated triadic blend to a structured pattern of intentional contrast. More complex to source and cut than a two-colour set, and the distribution of each colour is discussed before cutting begins.</div>                             
+                            <div class="enh-note">Same leather type throughout · Distribution and proportion confirmed before cutting · Longer sourcing lead time may apply</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">5</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Enhancement · Fall Colouring</div>                             
+                            <div class="enh-name">Four-Plus Colour Falls <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— +$150</span> 
+                            </div>                             
+                            <div class="enh-desc">Four or more dye colours within a single fall set — all from the same leather type. At this range, the fall set becomes as much a visual statement as a functional one. Sourcing four or more distinct dye lots of the same species and tanning process takes time; this enhancement requires patience and a clear palette conversation upfront. The result justifies both.</div>                             
+                            <div class="enh-note">Same leather type throughout · Palette conversation required before work begins · Extended sourcing lead time expected</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">6</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Enhancement · Fall Construction</div>                             
+                            <div class="enh-name">Mixed Fall Types <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— From +$200</span> 
+                            </div>                             
+                            <div class="enh-desc">Falls drawn from two or more different materials within the same set — combining, for example, cowhide and kangaroo, or suede and latex, or elk and horsehair. Each combination produces a sensation profile that no single material achieves alone: the thud of one layered against the sting of another, distributed across the same strike. Not all material pairings are compatible or advisable; the combination is discussed and assessed during commission. Pricing reflects the complexity of sourcing and construction.</div>                             
+                            <div class="enh-note">Compatibility of materials confirmed before commission · Sensation profile discussed in detail · Pricing confirmed per specific combination</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">7</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Enhancement · Fall Construction</div>                             
+                            <div class="enh-name">Fall Braiding <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— +$150</span> 
+                            </div>                             
+                            <div class="enh-desc">Individual falls braided along part or all of their length before the final cut. Braiding adds weight, changes the drape, and alters the sensation profile — a braided fall lands with more focus and authority than a flat one of the same width. It also changes the visual character of the set considerably: braided falls have a rope-like texture that reads as deliberate and constructed. Works best on leathers with sufficient thickness and pliability — cowhide, kangaroo, elk, and horse are the most suitable. The braid pattern and length are discussed during commission.</div>                             
+                            <div class="enh-note">Not available on all leather types · Braid pattern and extent confirmed during commission · Adds weight and alters sensation profile</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">8</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Enhancement · Fall Construction</div>                             
+                            <div class="enh-name">Fall Accoutrements <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— From +$100</span> 
+                            </div>                             
+                            <div class="enh-desc">Additions or modifications to the falls themselves &#8212; beyond the material and the cut. This includes tipping the ends of falls with metal, cord, or knotwork; adding small rings or charms threaded onto individual falls; weighting the fall tips with wrapped lead or brass; finishing the fall ends with decorative whipping in contrasting thread or leather lace, or using strategic cuts to interweave falls within each other.                                 Each addition changes both the appearance and the landing character of the fall. Some accoutrements are purely aesthetic; others alter the sensation profile meaningfully. The specific additions, their placement, and their effect are discussed during commission. Pricing depends on the complexity and number of accoutrements applied.
+</div>                             
+                            <div class="enh-note">Discussed and designed during commission · Some options affect sensation profile · Pricing confirmed per specific configuration</div>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </div>             
+        </section>         
+        <!-- PERSONALISATION -->         
+        <section class="section" style="padding-top:4rem;padding-bottom:4rem;"> 
+            <div class="section-bg" style="background-image:url('image2.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>             
+            <div class="section-inner"> 
+                <p class="eyebrow reveal">Step Two</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Personalisation</h2> 
+                <p class="section-body reveal rd3">Marking the piece as specifically, unmistakably yours, or as a gift made for one person alone.</p> 
+                <div class="enh-grid reveal rd4"> 
+                    <div class="enh-card"> 
+                        <div class="enh-num">01</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Personalisation</div>                             
+                            <div class="enh-name">Hardware Engraving <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">The metal neck band, collar, or butt cap can be engraved with initials, a date, a symbol, or a short text of your choosing. Engraving is executed by precision laser, and the design is confirmed by email before work begins. Polished brass and copper take engraving particularly well. Matte finishes and steel are also possible but with different visual results.</p> 
+                            <div class="enh-note">Design confirmation required before production begins&nbsp; &nbsp;&middot; <br>Works on most metal neck types
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">02</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Personalisation</div>                             
+                            <div class="enh-name">Branded Fall Stamp <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">A Blackwall maker&apos;s mark or a custom symbol of your choice can be pressed into the base of the falls using a heated brass die. Subtle visible only when the falls are held up but permanently part of the piece. Works best on thicker, smoother leathers: cowhide, horse, kangaroo, elk.</p> 
+                            <div class="enh-note">Works on select leather types only&nbsp; &nbsp; <br>Design options discussed during commission
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">03</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Personalisation</div>                             
+                            <div class="enh-name">Custom Wrist Tie Medallion <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">A small hand-turned wooden disc or metal or matching wood disc- matching the handle or contrasting it- can be threaded onto the wrist tie, functioning both as an elegant weight and as a personalised detail. The disc can be left natural, engraved, or inlaid. Discussed per piece.</p> 
+                            <div class="enh-note">Adds character to the butt treatment&nbsp; <br>Available on most wrist tie configurations
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">04</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Personalisation</div>                             
+                            <div class="enh-badge">Gift Commission</div>                             
+                            <div class="enh-name">Gift Commissioning <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">Commissioning a piece for another person requires a different kind of conversation, one that gathers what you know about their preferences, their aesthetic, and their practice. Blackwall treats gift commissions with the same privacy and care as all others. The recipient&apos;s name is never attached to any online record. A gift message, if desired, is prepared privately and included with the piece.</p> 
+                            <div class="enh-note">The recipient&apos;s details are kept entirely offline&nbsp; <br>Gift message by request
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </div>             
+        </section>         
+        <!-- PRESENTATION -->         
+        <section class="section" style="padding-top:4rem;"> 
+            <div class="section-bg" style="background-image:url('image1.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>             
+            <div class="section-inner"> 
+                <p class="eyebrow reveal">Step Two</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Presentation &amp; <em>Storage</em></h2> 
+                <p class="section-body reveal rd3"> 
+      How a piece is housed is part of how it is experienced. These options transform the receiving and keeping of the piece into something commensurate with its making. </p> 
+                <div class="enh-grid reveal rd4"> 
+                    <div class="enh-card"> 
+                        <div class="enh-num">05</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Presentation</div>                             
+                            <div class="enh-badge">Most Requested</div>                             
+                            <div class="enh-name">Bespoke Presentation Case <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">A handmade wooden presentation case, lined in black velvet or leather, sized specifically to the piece inside. The case is made of wood selected to complement- or deliberately contrast- the handle material. Exterior finish options include natural oiled, ebonised, or leather-wrapped. A recessed lid can carry a small engraved brass plate. The case is designed to be kept: a place for the piece between uses, and a container worthy of what it holds.</p> 
+                            <div class="enh-note">Lead time:weeks additional&nbsp; &nbsp;<br>Wood and lining material selected during commission&nbsp; &nbsp;<br>Adds significant presentation value for gift commissions
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">06</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Presentation</div>                             
+                            <div class="enh-name">Leather Roll Pouch <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">A hand-stitched leather roll pouch, tied with a leather lace, that holds the flogger in a way that protects it during travel and storage without compressing or distorting the falls. Made in vegetable-tanned leather in black, dark brown, or natural, with a material selected to complement the falls. Monogramming available.</p> 
+                            <div class="enh-note">Practical daily storage option <br>More discreet than a full presentation case<br>Shipping-safe
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">07</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Presentation</div>                             
+                            <div class="enh-name">Certificate of Provenance</div>                             
+                            <p class="enh-desc">A hand-signed certificate on heavy cotton rag paper, noting the order number, the date of completion, the materials used, and the maker&apos;s signature. The certificate carries no client name- it belongs to the piece, not the person. Printed in a single colour with the Blackwall mark. Suitable for framing. A record of making.</p> 
+                            <div class="enh-note">Included with every piece on request&nbsp; &nbsp;No additional charge&nbsp; &nbsp;Names are not recorded on the certificate</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">08</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Presentation</div>                             
+                            <div class="enh-name">Museum-Style Display Mount <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">A wall-mounted display bracket, fabricated in steel or brass, powder-coated matte black. Designed to hold the flogger horizontally, like a piece on display in a private collection. <br>Because that is exactly what it is. <br>The mount is custom-made to the diameter and length of the specific handle. Fixings and template included. <br>Gallery-quality finish.</p> 
+                            <div class="enh-note">Custom-made per handle diameter<br>Matte black standard<br>Polished brass available on request
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </div>             
+        </section>         
+        <!-- DOCUMENTATION & EXPERIENCE -->         
+        <section class="section"> 
+            <div class="section-bg" style="background-image:url('image5.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.89);"></div>             
+            <div class="section-inner"> 
+                <p class="eyebrow reveal">Step Three</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Documentation &amp;<br><em>Experience</em></h2> 
+                <p class="section-body reveal rd3">Options that extend the commission beyond the object itself, into record, into relationship, into experience.</p> 
+                <div class="enh-grid reveal rd4"> 
+                    <div class="enh-card"> 
+                        <div class="enh-num">09</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Documentation</div>                             
+                            <div class="enh-name">The Complete Experience- +$1000</div>                             
+                            <p class="enh-desc">When you want to be involved in every step of creation, this is the ultimate way to be involved in an document your piece being made.<br><br>This experience includes:<br><br>&nbsp;- Mr. Aishe will vidchat with you, and allow you to see what blanks are available for your handle. You can personally select both the wood type, and the individual piece of wood that he will use to create your piece.<br><br>&nbsp;- Mr. Aishe will then repeat that process with the leather. He will vidchat with you inside the leather warehouse, allowing you to select the exact leather that you want for your piece.<br><br>&nbsp;- Mr. Aishe will document the ENTIRE wood and leather working process, from centering out the blanks for the lathe and measuring out the falls all the way to final polish and treatment. You will watch him hand-deliver it to UPS. You will have the option to be sent links to the videos as each step is completed, and/or be sent the entire footage package on a thumb drive included with your flogger.&nbsp; &nbsp;&nbsp;</p> 
+                            <div class="enh-note" style="font-weight: 800;">NOTE: Certain proprietary techniques, including the biomechanical analysis and transferring those measurements to the piece, will not be filmed.. blackwall will never use the video of your piece being created without your express permission</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">10</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Documentation</div>                             
+                            <div class="enh-name">Making Documentary (Video)- +$500</div>                             
+                            <p class="enh-desc">A short (3-5 minute) documentary video of your piece being made- lathe turning, leather selection, cutting, assembly, finishing- edited with titles, music, and a close-up of the completed piece. Delivered as a private, unlisted file. A permanent record of the making, in motion. Available on request; lead time and production schedule permitting.</p> 
+                            <div class="enh-note">Subject to production schedule availability&middot;&nbsp; &nbsp;<br>Delivered as private video file<br>Music and edit discussed beforehand
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">11</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Experience</div>                             
+                            <div class="enh-name">Wood and Leather Selection- $500</div>                             
+                            <p class="enh-desc">When you want to be present for material selection, but do not require the footage of it being made. <br><br>Mr Aishe will hold two Vidchats with you; one where he will take you through the selection process for wood blanks, and then, after the wood has been turned, he will take you into the leather warehouse and show you different leathers and colour combinations, so you can see first-hand how the finished handle looks against the leather.&nbsp; &nbsp;&nbsp;</p> 
+                            <div class="enh-note">NOTE: while this option requires a fee, it is a fee for mr aishe&apos;s time. therefore, it will be scheduled according to mr aishe&apos;s schedule and availability. scheduling these vidchats may result in completion delays for your piece..<br> 
                                 <br>Vidchats to be arranged by Zoom, and carried out separately for both wood and leather.&nbsp;
-                            </div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">12</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Experience</div>
-                            <div class="enh-name">Extended Design Consultation <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">Some commissions warrant more than an email exchange. An extended design consultation â€" conducted by phone, video, or encrypted messaging â€" allows for a deeper conversation: about the intended use, the desired sensation, the aesthetic context, the relationship between maker and recipient. Particularly valuable for first commissions, gift commissions, and pieces at the higher end of the materials range. Billed by the hour. The conversation has no predetermined outcome â€" only the best possible piece.</p>
-                            <div class="enh-note">Hourly rate confirmed on request Â· Conducted via your preferred private channel Â· Time applies toward overall commission cost</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- COLLECTIONS & SETS -->
-        <section class="section">
-            <div class="section-bg" style="background-image:url('image3.jpg');"></div>
-            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>
-            <div class="section-inner">
-                <p class="eyebrow reveal">Step Four</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2">Sets &amp; <em>Collections</em></h2>
-                <p class="section-body reveal rd3">
-      For those who think beyond a single piece â€" toward a matched set, a graduated collection, or a body of work that speaks as a whole. </p>
-                <div class="enh-grid reveal rd4">
-                    <div class="enh-card">
-                        <div class="enh-num">13</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Sets</div>
-                            <div class="enh-badge">Most Ambitious</div>
-                            <div class="enh-name">Matched Set <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">Two or more floggers made as a set, sharing a handle wood, a leather family, a hardware finish, or a specific visual language. Sets can be graduated (light to heavy, short to long, narrow to wide falls), contrasted (same handle, different fall character). or visually similar or complimentary. <br><br>Presented together if a shared case is commissioned.<br><br>&nbsp;Priced per piece and accessory.<br><br>&nbsp;There is no discount.</p>
-                            <div class="enh-note">NOTE: Multiple pieces will increase the production time for the total set</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">14</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Sets</div>
-                            <div class="enh-name">Interchangeable System <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
-                            <p class="enh-desc">Mr. Aishe is always working on new and innovative pieces and techniques. For the last few years, he has been working on a way to develop an interchangeable handle type allows multiple fall sets to be used with a single handle, without disrupting the swing profile of the piece or the heirloom quality that he holds his work to. <br><br>He is close to perfecting that system.<br><br>It will not be inexpensive.<br><br>It will be the single greatest flogger system ever built.<br><br>Stay tuned.</p>
-                            <div class="enh-note">Coming Soon</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">15</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Sets</div>
-                            <div class="enh-name">Matching Rings/Pendant- Starts at $100</div>
-                            <p class="enh-desc">Some clients like to display their dominance in accoutrements. Some submissives like to show their submission and ownership through the same manner.&nbsp;<br><br>Using materials remaining from the process, Mr. Aishe can make matching rings or a pendant that matches the flogger handle. They are created with the same high quality and attention to detail that he creates his floggers with.<br><br>A unique statement accessory, for the more eclectic, eccentric or Bohemian of our clients.</p>
-                            <div class="enh-note">As these are made to the same standard as our floggers, these pieces may require delays in order completion abovee and beyond the norm.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- CARE & MAINTENANCE -->
-        <section class="section" style="padding:8rem 4rem;">
-            <div class="section-bg" style="background-image:url('image7.jpg');"></div>
-            <div class="section-overlay"></div>
-            <div class="section-inner" style="max-width:800px;">
-                <p class="eyebrow reveal">Step Five</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2">Care &amp; <em>Longevity</em></h2>
-                <p class="section-body reveal rd3">A Blackwall piece is made to last decades. These additions support that.</p>
-                <div class="enh-grid reveal rd4">
-                    <div class="enh-card">
-                        <div class="enh-num">16</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Care</div>
-                            <div class="enh-name">Leather Care Kit- $50</div>
-                            <p class="enh-desc">A small kit- some handmade beeswax wood polish, leather conditioner, a fine cloth, and a brief written care guide specific to the leather type in your piece, all packaged in a cloth drawstring pouch. The guide covers cleaning, conditioning, storage, and the signs of normal wear versus damage. Different leathers have different needs; the guide is specific to yours.</p>
-                            <div class="enh-note">Tailored to the specific leather type in the commission&nbsp; &nbsp; Written by the maker&nbsp;</div>
-                        </div>
-                    </div>
-                    <div class="enh-card">
-                        <div class="enh-num">17</div>
-                        <div class="enh-body">
-                            <div class="enh-tier">Care</div>
-                            <div class="enh-name">Restoration &amp; Repair Service <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span></div>
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">12</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Experience</div>                             
+                            <div class="enh-name">Extended Design Consultation <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">Some commissions warrant more than an email exchange. An extended design consultation â€" conducted by phone, video, or encrypted messaging â€" allows for a deeper conversation: about the intended use, the desired sensation, the aesthetic context, the relationship between maker and recipient. Particularly valuable for first commissions, gift commissions, and pieces at the higher end of the materials range. Billed by the hour. The conversation has no predetermined outcome â€" only the best possible piece.</p> 
+                            <div class="enh-note">Hourly rate confirmed on request<br>Conducted via your preferred private channel <br>Hourly rate confirmed on request&nbsp; <br>Time applies toward overall commission cost
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </div>             
+        </section>         
+        <!-- COLLECTIONS & SETS -->         
+        <section class="section"> 
+            <div class="section-bg" style="background-image:url('image3.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.87);"></div>             
+            <div class="section-inner"> 
+                <p class="eyebrow reveal">Step Four</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Sets &amp; <em>Collections</em></h2> 
+                <p class="section-body reveal rd3">For those who think beyond a single piece; toward a matched set, a graduated collection, or a body of work that speaks as a whole.</p> 
+                <div class="enh-grid reveal rd4"> 
+                    <div class="enh-card"> 
+                        <div class="enh-num">13</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Sets</div>                             
+                            <div class="enh-badge">Most Ambitious</div>                             
+                            <div class="enh-name">Matched Set <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">Two or more floggers made as a set, sharing a handle wood, a leather family, a hardware finish, or a specific visual language. Sets can be graduated (light to heavy, short to long, narrow to wide falls), contrasted (same handle, different fall character). or visually similar or complimentary. <br><br>Presented together if a shared case is commissioned.<br><br>&nbsp;Priced per piece and accessory.<br><br>&nbsp;There is no discount.</p> 
+                            <div class="enh-note">NOTE: Multiple pieces will increase the production time for the total set</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">14</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Sets</div>                             
+                            <div class="enh-name">Interchangeable System <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
+                            <p class="enh-desc">Mr. Aishe is always working on new and innovative pieces and techniques. For the last few years, he has been working on a way to develop an interchangeable handle type allows multiple fall sets to be used with a single handle, without disrupting the swing profile of the piece or the heirloom quality that he holds his work to. <br><br>He is close to perfecting that system.<br><br>It will not be inexpensive.<br><br>It will be the single greatest flogger system ever built.<br><br>Stay tuned.</p> 
+                            <div class="enh-note">Coming Soon</div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">15</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Sets</div>                             
+                            <div class="enh-name">Matching Rings/Pendant- Starts at $100</div>                             
+                            <p class="enh-desc">Some clients like to display their dominance in accoutrements. Some submissives like to show their submission and ownership through the same manner.&nbsp;<br><br>Using materials remaining from the creation process, Mr. Aishe can make matching rings or a pendant that matches the flogger handle. They are created with the same high quality and attention to detail that he creates his floggers with.<br><br>A unique statement accessory, for the more eclectic, eccentric or Bohemian of our clients.</p> 
+                            <div class="enh-note">As these are made to the same standard as our floggers, <br>these pieces may require delays in order completion abovee and beyond the norm.
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </div>             
+        </section>         
+        <!-- CARE & MAINTENANCE -->         
+        <section class="section" style="padding:8rem 4rem;"> 
+            <div class="section-bg" style="background-image:url('image7.jpg');"></div>             
+            <div class="section-overlay"></div>             
+            <div class="section-inner" style="max-width:800px;"> 
+                <p class="eyebrow reveal">Step Five</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2">Care &amp; <em>Longevity</em></h2> 
+                <p class="section-body reveal rd3">A Blackwall piece is made to last decades. These additions support that.</p> 
+                <div class="enh-grid reveal rd4"> 
+                    <div class="enh-card"> 
+                        <div class="enh-num">16</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Care</div>                             
+                            <div class="enh-name">Leather Care Kit- $50</div>                             
+                            <p class="enh-desc">A small kit- some handmade beeswax wood polish, leather conditioner, a fine cloth, and a brief written care guide specific to the leather type in your piece, all packaged in a cloth drawstring pouch. The guide covers cleaning, conditioning, storage, and the signs of normal wear versus damage. Different leathers have different needs; the guide is specific to yours.</p> 
+                            <div class="enh-note">Tailored to the specific leather type in the commission&nbsp; &nbsp; <br>Written by the maker&nbsp;
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <div class="enh-card"> 
+                        <div class="enh-num">17</div>                         
+                        <div class="enh-body"> 
+                            <div class="enh-tier">Care</div>                             
+                            <div class="enh-name">Restoration &amp; Repair Service <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--ember-glow);font-weight:200;">— Starts at +$100</span>
+                            </div>                             
                             <p class="enh-desc">Certain Blackwall pieces can be returned for restoration: re-wrapping of a grip, replacement of a fall set, re-finishing of the handle, repair or replacement of the neck or butt. This is very much piece specific, as the falls are typically installed in a manner that makes disassembly without damaging the neck difficult.
-These pieces are built to last generations, and are subject to vigorous quality controls and testing before they are shipped to you. <br><br>The construction reflects that.<br><br>&nbsp;Pricing for refinishing varies by piece and request.</p>
-                            <div class="enh-note">NOTE: Shipping and handling both ways is the responsibility of the client in restoration and repair services.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- CTA -->
-        <section class="section" style="padding:9rem 4rem;">
-            <div class="section-bg" style="background-image:url('image8.jpg');"></div>
-            <div class="section-overlay" style="background:rgba(5,4,7,0.89);"></div>
-            <div class="section-inner" style="max-width:700px;">
-                <p class="eyebrow reveal">Begin</p>
-                <div class="gold-rule reveal rd1"></div>
-                <h2 class="section-title reveal rd2" style="font-size:2.8rem;">Every enhancement<br>is a <em>conversation</em></h2>
-                <p class="section-body reveal rd3">None of these options have a fixed price until the specifics are understood. All of them begin the same way: an email.</p>
-                <a href="mailto:info@blackwallbdsm.com" class="btn reveal rd4" style="font-size:0.7rem;padding:1.2rem 3rem;">info@blackwallbdsm.com</a>
-                <div class="gold-rule reveal" style="margin-top:1rem;"></div>
-                <p class="reveal" style="font-family:var(--font-ui);font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--whisper);"> <a href="commission.html" style="color:var(--gold-dim);text-decoration:none;">&larr; Back to Commission Process</a> </p>
-            </div>
-        </section>
+These pieces are built to last generations, and are subject to vigorous quality controls and testing before they are shipped to you. <br><br>The construction reflects that.<br><br>&nbsp;Pricing for refinishing varies by piece and request.</p> 
+                            <div class="enh-note">NOTE: Shipping and handling both ways is the responsibility of the client in restoration and repair services.</div>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </div>             
+        </section>         
+        <!-- CTA -->         
+        <section class="section" style="padding:9rem 4rem;"> 
+            <div class="section-bg" style="background-image:url('image8.jpg');"></div>             
+            <div class="section-overlay" style="background:rgba(5,4,7,0.89);"></div>             
+            <div class="section-inner" style="max-width:700px;"> 
+                <p class="eyebrow reveal">Begin</p> 
+                <div class="gold-rule reveal rd1"></div>                 
+                <h2 class="section-title reveal rd2" style="font-size:2.8rem;">Every enhancement<br>is a <em>conversation</em></h2> 
+                <p class="section-body reveal rd3">None of these options have a fixed price until the specifics are understood. All of them begin the same way: an email.</p> 
+                <a href="mailto:info@blackwallbdsm.com" class="btn reveal rd4" style="font-size:0.7rem;padding:1.2rem 3rem;">info@blackwallbdsm.com</a> 
+                <div class="gold-rule reveal" style="margin-top:1rem;"></div>                 
+                <p class="reveal" style="font-family:var(--font-ui);font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--whisper);"> <a href="commission.html" style="color:var(--gold-dim);text-decoration:none;">&larr; Back to Commission Process</a> </p> 
+            </div>             
+        </section>         
         <footer>
-            <img class="footer-logo" src="Transparent logo white font.png" alt="Blackwall">
-            <div class="footer-rule"></div>
-            <p class="footer-artisan">J. Christophe Aishe &nbsp;Â·&nbsp; Artisan</p>
-            <p class="footer-copy">&copy; 2025 Blackwall &nbsp;Â·&nbsp; All rights reserved &nbsp;Â·&nbsp; Bespoke BDSM Equipment</p>
-        </footer>
-        <script>});</script>
-    <script>
+            <img class="footer-logo" src="Transparent logo white font.png" alt="Blackwall" style="width: 153px; height: 107px;">              
+            <div class="footer-rule"></div>             
+            <p class="footer-artisan">J. Christophe Aishe &nbsp;Â·&nbsp; Artisan</p> 
+            <p class="footer-copy">&copy; 2025 Blackwall&nbsp; &nbsp;&middot;&nbsp; All rights reserved&nbsp; &nbsp; &middot;&nbsp; Bespoke BDSM Equipment</p> 
+        </footer>         
+        <script>});</script>         
+        <script>
 /* Blackwall — shared.js
    Custom cursor + scroll-reveal used on every page.
    Page-specific hover targets can be passed via window.BW_HOVER
@@ -587,9 +461,8 @@ These pieces are built to last generations, and are subject to vigorous quality 
   document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 })();
 
-</script>
-
-<script>
+</script>         
+        <script>
 (function(){
   var ham = document.getElementById('bwHam');
   var menu = document.getElementById('bwMobMenu');
@@ -601,7 +474,6 @@ These pieces are built to last generations, and are subject to vigorous quality 
   close.addEventListener('click', shut);
   menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', shut); });
 })();
-</script>
-
-</body>
+</script>         
+    </body>     
 </html>
