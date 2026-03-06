@@ -10,11 +10,11 @@
         <style>
         /* icon encoding fix */
         .pmt-icon { font-size: 0 !important; }
-        .pmt-icon::after { font-size: 1.4rem; color: var(--gold); }
-        .pmt-grid .pmt-box:nth-child(1) .pmt-icon::after { content: '\0024'; }
-        .pmt-grid .pmt-box:nth-child(2) .pmt-icon::after { content: 'V'; }
-        .pmt-grid .pmt-box:nth-child(3) .pmt-icon::after { content: '\21C4'; }
-        .pmt-box.btc .pmt-icon::after { content: '\20BF'; }
+        .pmt-icon::after { font-size: 1.4rem; color: var(--gold); display: block; }
+        .pmt-grid .pmt-box:nth-child(1) .pmt-icon::after { content: "$"; }
+        .pmt-grid .pmt-box:nth-child(2) .pmt-icon::after { content: "V"; }
+        .pmt-grid .pmt-box:nth-child(3) .pmt-icon::after { content: "e-"; }
+        .pmt-box.btc .pmt-icon::after { content: "BTC"; font-size: 0.9rem; letter-spacing: 0.1em; }
         </style> 
         <style>/* == SHARED CSS == *//* ═══════════════════════════════════════════
    BLACKWALL — Shared Styles
@@ -69,7 +69,11 @@
                 <p style="font-family:var(--font-ui);font-size:0.58rem;letter-spacing:0.55em;text-transform:uppercase;color: var(--gold-light);margin-bottom:1.5rem;">Something That Has Never Existed Before</p> 
                 <div class="gold-rule-c"></div>                 
                 <h1 class="hero-title">The Commission<br><em>Process</em></h1> 
-                <p style="font-family: var(--font-ui); font-weight: 300; font-size: 0.58rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--parchment); margin-top: 1.5rem; line-height: 2.8;">Private<br>Unhurried<br>Without Compromise</p> 
+                <div style="margin-top:1.5rem; display:flex; flex-direction:column; align-items:center; gap:0.6rem;">
+                    <span style="font-family:var(--font-ui);font-weight:300;font-size:0.58rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--parchment);">Private</span>
+                    <span style="font-family:var(--font-ui);font-weight:300;font-size:0.58rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--parchment);">Unhurried</span>
+                    <span style="font-family:var(--font-ui);font-weight:300;font-size:0.58rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--parchment);">Without Compromise</span>
+                </div> 
             </div>             
         </div>         
         <!-- INTRO -->         
@@ -202,22 +206,22 @@
                 <p class="section-body reveal rd3">No payment processors. No credit card records. No transaction data tied to your name. All payment methods respect the same principle: your business is yours.</p> 
                 <div class="pmt-grid reveal rd4"> 
                     <div class="pmt-box"> 
-                        <div class="pmt-icon">âœ¦</div>                         
+                        <div class="pmt-icon">&#36;</div>                         
                         <div class="pmt-name">Cash</div>                         
                         <div class="pmt-note">Always accepted</div>                         
                     </div>                     
                     <div class="pmt-box"> 
-                        <div class="pmt-icon">âŸ</div>                         
+                        <div class="pmt-icon">&#x1D54D;</div>                         
                         <div class="pmt-name">Venmo</div>                         
                         <div class="pmt-note">United States</div>                         
                     </div>                     
                     <div class="pmt-box"> 
-                        <div class="pmt-icon">â—ˆ</div>                         
+                        <div class="pmt-icon">&#x21C4;</div>                         
                         <div class="pmt-name">E-Transfer</div>                         
                         <div class="pmt-note">Canada</div>                         
                     </div>                     
                     <div class="pmt-box btc"> 
-                        <div class="pmt-icon">â‚¿</div>                         
+                        <div class="pmt-icon">&#x20BF;</div>                         
                         <div class="pmt-name">Bitcoin</div>                         
                         <div class="pmt-note">In preparation</div>                         
                     </div>                     
