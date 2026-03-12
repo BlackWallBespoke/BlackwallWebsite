@@ -14,9 +14,11 @@
     </head>     
     <body> 
         <script>
-    if (localStorage.getItem('bw_age_ok') !== '1') {
-      window.location.replace('index.html');
-    }
+    try {
+      if (localStorage.getItem('bw_age_ok') !== '1') {
+        window.location.replace('index.html');
+      }
+    } catch(e) {}
   </script>         
         <div class="cur-dot" id="curDot"></div>         
         <div class="cur-ring" id="curRing"></div>         

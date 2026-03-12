@@ -205,12 +205,14 @@
         </div>         
         <script>
     // If already verified, skip straight to home
-    if (localStorage.getItem('bw_age_ok') === '1') {
-      window.location.replace('home.html');
-    }
+    try {
+      if (localStorage.getItem('bw_age_ok') === '1') {
+        window.location.replace('home.html');
+      }
+    } catch(e) {}
 
     document.getElementById('agYes').addEventListener('click', function () {
-      localStorage.setItem('bw_age_ok', '1');
+      try { localStorage.setItem('bw_age_ok', '1'); } catch(e) {}
       var g = document.getElementById('age-gate');
       g.classList.add('leaving');
       setTimeout(function () {
